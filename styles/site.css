@@ -6770,272 +6770,10 @@ button.close {
   font-weight: normal;
   font-style: normal;
 }
-.scene {
-  padding: 0;
-  margin: 0;
-  margin-top: -20%;
-}
-.aspect {
-  opacity: 0.2;
-}
-.layer:nth-child(1) button {
-  -webkit-transform: rotate(150deg);
-}
-.layer:nth-child(2) button {
-  -webkit-transform: rotate(120deg);
-}
-.layer:nth-child(3) button {
-  -webkit-transform: rotate(90deg);
-}
-.layer:nth-child(4) button {
-  -webkit-transform: rotate(60deg);
-}
-.layer:nth-child(5) button {
-  -webkit-transform: rotate(30deg);
-}
-.layer:nth-child(6) {
-  opacity: 0.90;
-}
-/* Style for our header texts
-* --------------------------------------- */
-h1 {
-  font-size: 5em;
-  font-family: arial,helvetica;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
-#card {
-  opacity: 0;
-}
-/* Centered texts in each section
-* --------------------------------------- */
-.section {
-  text-align: center;
-  background-size: cover;
-}
-.slide {
-  background-size: cover;
-}
-p {
-  color: #FFFFFF;
-  line-height: 19px;
-  letter-spacing: 5px;
-  font-size: 16px;
-  font-family: 'Geomanist-Regular';
-  font-weight: 400;
-  text-align: left;
-}
-.element {
-  color: #2DE9A1;
-  line-height: 19px;
-  letter-spacing: 5px;
-  font-size: 16px;
-  font-family: 'Geomanist-Regular';
-  font-weight: 400;
-  text-align: left;
-  text-transform: uppercase;
-  height: 20px;
-}
-.typer {
-  opacity: 0;
-}
-/* Defining each section background and styles
-* --------------------------------------- */
 #section0 {
-  background-image: url(../assets/bg1.jpg);
+  /* hide control & slide sources */
 }
-#section0 .overlay {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkQAKMUPZ/BgYGRhgHLAYAEnEBBHGlZskAAAAASUVORK5CYII=) repeat;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-}
-#section2 {
-  background-image: url(../assets/100x100TexTile.jpg);
-  background-repeat: repeat;
-  padding: 6% 0 0 0;
-  z-index: 2;
-}
-#section2 .crystalClump {
-  margin-top: 35%;
-}
-#section2 .main-text {
-  margin-top: 35%;
-}
-#section2 .crystal1Item {
-  left: 20%!important;
-  margin-top: 27%;
-}
-#section2 .crystal2Item {
-  left: 22%!important;
-  margin-top: 25%;
-}
-#section2 .crystal3Item {
-  left: 50%!important;
-  margin-top: 35%;
-}
-#section2 .crystal3Item .crystal {
-  width: 80px;
-  height: auto;
-}
-#section1 {
-  background-image: url(../assets/03a.jpg);
-  padding: 6% 0 0 0;
-  animation-name: scaleIt;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-#section1outer {
-  overflow: hidden;
-  z-index: 2;
-}
-#section1outer .child .rotateMinusNinety {
-  transform: rotate(-118deg);
-}
-#section1outer .small-ball {
-  width: 68%;
-}
-#section1outer .main-text {
-  padding-top: 110px;
-}
-#section1outer .top-ball {
-  padding-top: 82px;
-}
-#section1outer .copy {
-  top: 20%;
-}
-#section1outer .copy .main {
-  color: #2DE9A1;
-  line-height: 30px;
-  letter-spacing: 5px;
-  font-size: 25px;
-  font-family: 'Geomanist-Regular';
-  font-weight: 400;
-}
-#section1outer .copy .sub {
-  color: #FFFFFF;
-  line-height: 19px;
-  letter-spacing: 5px;
-  font-size: 16px;
-  font-family: 'Geomanist-Regular';
-  font-weight: 400;
-  text-align: right;
-}
-#section3 h1 {
-  color: #000;
-}
-/*Adding background for the slides
-* --------------------------------------- */
-#slide1 {
-  background-image: url(../assets/bg2.jpg);
-  padding: 6% 0 0 0;
-}
-#slide2 {
-  background-image: url(../assets/bg5.jpg);
-  padding: 6% 0 0 0;
-}
-.child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.splat {
-  top: 35%;
-  left: 55%;
-}
-.myLayer {
-  position: absolute;
-}
-.myLayer1 {
-  z-index: 10;
-}
-.myLayer2 {
-  z-index: 20;
-}
-.clr-pad {
-  padding: 0px;
-}
-.pad-top-md {
-  padding-top: 160px;
-}
-body {
-  background-color: #F2EEDF;
-}
-.ball {
-  animation-name: bounce;
-  animation-duration: 4s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-.shadow {
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  border-radius: 50%;
-  bottom: -33px;
-  animation-name: shadowBounce;
-  animation-duration: 4s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-@-webkit-keyframes bounce {
-  0% {
-    -webkit-transform: translateY(-10%);
-  }
-  100% {
-    -webkit-transform: translateY(0%);
-  }
-}
-@-webkit-keyframes shadowBounce {
-  0% {
-    width: 19%;
-    height: 20px;
-    margin-left: -51px;
-    background: rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 0 2px 4px rgba(20, 20, 20, 0.1);
-  }
-  100% {
-    width: 30%;
-    height: 15px;
-    margin-left: -54px;
-    background: rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 0 2px 4px rgba(20, 20, 20, 0.17);
-  }
-}
-@-webkit-keyframes bounce-shadow {
-  0%,
-  100% {
-    top: 180px;
-    width: 160px;
-    height: 80px;
-    border-radius: 2px;
-    margin-left: -80px;
-    box-shadow: 0 120px 0px 0px rgba(0, 0, 0, 0.8);
-  }
-  50% {
-    top: 135px;
-    width: 90px;
-    height: 45px;
-    border-radius: 2px;
-    margin-left: -45px;
-    box-shadow: 0 190px 90px 0 rgba(0, 0, 0, 0.6);
-  }
-}
-@keyframes scaleIt {
-  from {
-    transform: scale(1, 1);
-  }
-  to {
-    transform: scale(1.3, 1.3);
-  }
-}
-#myVideo {
+#section0 #myVideo {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -7051,8 +6789,38 @@ body {
   /*cover video background */
   z-index: 0;
 }
-.svgHolder {
-  margin-top: 550px;
+#section0 #card {
+  opacity: 0;
+}
+#section0 .overlay {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAF0lEQVQIW2NkQAKMUPZ/BgYGRhgHLAYAEnEBBHGlZskAAAAASUVORK5CYII=) repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+#section0 .typer {
+  opacity: 0;
+}
+#section0 #particle-slider {
+  width: 600px;
+  height: 300px;
+  margin-left: -300px;
+  left: 50%;
+}
+#section0 #particle-slider div {
+  display: none;
+}
+#section0 .element {
+  color: #2DE9A1;
+  line-height: 19px;
+  letter-spacing: 5px;
+  font-size: 16px;
+  font-family: 'Geomanist-Regular';
+  font-weight: 400;
+  text-align: left;
+  text-transform: uppercase;
+  height: 20px;
 }
 .typed-cursor {
   opacity: 1;
@@ -7094,6 +6862,208 @@ body {
     opacity: 1;
   }
 }
+#section2outer {
+  overflow: hidden;
+  z-index: 2;
+}
+#section2outer #section2 {
+  background-image: url(../assets/03a.jpg);
+  padding: 6% 0 0 0;
+  animation-name: scaleIt;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#section2outer .splat {
+  top: 35%;
+  left: 55%;
+}
+#section2outer .child .rotateMinusNinety {
+  transform: rotate(-118deg);
+}
+#section2outer .small-ball {
+  width: 68%;
+}
+#section2outer .main-text {
+  padding-top: 110px;
+}
+#section2outer .top-ball {
+  padding-top: 82px;
+}
+#section2outer .copy {
+  top: 20%;
+}
+#section2outer .copy .main {
+  color: #2DE9A1;
+  line-height: 30px;
+  letter-spacing: 5px;
+  font-size: 25px;
+  font-family: 'Geomanist-Regular';
+  font-weight: 400;
+}
+#section2outer .copy .sub {
+  color: #FFFFFF;
+  line-height: 19px;
+  letter-spacing: 5px;
+  font-size: 16px;
+  font-family: 'Geomanist-Regular';
+  font-weight: 400;
+  text-align: right;
+}
+#section1 {
+  background-image: url(../assets/100x100TexTile.jpg);
+  background-repeat: repeat;
+  padding: 6% 0 0 0;
+  z-index: 2;
+}
+#section1 .crystalClump {
+  margin-top: 35%;
+}
+#section1 .main-text {
+  margin-top: 35%;
+}
+#section1 .crystal1Item {
+  left: 20%!important;
+  margin-top: 27%;
+}
+#section1 .crystal2Item {
+  left: 22%!important;
+  margin-top: 25%;
+}
+#section1 .crystal3Item {
+  left: 50%!important;
+  margin-top: 35%;
+}
+#section1 .crystal3Item .crystal {
+  width: 80px;
+  height: auto;
+}
+body {
+  background-color: #F2EEDF;
+}
+.section {
+  text-align: center;
+  background-size: cover;
+}
+.scene {
+  padding: 0;
+  margin: 0;
+  margin-top: -20%;
+}
+.layer:nth-child(1) button {
+  -webkit-transform: rotate(150deg);
+}
+.layer:nth-child(2) button {
+  -webkit-transform: rotate(120deg);
+}
+.layer:nth-child(3) button {
+  -webkit-transform: rotate(90deg);
+}
+.layer:nth-child(4) button {
+  -webkit-transform: rotate(60deg);
+}
+.layer:nth-child(5) button {
+  -webkit-transform: rotate(30deg);
+}
+.layer:nth-child(6) {
+  opacity: 0.90;
+}
+/* Style for our header texts
+* --------------------------------------- */
+h1 {
+  font-size: 5em;
+  font-family: arial,helvetica;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+p {
+  color: #FFFFFF;
+  line-height: 19px;
+  letter-spacing: 5px;
+  font-size: 16px;
+  font-family: 'Geomanist-Regular';
+  font-weight: 400;
+  text-align: left;
+}
+.slide {
+  background-size: cover;
+}
+.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.myLayer {
+  position: absolute;
+}
+.myLayer1 {
+  z-index: 10;
+}
+.myLayer2 {
+  z-index: 20;
+}
+.clr-pad {
+  padding: 0px;
+}
+.pad-top-md {
+  padding-top: 160px;
+}
+.ball {
+  animation-name: bounce;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.shadow {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  border-radius: 50%;
+  bottom: -33px;
+  animation-name: shadowBounce;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.svgHolder {
+  margin-top: 550px;
+}
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-10%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
+@-webkit-keyframes shadowBounce {
+  0% {
+    width: 19%;
+    height: 20px;
+    margin-left: -51px;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0 2px 4px rgba(20, 20, 20, 0.1);
+  }
+  100% {
+    width: 30%;
+    height: 15px;
+    margin-left: -54px;
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0 2px 4px rgba(20, 20, 20, 0.17);
+  }
+}
+@keyframes scaleIt {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.3, 1.3);
+  }
+}
 #cursor {
   display: block;
   position: absolute;
@@ -7102,6 +7072,10 @@ body {
   /*margin: 140px;*/
   z-index: 99;
   text-align: center;
+}
+#cursor.open {
+  animation: minusNinety 1s forwards,fadeout 1s forwards,fadein 1s forwards;
+  -webkit-animation-delay: 0s, 1s,2s;
 }
 .over {
   float: right;
@@ -7405,42 +7379,6 @@ nav.open {
   -webkit-animation: rotater 1s forwards, mymove 1s forwards;
   -webkit-animation-delay: 0s, 1s;
 }
-#cursor.open {
-  animation: minusNinety 1s forwards,fadeout 1s forwards,fadein 1s forwards;
-  -webkit-animation-delay: 0s, 1s,2s;
-}
-@keyframes killMarginL {
-  100% {
-    margin-left: 0;
-  }
-}
-@keyframes minusNinety {
-  100% {
-    transform: rotate(-90deg);
-  }
-}
-@keyframes fadeout {
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes fadein {
-  100% {
-    opacity: 1;
-  }
-}
-/* Standard syntax */
-@keyframes rotater {
-  100% {
-    transform: rotate(0deg);
-  }
-}
-@keyframes mymove {
-  100% {
-    top: 10px;
-    left: 10px;
-  }
-}
 nav {
   width: 500px;
   height: 40px;
@@ -7455,7 +7393,6 @@ nav {
   -o-transition: transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
 }
-/* list styles */
 nav ul {
   width: 500px;
   margin: 0px auto;
@@ -7499,10 +7436,34 @@ nav li.active a {
 nav span {
   float: left;
 }
-.notransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  -ms-transition: none !important;
-  transition: none !important;
+@keyframes killMarginL {
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes minusNinety {
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+@keyframes fadeout {
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotater {
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes mymove {
+  100% {
+    top: 10px;
+    left: 10px;
+  }
 }

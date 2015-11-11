@@ -56,7 +56,7 @@
     var SHOW_ACTIVE_TOOLTIP =   'fp-show-active';
 
     // slide
-    var SLIDE_DEFAULT_SEL =     '.slide';
+    var SLIDE_DEFAULT_SEL =     '.fpslide';
     var SLIDE =                 'fp-slide';
     var SLIDE_SEL =             '.' + SLIDE;
     var SLIDE_ACTIVE_SEL =      SLIDE_SEL + ACTIVE_SEL;

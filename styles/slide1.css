@@ -1,0 +1,28 @@
+#section1 {
+  background-image: url(../assets/100x100TexTile.jpg);
+  background-repeat: repeat;
+  padding: 6% 0 0 0;
+  z-index: 2;
+}
+#section1 .crystalClump {
+  margin-top: 35%;
+}
+#section1 .main-text {
+  margin-top: 35%;
+}
+#section1 .crystal1Item {
+  left: 20%!important;
+  margin-top: 27%;
+}
+#section1 .crystal2Item {
+  left: 22%!important;
+  margin-top: 25%;
+}
+#section1 .crystal3Item {
+  left: 50%!important;
+  margin-top: 35%;
+}
+#section1 .crystal3Item .crystal {
+  width: 80px;
+  height: auto;
+}
