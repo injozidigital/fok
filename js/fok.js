@@ -477,83 +477,83 @@ $(document).ready(function() {
         (psScript.addEventListener
             ? psScript.addEventListener('load', init, false)
             : psScript.onload = init);
-        psScript.src = 'http://fok.local/js/partslide.js';
+        psScript.src = 'http://localhost:8080/fok/js/partslide.js';
         psScript.setAttribute('type', 'text/javascript');
         document.body.appendChild(psScript);
     }
 
     $(".my-row").css('height', window.innerHeight/3 + 'px');
 
-    $cube.lazylinepainter({
-        'svgData': svgDatacube,
-        'strokeWidth': 2,
-        'strokeColor': 'grey',
-        'drawSequential': false,
-        'ease': 'easeInOutQuad'
-    });
-    $up.lazylinepainter({
-        'svgData': svgDataUp,
-        'strokeWidth': 2,
-        'strokeColor': '#2de9a1',
-        'drawSequential': false,
-        'ease': 'easeInOutQuad',
-        'onStrokeStart': function(){isUp = true}
-    });
-    $backup.lazylinepainter({
-        'svgData': svgDataBackUp,
-        'strokeWidth': 2,
-        'strokeColor': 'grey',
-        'drawSequential': false,
-        'ease': 'easeInOutQuad'
-    });
-    $down.lazylinepainter({
-        'svgData': svgDataDown,
-        'strokeWidth': 2,
-        'strokeColor': '#2de9a1',
-        'drawSequential': false,
-        'ease': 'easeInOutQuad',
-        'onStrokeStart': function(){isDown = true}
-    });
-    $backdown.lazylinepainter({
-        'svgData': svgDataBackDown,
-        'strokeWidth': 2,
-        'strokeColor': 'grey',
-        'drawSequential': false,
-        'ease': 'easeInOutQuad'
-    });
-    $menu.lazylinepainter({
-        'svgData': svgDataMenu,
-        'strokeWidth': 2,
-        'strokeColor': '#2de9a1',
-        'drawSequential': false,
-        'ease': 'easeInOutQuad'
-    });
-    $ex.lazylinepainter({
-        'svgData': svgDataEx,
-        'strokeWidth': 2,
-        'strokeColor': '#2de9a1',
-        'drawSequential': false,
-        'ease': 'easeInOutQuad',
-        'onStrokeStart': function(){$ex.show()}
-    });
-    $backex.lazylinepainter({
-        'svgData': svgDataBackEx,
-        'strokeWidth': 2,
-        'strokeColor': 'grey',
-        'drawSequential': false,
-        'ease': 'easeInOutQuad',
-        'onStrokeStart': function(){console.log("Stroke started")},
-        'onStrokeComplete': function(){$backex.hide();$ex.hide()},
+    //$cube.lazylinepainter({
+    //    'svgData': svgDatacube,
+    //    'strokeWidth': 2,
+    //    'strokeColor': 'grey',
+    //    'drawSequential': false,
+    //    'ease': 'easeInOutQuad'
+    //});
+    //$up.lazylinepainter({
+    //    'svgData': svgDataUp,
+    //    'strokeWidth': 2,
+    //    'strokeColor': '#2de9a1',
+    //    'drawSequential': false,
+    //    'ease': 'easeInOutQuad',
+    //    'onStrokeStart': function(){isUp = true}
+    //});
+    //$backup.lazylinepainter({
+    //    'svgData': svgDataBackUp,
+    //    'strokeWidth': 2,
+    //    'strokeColor': 'grey',
+    //    'drawSequential': false,
+    //    'ease': 'easeInOutQuad'
+    //});
+    //$down.lazylinepainter({
+    //    'svgData': svgDataDown,
+    //    'strokeWidth': 2,
+    //    'strokeColor': '#2de9a1',
+    //    'drawSequential': false,
+    //    'ease': 'easeInOutQuad',
+    //    'onStrokeStart': function(){isDown = true}
+    //});
+    //$backdown.lazylinepainter({
+    //    'svgData': svgDataBackDown,
+    //    'strokeWidth': 2,
+    //    'strokeColor': 'grey',
+    //    'drawSequential': false,
+    //    'ease': 'easeInOutQuad'
+    //});
+    //$menu.lazylinepainter({
+    //    'svgData': svgDataMenu,
+    //    'strokeWidth': 2,
+    //    'strokeColor': '#2de9a1',
+    //    'drawSequential': false,
+    //    'ease': 'easeInOutQuad'
+    //});
+    //$ex.lazylinepainter({
+    //    'svgData': svgDataEx,
+    //    'strokeWidth': 2,
+    //    'strokeColor': '#2de9a1',
+    //    'drawSequential': false,
+    //    'ease': 'easeInOutQuad',
+    //    'onStrokeStart': function(){$ex.show()}
+    //});
+    //$backex.lazylinepainter({
+    //    'svgData': svgDataBackEx,
+    //    'strokeWidth': 2,
+    //    'strokeColor': 'grey',
+    //    'drawSequential': false,
+    //    'ease': 'easeInOutQuad',
+    //    'onStrokeStart': function(){console.log("Stroke started")},
+    //    'onStrokeComplete': function(){$backex.hide();$ex.hide()},
+    //
+    //});
 
-    });
-
-    $card.lazylinepainter({
-        'svgData': svgDataCard,
-        'strokeWidth': 1,
-        'strokeColor': '#ffffff',
-        'drawSequential': false,
-        'ease': 'easeInOutQuad'
-    });
+    //$card.lazylinepainter({
+    //    'svgData': svgDataCard,
+    //    'strokeWidth': 1,
+    //    'strokeColor': '#ffffff',
+    //    'drawSequential': false,
+    //    'ease': 'easeInOutQuad'
+    //});
 
     function initFok(){
         setTimeout(function(){
@@ -562,7 +562,7 @@ $(document).ready(function() {
             $(".svgHolder").animate({marginTop:'0'},2000);
         }, 2000);
         setTimeout(function(){
-            $card.lazylinepainter('paint');
+            //$card.lazylinepainter('paint');
         }, 3000);
 //		setTimeout(function(){
 //			$('body').mouseover(function(){
