@@ -3,10 +3,10 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Background images - fullPage.js</title>
-	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="fullPage full-screen backgrounds." />
-	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+	<title>I N J O Z I</title>
+	<meta name="author" content="injozi" />
+	<meta name="description" content="injozi about page" />
+	<meta name="keywords"  content="injozi,about" />
 	<meta name="Resource-type" content="Document" />
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -17,451 +17,6 @@
 
 	<link rel="stylesheet" type="text/css" href="styles/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="styles/site.css" />
-
-	<style>
-		#myVideo{
-			position: absolute;
-			right: 0;
-			bottom: 0;
-			top:0;
-			right:0;
-			width: 100%;
-			height: 100%;
-			background-size: 100% 100%;
-			background-color: black; /* in case the video doesn't fit the whole page*/
-			background-image: /* our video */;
-			background-position: center center;
-			background-size: contain;
-			object-fit: cover; /*cover video background */
-			z-index:3;
-		}
-
-		.svgHolder {
-			margin-top: 550px;
-		}
-
-		.typed-cursor{
-			opacity: 1;
-			color: #ffffff;
-			-webkit-animation: blink 0.7s infinite;
-			-moz-animation: blink 0.7s infinite;
-			animation: blink 0.7s infinite;
-		}
-		@keyframes blink{
-			0% { opacity:1; }
-			50% { opacity:0; }
-			100% { opacity:1; }
-		}
-		@-webkit-keyframes blink{
-			0% { opacity:1; }
-			50% { opacity:0; }
-			100% { opacity:1; }
-		}
-		@-moz-keyframes blink{
-			0% { opacity:1; }
-			50% { opacity:0; }
-			100% { opacity:1; }
-		}
-
-		#cursor {
-			display: block;
-			position: absolute;
-			margin-top: -14px;
-			margin-left: -14px;
-			/*margin: 140px;*/
-			z-index: 99;
-			text-align: center;
-		}
-
-		.over {
-			float: right;
-			overflow: visible;
-			position: relative;
-			width: 40px;
-			z-index: 1000;
-			margin-top: -40px;
-		}
-		.under {
-			width:40px;
-			height:40px;
-		}
-
-		.nudge_left{
-			margin-left: -40px;
-		}
-
-		/*no menu*/
-		.nomenu svg{
-			-webkit-transform:rotate(0deg) translate(0, 0);
-			-moz-transform: rotate(0deg) translate(0, 0);
-			-ms-transform: rotate(0deg) translate(0, 0);
-			-o-transform: rotate(0deg) translate(0, 0);
-			transform: rotate(0deg) translate(0 0);
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :first-child{
-			opacity: 1;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(8){
-			opacity: 1;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(7){
-			opacity: 1;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(6){
-			opacity: 1;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(5){
-			opacity: 1;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(3){
-			opacity: 1;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(2){
-			transform-origin: center;
-			transform: rotate(0deg) translate(0px,0px);
-			-moz-transform: rotate(0deg) translate(0px,0px);
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(4){
-			transform-origin: center;
-			transform: rotate(0deg) translate(0px,0px);
-			-moz-transform: rotate(0deg) translate(0px,0px);
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(9){
-			transform: rotate(0deg);
-			transform-origin: center;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(11){
-			transform: rotate(0deg);
-			transform-origin: center;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(10){
-			transform: rotate(0deg);
-			transform-origin: center;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.nomenu svg :nth-child(12){
-			transform: rotate(0deg);
-			transform-origin: center;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		/*menu*/
-		.menu svg{
-			-webkit-transform:rotate(0deg) translate(0, 0);
-			-moz-transform: rotate(0deg) translate(0, 0);
-			-ms-transform: rotate(0deg) translate(0, 0);
-			-o-transform: rotate(0deg) translate(0, 0);
-			transform: rotate(0deg) translate(0 0);
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :first-child{
-			opacity: 0;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(8){
-			opacity: 0;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(7){
-			opacity: 0;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(6){
-			opacity: 0;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(5){
-			opacity: 0;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(3){
-			opacity: 0;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(2){
-			transform-origin: center;
-			transform: rotate(-30deg) translate(10px,-12px);
-			-moz-transform: rotate(-30deg) translate(0px,-19px);
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(4){
-			transform-origin: center;
-			transform: rotate(-30deg) translate(-11px,9px);
-			-moz-transform: rotate(-30deg) translate(0px,-19px);
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(9){
-			transform: rotate(-30deg);
-			transform-origin: center;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(11){
-			transform: rotate(-30deg);
-			transform-origin: center;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(10){
-			transform: rotate(30deg);
-			transform-origin: center;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-		.menu svg :nth-child(12){
-			transform: rotate(30deg);
-			transform-origin: center;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-
-		#menu svg :nth-child(1),#menu svg :nth-child(3){
-			transform: rotate(-30deg);
-			transform-origin: center;
-		}
-
-		#menu svg :nth-child(2),#menu svg :nth-child(4){
-			transform: rotate(30deg);
-			transform-origin: center;
-		}
-
-		#menu svg :nth-child(6){
-			transform-origin: center;
-			transform: rotate(-30deg) translate(10px,-12px);
-			-moz-transform: rotate(-30deg) translate(0px,-19px);
-		}
-
-		#menu svg :nth-child(5){
-			transform-origin: center;
-			transform: rotate(-30deg) translate(-11px,9px);
-			-moz-transform: rotate(-30deg) translate(0px,-19px);
-		}
-
-		.vert-menu-line{
-			width: 1px;
-			height: 40px;
-			background-color: grey;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-
-		.vert-menu-line.two{
-			margin-left:-64px;
-		}
-		.vert-menu-line.three{
-			margin-left:-127px;
-		}
-
-		nav.open .vert-menu-line.two{
-			-webkit-animation: killMarginL 1s forwards;
-			-webkit-animation-delay: 2s;
-		}
-
-		nav.open .vert-menu-line.three{
-			-webkit-animation: killMarginL 1s forwards;
-			-webkit-animation-delay: 2s;
-		}
-
-
-		nav.open li{
-			-webkit-animation: fadein 1s forwards;
-			-webkit-animation-delay: 3s;
-		}
-
-		nav.open{
-			/*transform-origin: bottom left;*/
-			-webkit-animation: rotater 1s forwards, mymove 1s forwards;
-			-webkit-animation-delay: 0s, 1s;
-		}
-		#cursor.open{
-			animation: minusNinety 1s forwards,fadeout 1s forwards,fadein 1s forwards;
-			-webkit-animation-delay: 0s, 1s,2s;
-		}
-		@keyframes killMarginL {
-			100%  {margin-left: 0;}
-		}
-
-		@keyframes minusNinety {
-			100%  {transform: rotate(-90deg);}
-		}
-
-		@keyframes fadeout {
-			100%  {opacity: 0;}
-		}
-
-		@keyframes fadein {
-			100%  {opacity: 1;}
-		}
-
-		/* Standard syntax */
-		@keyframes rotater {
-			100%  {transform: rotate(0deg);}
-		}
-
-		@keyframes mymove {
-			100%  {top: 10px;left:10px}
-		}
-
-		nav {
-
-			width: 500px;
-			height: 40px;
-			position: absolute;
-			/*top: 10px;*/
-			/*left: 10px;*/
-			transform: rotate(90deg);
-			transform-origin: 20px 20px;
-			-webkit-transition: transform 0.3s ease-in; /* Changed here */
-			-moz-transition: transform 0.3s ease-in;
-			-o-transition: transform 0.3s ease-in;
-			transition: transform 0.3s ease-in;
-		}
-
-		/* list styles */
-		nav ul {
-			width: 500px;
-			margin: 0px auto;
-			overflow: auto;
-			list-style: none;
-			padding: 0;
-		}
-
-		nav li {
-			font-family: Open Sans, sans-serif;
-			font-size: 14px;
-			font-weight:300;
-			float: left;
-			padding-right: 20px;
-			padding-left: 20px;
-			padding-top: 10px;
-			opacity: 0;
-			-webkit-transition: all 0.3s ease-in; /* Changed here */
-			-moz-transition: all 0.3s ease-in;
-			-o-transition: all 0.3s ease-in;
-			transition: all 0.3s ease-in;
-		}
-
-		nav li:last-child {
-			border: none;
-		}
-
-		nav li a {
-			text-decoration: none;
-			color: #888;
-			transition: all .5s ease;
-			-webkit-transition: all .5s ease;
-			-moz-transition: all .5s ease;
-			-o-transition: all .5s ease;
-		}
-
-		nav li a:hover {
-			color: #333;
-		}
-
-		nav li.active a {
-			color: #2de9a1;
-			font-weight: normal;
-		}
-
-		nav span {
-			float: left;
-		}
-
-		.notransition {
-			-webkit-transition: none !important;
-			-moz-transition: none !important;
-			-o-transition: none !important;
-			-ms-transition: none !important;
-			transition: none !important;
-		}
-	</style>
-
 	<!--[if IE]>
 	<script type="text/javascript">
 		var console = { log: function() {} };
@@ -483,39 +38,36 @@
 	</script>
 </head>
 <body>
-<div id="cursor">
-	<div class="under" id="cube"></div>
-	<div class="over nudge_left" id="up"></div>
-	<div class="over nudge_left" id="backup"></div>
-	<div class="over nudge_left" id="down"></div>
-	<div class="over nudge_left" id="backdown"></div>
-	<div class="over nudge_left" id="ex"></div>
-	<div class="over nudge_left" id="backex"></div>
-	<div class="over " id="menu"></div>
-	<!--<div class="over" id="backmenu"></div>-->
-</div>
+<!--<div id="cursor">-->
+	<!--<div class="under" id="cube"></div>-->
+	<!--<div class="over nudge_left" id="up"></div>-->
+	<!--<div class="over nudge_left" id="backup"></div>-->
+	<!--<div class="over nudge_left" id="down"></div>-->
+	<!--<div class="over nudge_left" id="backdown"></div>-->
+	<!--<div class="over nudge_left" id="ex"></div>-->
+	<!--<div class="over nudge_left" id="backex"></div>-->
+	<!--<div class="over " id="menu"></div>-->
+	<!--&lt;!&ndash;<div class="over" id="backmenu"></div>&ndash;&gt;-->
+<!--</div>-->
 
-<div class="col-xs-12 my-row" style="background-color: transparent"></div>
-<div class="col-xs-12 my-row" style="background-color: transparent"></div>
-<div class="col-xs-12 my-row" style="background-color: transparent"></div>
-
-<nav id="nav-menu">
-	<ul>
-		<span class="vert-menu-line"></span>
-		<li><a href="#">Home</a></li>
-		<span class="vert-menu-line two"></span>
-		<li class="active"><a href="#">About</a></li>
-		<span class="vert-menu-line three"></span>
-		<li><a href="#">Contact</a></li>
-	</ul>
-</nav>
+<!--<nav id="nav-menu">-->
+	<!--<ul>-->
+		<!--<span class="vert-menu-line"></span>-->
+		<!--<li><a href="#">Home</a></li>-->
+		<!--<span class="vert-menu-line two"></span>-->
+		<!--<li class="active"><a href="#">About</a></li>-->
+		<!--<span class="vert-menu-line three"></span>-->
+		<!--<li><a href="#">Contact</a></li>-->
+	<!--</ul>-->
+<!--</nav>-->
 <div id="fullpage">
 	<div class="section " id="section0">
 		<video autoplay loop muted id="myVideo">
 			<source src="assets/final.mp4" type="video/mp4">
 			<source src="assets/final.webm" type="video/webm">
 		</video>
-		<div class="layer child layer1 col-xs-7">
+		<div class="overlay"></div>
+		<div class="myLayer child myLayer1 col-xs-7">
 			<div class="copy pull-right col-xs-12">
 				<div class="row typer"><p class="col-sm-3">WE CREATE /</p><div class="col-sm-9 element clr-pad"></div></div>
 			</div>
@@ -524,16 +76,41 @@
 			</div>
 		</div>
 	</div>
+	<div class="section" id="section2">
+			<ul id="scene" class="scene border col-xs-12">
+				<li class="layer" data-depth="1.00"></li>
+				<li class="layer" data-depth="1.00">
+						<img class="col-xs-10" src="assets/slide2_splat.png">
+				</li>
+				<li class="layer" data-depth="0.80">
+					<img class="col-lg-offset-5 col-xs-9 crystalClump" src="assets/slide2_crystals.png">
+				</li>
+				<li class="layer crystal1Item" data-depth="0.60">
+					<img class="col-lg-offset-5 col-xs-9 crystal" src=" assets/slide2_miscJewel1.png">
+				</li>
+				<li class="layer crystal2Item" data-depth="0.40">
+					<img class="col-lg-offset-5 col-xs-9 crystal" src="assets/slide2_miscJewel2.png">
+				</li>
+				<li class="layer" data-depth="0.20">
+					<img class="col-lg-offset-4 col-xs-9 main-text" src="assets/Slide2_header-01.png">
+				</li>
+				<li class="layer crystal3Item" data-depth="0.00">
+					<img class="crystal" src="assets/slide2_miscJewel3.png">
+				</li>
+			</ul>
+			<br>
+
+	</div>
 	<div class="section" id="section1outer">
 		<div class="section" id="section1"></div>
 		<div class="copy col-xs-8 child">
 			<p class="main">THIS IS WHAT WE DO</p>
 			<p class="sub">WORK THAT MAINTAINS A CERTAIN<br>BOLDNESS IN THE FACE OF STANDARDS.</p>
 		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child layer splat">
+		<div class=" col-sm-offset-2 col-sm-10 child myLayer splat">
 			<img src="assets/pasted-svg-366492x368.svg" class="img-responsive col-sm-4 rotateMinusNinety ">
 		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child layer layer1">
+		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
 			<div class="col-sm-offset-2 col-sm-3 ">
 				<img src="assets/ball1.png" class="img-responsive col-sm-12 ball">
 				<span class="shadow"></span>
@@ -543,36 +120,12 @@
 				<span class="shadow"></span>
 			</div>
 		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child layer layer2 main-text">
+		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
 			<img src="assets/pasted%20svg%20517709x382_poster_.png" class="img-responsive col-sm-6 ">
 		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child layer layer2 top-ball">
+		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 top-ball">
 			<div class="clr-pad col-sm-offset-2 col-sm-2">
 				<img src="assets/ball1.png" class="img-responsive col-sm-12 ball small-ball">
-				<span class="shadow"></span>
-			</div>
-		</div>
-	</div>
-	<div class="section" id="section2">
-		<!--<div class=" col-sm-offset-2 col-sm-10 child layer splat">-->
-			<!--<img src="assets/pasted-svg-366492x368.svg" class="img-responsive col-sm-4 rotateMinusNinety ">-->
-		<!--</div>-->
-		<div class=" col-sm-offset-2 col-sm-10 child layer layer1">
-			<div class="col-sm-offset-2 col-sm-3 ">
-				<img src="assets/slide2_miscJewel2.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
-			</div>
-			<div class="col-sm-2 pad-top-md">
-				<img src="assets/slide2_miscJewel3.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
-			</div>
-		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child layer layer2 main-text">
-			<img src="assets/Slide2_header-01.png" class="img-responsive col-sm-6 ">
-		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child layer layer2 top-ball">
-			<div class="clr-pad col-sm-offset-2 col-sm-2">
-				<img src="assets/slide2_miscJewel1.png" class="img-responsive col-sm-12 ball small-ball">
 				<span class="shadow"></span>
 			</div>
 		</div>
@@ -581,167 +134,21 @@
 </div>
 
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Scripts -->
+<script src="js/parallax.js"></script>
+<script>
+
+	// Elements
+	var scene = document.getElementById('scene');
+
+	// Pretty simple huh?
+	var parallax = new Parallax(scene, {
+		relativeInput: true
+	});
+
+</script>
 <script>
 	var $card = $('#card');
-
-//	var pathObj = {
-//		"Untitled-1": {
-//			"strokepath": [
-//				{
-//					"path": "M 0.7,1. L 0.7,41.7 11.3,41.7   ",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 0.7,94. L 0.7,54.1 11.3,54.1   ",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 11.9 1.3 L 11.9 94.5",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 713.7,1. L 713.7,41.7 724.3,41.7   ",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 713.7,94. L 713.7,54.1 724.3,54.1   ",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 724.9 1.3 L 724.9 94.5",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 111.7 1.3 L 111.7 94.5",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 176 1.3 L 176 64.6",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 123.9,94. L 123.9,12.7 188.1,76.4 188.1,76.4 188.1,1.3    ",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 123.7 30.3 L 187.7 94",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M276.9,94.9c15.7,0,28.2-12.6,28.2-28V1.3",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M276.9,83.1c9.3,0,16.7-7.5,16.7-16.7V52.9h11.6",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 305.1,41. L 292.3,41.7 292.3,1.3   ",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M461.1,11.6l-56.3,56.1L461.1,11.6c-7.7-5.8-17.5-9.3-27.9-9.3c-25.3,0-45.8,20.5-45.8,45.7    s20.5,45.7,45.8,45.7c25.3,0,45.5-20.5,45.8-45.7c0.2-10.7-2.9-19.7-9.3-27.9l-56.2,56.1l56.3-56.1",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M453,19.4c-5.4-3.9-12.4-6.2-19.7-6.2c-19.1,0-34.7,15.7-34.7,34.7c0,19.1,15.7,34.7,34.7,34.7    S468,66.9,468,47.9c0-7.5-2.3-14-6.2-19.7",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 538.4,0. L 600.1,0.7 545.5,83.9 614.2,83.9   ",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 559.7 83.7 L 614.4 0.9",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 539.3 13.2 L 591.9 13.2",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 537 95.1 L 614.2 95.1",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 600.1 0.7 L 545.5 83.9",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 538.4 0.7 L 600.1 0.7",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 545.5 83.9 L 614.2 83.9",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 713.7 1.3 L 713.7 41.7",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 713.7 41.7 L 724.3 41.7",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 724.3 54.1 L 713.7 54.1",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 713.7 54.1 L 713.7 94.5",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 292.3 1.3 L 292.3 41.7",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 292.3 41.7 L 305.1 41.7",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 188.1 1.3 L 188.1 76.4",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 188.1 76.4 L 124.2 12.5",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 11.9 1.3 L 11.9 41.7",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 11.9 41.7 L 0.7 41.7",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 0.7 54.1 L 11.9 54.1",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 11.9 54.1 L 11.9 94.5",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 0.7 1.3 L 0.7 41.7",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 0.7 54.1 L 0.7 94.5",
-//					"duration": 600
-//				},
-//				{
-//					"path": "M 124.2 12.5 L 123.9 94.5",
-//					"duration": 600
-//				}
-//			],
-//			"dimensions": {
-//				"width": 726,
-//				"height": 96
-//			}
-//		}
-//	};
 	var svgDataCard= {
 		"card": {
 			"strokepath": [
@@ -1313,12 +720,12 @@
 		});
 
 
-		setTimeout(function(){
-			$('body').mouseover(function(){
-				$(this).css({cursor: 'none'});
-			});
-			$cube.lazylinepainter('paint');
-		}, 10);
+//		setTimeout(function(){
+//			$('body').mouseover(function(){
+//				$(this).css({cursor: 'none'});
+//			});
+//			$cube.lazylinepainter('paint');
+//		}, 10);
 
 		function hideAll(except){
 			except = (typeof except === 'undefined') ? 'none' : except;
@@ -1444,62 +851,62 @@
 			$(".my-row").css('height', $section + 'px');
 		});
 
-		$(document).on('mousemove', function(e){
-			$('#cursor').css({
-				left:  e.pageX,
-				top:   e.pageY
-			});
-
-			if((e.pageY < $section)) {
-				if(isUp) {
-					hideUp();
-				}else if(isDown){
-					hideDown();
-				}
-
-				if(!isMenuButton && !isNavOpen){
-					showMenu();
-				}
-			}else{
-				if(isMenuButton && !isNavOpen){
-					hideMenu();
-				}
-			}
-
-			if((e.pageY > $section)&&(e.pageY < $section*2)&& !isUp && !isMenuButton){
-				if(isDown) {
-					hideDown();
-				}
-				if(isMenuButton) {
-					isMenuButton = false;
-				}
-				showUp();
-				hideMenu()
-			}
-
-			if((e.pageY > $section*2)&& !isDown && !isMenuButton){
-				if(isUp) {
-					hideUp();
-				}
-				if(isMenuButton) {
-					isMenuButton = false;
-				}
-				showDown();
-				hideMenu()
-			}
-
-			if(isMenuButton && !isNavOpen){
-				$navigation.css({
-					display:'block',
-					left:  (e.pageX-14),
-					top:   (e.pageY-8)
-				});
-			} else if(!isNavOpen){
-				$navigation.css({
-					display:'none'
-				});
-			}
-		});
+//		$(document).on('mousemove', function(e){
+//			$('#cursor').css({
+//				left:  e.pageX,
+//				top:   e.pageY
+//			});
+//
+//			if((e.pageY < $section)) {
+//				if(isUp) {
+//					hideUp();
+//				}else if(isDown){
+//					hideDown();
+//				}
+//
+//				if(!isMenuButton && !isNavOpen){
+//					showMenu();
+//				}
+//			}else{
+//				if(isMenuButton && !isNavOpen){
+//					hideMenu();
+//				}
+//			}
+//
+//			if((e.pageY > $section)&&(e.pageY < $section*2)&& !isUp && !isMenuButton){
+//				if(isDown) {
+//					hideDown();
+//				}
+//				if(isMenuButton) {
+//					isMenuButton = false;
+//				}
+//				showUp();
+//				hideMenu()
+//			}
+//
+//			if((e.pageY > $section*2)&& !isDown && !isMenuButton){
+//				if(isUp) {
+//					hideUp();
+//				}
+//				if(isMenuButton) {
+//					isMenuButton = false;
+//				}
+//				showDown();
+//				hideMenu()
+//			}
+//
+//			if(isMenuButton && !isNavOpen){
+//				$navigation.css({
+//					display:'block',
+//					left:  (e.pageX-14),
+//					top:   (e.pageY-8)
+//				});
+//			} else if(!isNavOpen){
+//				$navigation.css({
+//					display:'none'
+//				});
+//			}
+//		});
 
 		$(document).on('click', function(e){
 			if(isMenuButton){
