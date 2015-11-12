@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>I N J O Z I</title>
+    <meta name="author" content="injozi" />
+    <meta name="description" content="injozi about page" />
+    <meta name="keywords"  content="injozi,about" />
+    <meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet" type="text/css" href="styles/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="styles/site.css" />
+    <!--[if IE]>
+    <script type="text/javascript">
+        var console = { log: function() {} };
+    </script>
+    <![endif]-->
+    <style> /* Firefox seems to have issues loading the clip path from inside the CSS */
+    .link--urpi::before {
+        -webkit-clip-path: url(#cp_up);
+        clip-path: url(#cp_up);
+    }
+
+    .link--urpi::after {
+        -webkit-clip-path: url(#cp_down);
+        clip-path: url(#cp_down);
+    }
+    </style>
+</head>
+<body>
+<div id="cursor">
+<div class="under" id="cube"></div>
+<div class="over nudge_left" id="up"></div>
+<div class="over nudge_left" id="backup"></div>
+<div class="over nudge_left" id="down"></div>
+<div class="over nudge_left" id="backdown"></div>
+<div class="over nudge_left" id="ex"></div>
+<div class="over nudge_left" id="backex"></div>
+<div class="over " id="menu"></div>
+<div class="over" id="backmenu"></div>
+</div>
+
+
+
+
+<div class ="menuWrapper">
+    <svg class="hidden" viewBox="0 0 3500 440">
+        <defs>
+            <clippath id="cp_up">
+                <polygon id="cp_poly_up" points="0,0 3500,0 1300,440" />
+            </clippath>
+            <clippath id="cp_down">
+                <polygon id="cp_poly_down" points="0,0 0,440 1225,440" />
+            </clippath>
+        </defs>
+    </svg>
+
+    <div class ="menuImage">
+        <img src ="assets/right-splash.png" class="img-responsive">
+    </div>
+
+    <div id ="divElement">
+    <div id="menu1">
+        <div class="grid__item color-5" style="float: left;">
+            <a id="link1" class="link link--urpi" href="#" data-letters="+ABOUT"><span class ="test">+ABOUT</span></a>
+        </div>
+
+        <div class="grid__item color-5">
+            <a id="link2" class="link link--urpi lighttext" href="#" data-letters="INJOZI">INJOZI</a>
+        </div>
+    </div>
+    <!--<div class ="lighttext" style="color:#4b4b4b;"> &</div>-->
+    <div id="menu2">
+
+    <div class="grid__item color-5 " style="float: left;">
+        <a class="link link--urpi" href="#" data-letters="+WORK">+WORK&</a>
+    </div>
+
+
+        <div class="grid__item color-5">
+            <a id="link2" class="link link--urpi" href="#" data-letters="SERVICES">SERVICES</a>
+        </div>
+</div>
+
+    <div id="menu3">
+    <div class="grid__item color-5">
+        <a class="link link--urpi" href="#" data-letters="+CONTACT">+CONTACT</a>
+    </div>
+    </div>
+    </div></div>
+
+
+<div id="fullpage">
+
+
+    <div class="section" id="section0">
+        <video autoplay loop muted id="myVideo">
+            <source src="assets/final.mp4" type="video/mp4">
+            <source src="assets/final.webm" type="video/webm">
+        </video>
+        <div class="overlay"></div>
+        <div class="myLayer child myLayer1 col-xs-7">
+            <div class="copy pull-right col-xs-12">
+                <div class="row typer"><p class="col-sm-3">WE CREATE /</p><div class="col-sm-9 element clr-pad"></div></div>
+            </div>
+            <div class="svgHolder col-xs-12">
+                <div id='card'></div>
+            </div>
+        </div>
+        <div class="myLayer myLayer1 est" id="particle-slider">
+            <div class="slides">
+                <div class="slide" data-src="assets/est-01-2.png">
+                </div>
+            </div>
+            <canvas class="draw"></canvas>
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <ul id="scene" class="scene border col-xs-12">
+            <li class="layer" data-depth="1.00"></li>
+            <li class="layer" data-depth="1.00">
+                <img class="col-xs-10" src="assets/slide2_splat.png">
+            </li>
+            <li class="layer" data-depth="0.80">
+                <img class="col-lg-offset-5 col-xs-9 crystalClump" src="assets/slide2_crystals.png">
+            </li>
+            <li class="layer crystal1Item" data-depth="0.60">
+                <img class="col-lg-offset-5 col-xs-9 crystal" src=" assets/slide2_miscJewel1.png">
+            </li>
+            <li class="layer crystal2Item" data-depth="0.40">
+                <img class="col-lg-offset-5 col-xs-9 crystal" src="assets/slide2_miscJewel2.png">
+            </li>
+            <li class="layer" data-depth="0.20">
+                <img class="col-lg-offset-4 col-xs-9 main-text" src="assets/Slide2_header-01.png">
+            </li>
+            <li class="layer crystal3Item" data-depth="0.00">
+                <img class="crystal" src="assets/slide2_miscJewel3.png">
+            </li>
+        </ul>
+        <br>
+
+    </div>
+    <div class="section" id="section2outer">
+        <div class="section" id="section2"></div>
+        <div class="copy col-xs-8 child">
+            <p class="main">THIS IS WHAT WE DO</p>
+            <p class="sub">WORK THAT MAINTAINS A CERTAIN<br>BOLDNESS IN THE FACE OF STANDARDS.</p>
+        </div>
+        <div class=" col-sm-offset-2 col-sm-10 child myLayer splat">
+            <img src="assets/pasted-svg-366492x368.svg" class="img-responsive col-sm-4 rotateMinusNinety ">
+        </div>
+        <div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
+            <div class="col-sm-offset-2 col-sm-3 ">
+                <img src="assets/ball1.png" class="img-responsive col-sm-12 ball">
+                <span class="shadow"></span>
+            </div>
+            <div class="col-sm-2 pad-top-md">
+                <img src="assets/ball1.png" class="img-responsive col-sm-12 ball">
+                <span class="shadow"></span>
+            </div>
+        </div>
+        <div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
+            <img src="assets/pasted%20svg%20517709x382_poster_.png" class="img-responsive col-sm-6 ">
+        </div>
+        <div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 top-ball">
+            <div class="clr-pad col-sm-offset-2 col-sm-2">
+                <img src="assets/ball1.png" class="img-responsive col-sm-12 ball small-ball">
+                <span class="shadow"></span>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section3"><h1>One Image = One thousand words</h1></div>
+</div>
+
+<!-- Scripts -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+<script type="text/javascript" src="examples/examples.js"></script>
+<script type="text/javascript" src="js/jquery.lazylinepainter-1.7.0.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/parallax.js"></script>
+<script type="text/javascript" src="js/typed.js"></script>
+<script type="text/javascript" src="js/fok.js"></script>
+<script type="">
+    var item = document.getElementById("link1");
+    item.addEventListener("mouseover", hover2, false);
+    function hover2()
+    {  	$("#link2").addClass("myhover");
+    }
+
+    item.addEventListener("mouseout", unhover1, false);
+    function unhover1()
+    {  	$("#link2").removeClass("myhover");
+    }
+
+</script>
+</body>
+</html>
+
