@@ -477,7 +477,7 @@ $(document).ready(function() {
         (psScript.addEventListener
             ? psScript.addEventListener('load', init, false)
             : psScript.onload = init);
-        psScript.src = 'http://localhost:8080/fok/js/partslide.js';
+        psScript.src = 'http://fok.local/js/partslide.js';
         psScript.setAttribute('type', 'text/javascript');
         document.body.appendChild(psScript);
     }
@@ -547,13 +547,13 @@ $(document).ready(function() {
     //
     //});
 
-    //$card.lazylinepainter({
-    //    'svgData': svgDataCard,
-    //    'strokeWidth': 1,
-    //    'strokeColor': '#ffffff',
-    //    'drawSequential': false,
-    //    'ease': 'easeInOutQuad'
-    //});
+    $card.lazylinepainter({
+        'svgData': svgDataCard,
+        'strokeWidth': 1,
+        'strokeColor': '#ffffff',
+        'drawSequential': false,
+        'ease': 'easeInOutQuad'
+    });
 
     function initFok(){
         setTimeout(function(){
@@ -562,7 +562,7 @@ $(document).ready(function() {
             $(".svgHolder").animate({marginTop:'0'},2000);
         }, 2000);
         setTimeout(function(){
-            //$card.lazylinepainter('paint');
+            $card.lazylinepainter('paint');
         }, 3000);
 //		setTimeout(function(){
 //			$('body').mouseover(function(){
