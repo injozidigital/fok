@@ -10,6 +10,8 @@
 
 	<link rel="stylesheet" type="text/css" href="styles/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="styles/site.css" />
+	<link rel="stylesheet" type="text/css" href="styles/preloader.css" />
+
 	<!--[if IE]>
 	<script type="text/javascript">
 		var console = { log: function() {} };
@@ -17,28 +19,14 @@
 	<![endif]-->
 </head>
 <body>
-<!--<div id="cursor">-->
-	<!--<div class="under" id="cube"></div>-->
-	<!--<div class="over nudge_left" id="up"></div>-->
-	<!--<div class="over nudge_left" id="backup"></div>-->
-	<!--<div class="over nudge_left" id="down"></div>-->
-	<!--<div class="over nudge_left" id="backdown"></div>-->
-	<!--<div class="over nudge_left" id="ex"></div>-->
-	<!--<div class="over nudge_left" id="backex"></div>-->
-	<!--<div class="over " id="menu"></div>-->
-	<!--&lt;!&ndash;<div class="over" id="backmenu"></div>&ndash;&gt;-->
-<!--</div>-->
+<span id="preloaderwrapper">
+    <span class="progress" id="progress"></span>
+    <span id="mask-outer" class="mask"></span>
+    <span id="loader-fill2" class="always"></span>
+    <span id="loader-fill" class="some"></span>
+    <span id="mask-inner" class="mask"></span>
+</span>
 
-<!--<nav id="nav-menu">-->
-	<!--<ul>-->
-		<!--<span class="vert-menu-line"></span>-->
-		<!--<li><a href="#">Home</a></li>-->
-		<!--<span class="vert-menu-line two"></span>-->
-		<!--<li class="active"><a href="#">About</a></li>-->
-		<!--<span class="vert-menu-line three"></span>-->
-		<!--<li><a href="#">Contact</a></li>-->
-	<!--</ul>-->
-<!--</nav>-->
 <div id="fullpage">
 	<div class="section" id="section0">
 		<video autoplay loop muted id="myVideo">
@@ -85,10 +73,42 @@
 				</li>
 			</ul>
 			<br>
-
 	</div>
-	<div class="section" id="section2outer">
-		<div class="section" id="section2"></div>
+	<div class="section" id="section2">
+		<div class="square"></div>
+		<div class="col-sm-10 child myLayer small-ball-container">
+			<div class="clr-pad col-sm-4">
+				<img src="assets/slide3_smlBall.png" class="img-responsive col-sm-12 ball small-ball">
+				<span class="shadow"></span>
+			</div>
+		</div>
+		<div class=" col-sm-10 child myLayer myLayer1">
+
+			<div class="col-sm-4 pad-top-md">
+				<img src="assets/slide3_medBall.png" class="img-responsive col-sm-12 ball">
+				<span class="shadow"></span>
+			</div>
+
+			<img src="assets/slide3_greenSplat.png" class="img-responsive col-sm-4 splat ">
+
+		</div>
+		<div class=" col-sm-offset-1 col-sm-10 child myLayer myLayer2 big-ball-container">
+			<div class="col-sm-5">
+				<img src="assets/slide3_bigBall.png" class="img-responsive col-sm-12 ball">
+				<span class="shadow"></span>
+			</div>
+		</div>
+		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
+			<img src="assets/slide3_Header.png" class="img-responsive col-sm-7 ">
+			<div class="copy col-xs-8 child">
+				<p class="sub">WORK THAT MAINTAINS A CERTAIN<br><span>BOLDNESS</span> IN THE FACE OF STANDARDS.</p>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section3"><h1>One Image = One thousand words</h1></div>
+
+	<div class="section" id="section6outer">
+		<div class="section" id="section6"></div>
 		<div class="copy col-xs-8 child">
 			<p class="main">THIS IS WHAT WE DO</p>
 			<p class="sub">WORK THAT MAINTAINS A CERTAIN<br>BOLDNESS IN THE FACE OF STANDARDS.</p>
@@ -116,7 +136,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="section" id="section3"><h1>One Image = One thousand words</h1></div>
 </div>
 
 <!-- Scripts -->
@@ -126,6 +145,7 @@
 <script type="text/javascript" src="examples/examples.js"></script>
 <script type="text/javascript" src="js/jquery.lazylinepainter-1.7.0.min.js"></script>
 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bower_components/progressbar.js/dist/progressbar.js"></script>
 <script type="text/javascript" src="js/parallax.js"></script>
 <script type="text/javascript" src="js/typed.js"></script>
 <script type="text/javascript" src="js/fok.js"></script>

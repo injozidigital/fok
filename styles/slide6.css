@@ -1,0 +1,48 @@
+#section6outer {
+  overflow: hidden;
+  z-index: 2;
+}
+#section6outer #section6 {
+  background-image: url(../assets/03a.jpg);
+  padding: 6% 0 0 0;
+  animation-name: scaleIt;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#section6outer .splat {
+  top: 35%;
+  left: 55%;
+}
+#section6outer .child .rotateMinusNinety {
+  transform: rotate(-118deg);
+}
+#section6outer .small-ball {
+  width: 68%;
+}
+#section6outer .main-text {
+  padding-top: 110px;
+}
+#section6outer .top-ball {
+  padding-top: 82px;
+}
+#section6outer .copy {
+  top: 20%;
+}
+#section6outer .copy .main {
+  color: #2DE9A1;
+  line-height: 30px;
+  letter-spacing: 5px;
+  font-size: 25px;
+  font-family: 'Geomanist-Regular';
+  font-weight: 400;
+}
+#section6outer .copy .sub {
+  color: #FFFFFF;
+  line-height: 19px;
+  letter-spacing: 5px;
+  font-size: 16px;
+  font-family: 'Geomanist-Regular';
+  font-weight: 400;
+  text-align: right;
+}
