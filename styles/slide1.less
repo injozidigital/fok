@@ -12,7 +12,14 @@
     margin-top: 35%;
   }
 
-
+  .rotateAni {
+    -webkit-animation:spin 12s alternate infinite;
+    -moz-animation:spin 12s alternate infinite;
+    animation:spin 12s alternate infinite;
+  }
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
   .crystal1Item{
     left: 20%!important;

@@ -1,0 +1,69 @@
+.mask{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 80px;
+  height: 80px;
+}
+#mask-outer{
+  background: url(../assets/cube-01-outer.png)0 0 no-repeat;
+  background-size: cover;
+}
+#mask-inner{
+  background: url(../assets/cube-01.png)0 0 no-repeat;
+  background-size: cover;
+  display: none;
+}
+#preloaderwrapper{
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -41px;
+  margin-left: -40px;
+}
+#loader-fill{
+  -webkit-transition: all 1.5s ease-in-out;
+  -o-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;;
+}
+.none {
+  width: 1px;
+  height: 1px;
+  background: black;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+.some {
+  width: 62px;
+  height: 62px;
+  background: black;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-left: -31px;
+  margin-top: -31px;
+}
+.always {
+  width: 60px;
+  height: 60px;
+  background: white;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-left: -30px;
+  margin-top: -30px;
+}
