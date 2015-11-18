@@ -214,7 +214,15 @@ $(document).ready(function() {
             setTimeout(function(){
                 $card.lazylinepainter('paint');
                 setTimeout(function(){
-                    $(".typer").animate({opacity:'1'},100);
+                    $('[data-typer-targets]').typer({
+                        highlightSpeed    : 20,
+                        typeSpeed         : 100,
+                        clearDelay        : 500,
+                        typeDelay         : 200,
+                        clearOnHighlight  : true,
+                        typerDataAttr     : 'data-typer-targets',
+                        typerInterval     : 2000
+                    });
                     setTimeout(function(){
                         $("#particle-slider").animate({opacity:'1'},4000);
                     }, 4500);
@@ -224,19 +232,19 @@ $(document).ready(function() {
 
 
 
-        $(function(){
-            $(".element").typed({
-                strings: ["Websites","Apps","Ideas","Attack Dragons","Strategy","Illustrations","Branding","OK Sh^800","Great Shit","Your Mom","Installations","Games","Concepts","Drink Names","Crafted Work","enage Mutant Ninja Turtles"],
-                typeSpeed: 80,
-                backSpeed: 50,
-                // time before backspacing
-                backDelay: 500,
-                showCursor: true,
-                // character for cursor
-                cursorChar: "|",
-                loop:true
-            });
-        });
+        //$(function(){
+        //    $(".element").typed({
+        //        strings: ["Websites","Apps","Ideas","Attack Dragons","Strategy","Illustrations","Branding","OK Sh^800","Great Shit","Your Mom","Installations","Games","Concepts","Drink Names","Crafted Work","enage Mutant Ninja Turtles"],
+        //        typeSpeed: 80,
+        //        backSpeed: 50,
+        //        // time before backspacing
+        //        backDelay: 500,
+        //        showCursor: true,
+        //        // character for cursor
+        //        cursorChar: "|",
+        //        loop:true
+        //    });
+        //});
     };
 
     initFok();
