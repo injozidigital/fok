@@ -2,318 +2,6 @@
  * Created by Steinburch on 11/11/15.
  */
 $(document).ready(function() {
-    var $windowHeight = window.innerHeight;
-    var $section = $windowHeight/3;
-    var isUp = false;
-    var isDown = false;
-    var isMenuButton = false;
-    var isNavOpen = false;
-    var $navigation = $('nav');
-    var $cube = $('#cube');
-    var $up = $('#up');
-    var $backup = $('#backup');
-    var $down = $('#down');
-    var $backdown = $('#backdown');
-    var $menu = $('#menu');
-    var $ex = $('#ex');
-    var $backex = $('#backex');
-    var $cursor = $('#cursor');
-    var svgDatacube= {
-        "cube": {
-            "strokepath": [
-                //2
-                {
-                    "path": "M 50.4 59.8 L 50.4 1.8",
-                    "duration": 600
-                },
-                //10
-                {
-                    "path": "M 50.4 59.8 L 99.2 88.4",
-                    "duration": 600
-                },
-                //8
-                {
-                    "path": "M 50.4 59.8 L 1.6 88.4",
-                    "duration": 600
-                },
-                //5
-                {
-                    "path": "M 50.4 59.8 L 1.6 30.4",
-                    "duration": 600
-                },
-                //6
-                {
-                    "path": "M 50.4 59 L 99.2 30.4",
-                    "duration": 600
-                },
-                //9
-                {
-                    "path": "M 50.4 59.8 L 50.4 116.8",
-                    "duration": 600
-                },
-
-
-
-
-
-                //7
-                {
-                    "path": "M 99.2 30.4 L 99.2 88.4",
-                    "duration": 600,
-                    "delay":600
-
-                },
-                //4
-                {
-                    "path": "M 1.6 30.4 L 1.6 88.4",
-                    "duration": 600,
-                    "delay":600
-                },
-
-
-                //3
-                {
-                    "path": "M 50.4 1.8 L 99.2 30.4",
-                    "duration": 600,
-                    "delay":1200
-                },
-
-                //1
-                {
-                    "path": "M 50.4 1.8 L 1.6 30.4",
-                    "duration": 600,
-                    "delay":1200
-                },
-                //11
-                {
-                    "path": "M 50.4 117 L 1.6 88.4",
-                    "duration": 600,
-                    "delay":1200
-                },
-                //12
-                {
-                    "path": "M 50.4 117 L 99.2 88.4",
-                    "duration": 600,
-                    "delay":1200
-                },
-
-
-
-            ],
-            "dimensions": {
-                "width": 101,
-                "height": 120
-            }
-        }
-    };
-    var svgDataUp= {
-        "up": {
-            "strokepath": [
-                //2
-                {
-                    "path": "M 50.4 59.8 L 50.4 1.8",
-                    "duration": 600
-                },
-                //3
-                {
-                    "path": "M 50.4 1.8 L 99.2 30.4",
-                    "duration": 600,
-                    "delay":600
-                },
-                //1
-                {
-                    "path": "M 50.4 1.8 L 1.6 30.4",
-                    "duration": 600,
-                    "delay":600
-                },
-            ],
-            "dimensions": {
-                "width": 101,
-                "height": 120
-            }
-        }
-    };
-    var svgDataBackUp= {
-        "backup": {
-            "strokepath": [
-                //2
-                {
-                    "path": "M 50.4 1.8 L 50.4  59.8",
-                    "duration": 600,
-                    "delay":600
-                },
-                //3
-                {
-                    "path": "M 99.2 30.4 L 50.4 1.8",
-                    "duration": 600
-                },
-                //1
-                {
-                    "path": "M 1.6 30.4 L 50.4 1.8",
-                    "duration": 600
-                }
-            ],
-            "dimensions": {
-                "width": 101,
-                "height": 120
-            }
-        }
-    };
-    var svgDataDown= {
-        "down": {
-            "strokepath": [
-                //9
-                {
-                    "path": "M 50.4 59.8 L 50.4 116.8",
-                    "duration": 600
-                },
-                //11
-                {
-                    "path": "M 50.4 117 L 1.6 88.4",
-                    "duration": 600,
-                    "delay":600
-                },
-                //12
-                {
-                    "path": "M 50.4 117 L 99.2 88.4",
-                    "duration": 600,
-                    "delay":600
-                },
-            ],
-            "dimensions": {
-                "width": 101,
-                "height": 120
-            }
-        }
-    };
-    var svgDataBackDown= {
-        "backdown": {
-            "strokepath": [
-                //11
-                {
-                    "path": "M 1.6 88.4 L 50.4 117",
-                    "duration": 600
-                },
-                //12
-                {
-                    "path": "M 99.2 88.4 L 50.4 117",
-                    "duration": 600
-                },
-                //9
-                {
-                    "path": "M 50.4 116.8 L 50.4 59.8",
-                    "duration": 600,
-                    "delay":600
-                }
-            ],
-            "dimensions": {
-                "width": 101,
-                "height": 120
-            }
-        }
-    };
-    var svgDataMenu= {
-        "menu": {
-            "strokepath": [
-                //3
-                {
-                    "path": "M 50.4 1.8 L 99.2 30.4",
-                    "duration": 600
-                },
-                //1
-                {
-                    "path": "M 50.4 1.8 L 1.6 30.4",
-                    "duration": 600
-                },
-                //11
-                {
-                    "path": "M 50.4 117 L 1.6 88.4",
-                    "duration": 600
-                },
-                //12
-                {
-                    "path": "M 50.4 117 L 99.2 88.4",
-                    "duration": 600
-                },
-                //5
-                {
-                    "path": "M 50.4 59.8 L 1.6 30.4",
-                    "duration": 600,
-                    "delay":450
-                },
-                //10
-                {
-                    "path": "M 50.4 59.8 L 99.2 88.4",
-                    "duration": 600,
-                    "delay":450
-                },
-            ],
-            "dimensions": {
-                "width": 101,
-                "height": 120
-            }
-        }
-    };
-    var svgDataEx= {
-        "ex": {
-            "strokepath": [
-                //10
-                {
-                    "path": "M 50.4 59.8 L 99.2 88.4",
-                    "duration": 600
-                },
-                //8
-                {
-                    "path": "M 50.4 59.8 L 1.6 88.4",
-                    "duration": 600
-                },
-                //5
-                {
-                    "path": "M 50.4 59.8 L 1.6 30.4",
-                    "duration": 600
-                },
-                //6
-                {
-                    "path": "M 50.4 59 L 99.2 30.4",
-                    "duration": 600
-                },
-            ],
-            "dimensions": {
-                "width": 101,
-                "height": 120
-            }
-        }
-    };
-    var svgDataBackEx= {
-        "backex": {
-            "strokepath": [
-                //10
-                {
-                    "path": "M 99.2 88.4 L 50.4 59.8",
-                    "duration": 600
-                },
-                //8
-                {
-                    "path": "M 1.6 88.4 L 50.4 59.8",
-                    "duration": 600
-                },
-                //5
-                {
-                    "path": "M 1.6 30.4 L 50.4 59.8",
-                    "duration": 600
-                },
-                //6
-                {
-                    "path": "M 99.2 30.4 L 50.4 59",
-                    "duration": 600
-                },
-            ],
-            "dimensions": {
-                "width": 101,
-                "height": 120
-            }
-        }
-    };
     var scene = document.getElementById('scene');
     var parallax = new Parallax(scene, {
         relativeInput: true
@@ -472,80 +160,12 @@ $(document).ready(function() {
             ? window.addEventListener('click', function(){ps.init(true)}, false)
             : window.onclick = function(){ps.init(true)});
     }
-    var initParticleSlider = function(){
-        var psScript = document.createElement('script');
-        (psScript.addEventListener
-            ? psScript.addEventListener('load', init, false)
-            : psScript.onload = init);
-        psScript.src = 'http://fok.local/js/partslide.js';
-        psScript.setAttribute('type', 'text/javascript');
-        document.body.appendChild(psScript);
-    }
+    var ps = new ParticleSlider();
+    var $ec1Splat = $('#section2').find('.splat');
+    var $ec3Splat = $('#section3').find('.splat');
+    var $ec4Splat = $('#section4outer').find('.splat');
+    var $ec6Splat = $('#section6outer').find('.splat');
 
-    $(".my-row").css('height', window.innerHeight/3 + 'px');
-
-    //$cube.lazylinepainter({
-    //    'svgData': svgDatacube,
-    //    'strokeWidth': 2,
-    //    'strokeColor': 'grey',
-    //    'drawSequential': false,
-    //    'ease': 'easeInOutQuad'
-    //});
-    //$up.lazylinepainter({
-    //    'svgData': svgDataUp,
-    //    'strokeWidth': 2,
-    //    'strokeColor': '#2de9a1',
-    //    'drawSequential': false,
-    //    'ease': 'easeInOutQuad',
-    //    'onStrokeStart': function(){isUp = true}
-    //});
-    //$backup.lazylinepainter({
-    //    'svgData': svgDataBackUp,
-    //    'strokeWidth': 2,
-    //    'strokeColor': 'grey',
-    //    'drawSequential': false,
-    //    'ease': 'easeInOutQuad'
-    //});
-    //$down.lazylinepainter({
-    //    'svgData': svgDataDown,
-    //    'strokeWidth': 2,
-    //    'strokeColor': '#2de9a1',
-    //    'drawSequential': false,
-    //    'ease': 'easeInOutQuad',
-    //    'onStrokeStart': function(){isDown = true}
-    //});
-    //$backdown.lazylinepainter({
-    //    'svgData': svgDataBackDown,
-    //    'strokeWidth': 2,
-    //    'strokeColor': 'grey',
-    //    'drawSequential': false,
-    //    'ease': 'easeInOutQuad'
-    //});
-    //$menu.lazylinepainter({
-    //    'svgData': svgDataMenu,
-    //    'strokeWidth': 2,
-    //    'strokeColor': '#2de9a1',
-    //    'drawSequential': false,
-    //    'ease': 'easeInOutQuad'
-    //});
-    //$ex.lazylinepainter({
-    //    'svgData': svgDataEx,
-    //    'strokeWidth': 2,
-    //    'strokeColor': '#2de9a1',
-    //    'drawSequential': false,
-    //    'ease': 'easeInOutQuad',
-    //    'onStrokeStart': function(){$ex.show()}
-    //});
-    //$backex.lazylinepainter({
-    //    'svgData': svgDataBackEx,
-    //    'strokeWidth': 2,
-    //    'strokeColor': 'grey',
-    //    'drawSequential': false,
-    //    'ease': 'easeInOutQuad',
-    //    'onStrokeStart': function(){console.log("Stroke started")},
-    //    'onStrokeComplete': function(){$backex.hide();$ex.hide()},
-    //
-    //});
 
     $card.lazylinepainter({
         'svgData': svgDataCard,
@@ -554,34 +174,55 @@ $(document).ready(function() {
         'drawSequential': false,
         'ease': 'easeInOutQuad'
     });
-
     function initFok(){
-        setTimeout(function(){
-            $card.animate({opacity:'1'},4500);
-            $(".typer").animate({opacity:'1'},4000);
-            $(".svgHolder").animate({marginTop:'0'},2000);
-        }, 2000);
-        setTimeout(function(){
-            $card.lazylinepainter('paint');
-        }, 3000);
-//		setTimeout(function(){
-//			$('body').mouseover(function(){
-//				$(this).css({cursor: 'none'});
-//			});
-//			$cube.lazylinepainter('paint');
-//		}, 10);
-
         $('#fullpage').fullpage({
             verticalCentered: false,
             afterRender: function(){
                 //playing the video
                 $('video').get(0).play();
+            },
+            onLeave: function(index, nextIndex, direction){
+                var leavingSection = $(this);
+
+                if(index == 2 && direction =='down'){
+                    setTimeout(function(){
+                        $ec1Splat.addClass('grow');
+                    }, 3500);
+                }
+
+                if(index == 3 && direction =='down'){
+                    setTimeout(function(){
+                        $ec3Splat.addClass('grow');
+                    }, 3500);
+                }
+                if(index == 4 && direction =='down'){
+                    setTimeout(function(){
+                        $ec4Splat.addClass('grow');
+                    }, 3500);
+                }
+                if(index == 5 && direction =='down'){
+                    setTimeout(function(){
+                        $ec6Splat.addClass('grow');
+                    }, 3500);
+                }
+
             }
         });
 
-        (window.addEventListener
-            ? window.addEventListener('load', initParticleSlider, false)
-            : window.onload = initParticleSlider);
+        setTimeout(function(){
+            $card.animate({opacity:'1'},4500);
+            setTimeout(function(){
+                $card.lazylinepainter('paint');
+                setTimeout(function(){
+                    $(".typer").animate({opacity:'1'},100);
+                    setTimeout(function(){
+                        $("#particle-slider").animate({opacity:'1'},4000);
+                    }, 4500);
+                }, 3500);
+            }, 1000);
+        }, 2000);
+
+
 
         $(function(){
             $(".element").typed({
@@ -597,210 +238,6 @@ $(document).ready(function() {
             });
         });
     };
-
-
-    //MENU FUNCTIONS
-    function hideAll(except){
-        except = (typeof except === 'undefined') ? 'none' : except;
-
-        $cube.hide();
-        $up.hide();
-        $backup.hide();
-        $down.hide();
-        $backdown.hide();
-        $menu.hide();
-        $ex.hide();
-        $backex.hide();
-
-        switch (except) {
-            case "cube":
-                $cube.show();
-                break;
-            case "up":
-                $up.show();
-                $backup.show();
-                break;
-            case "down":
-                $down.show();
-                $backdown.show();
-                break;
-            case "menu":
-                $menu.show();
-                break;
-            case "ex":
-                $ex.show();
-                $backex.show();
-                break;
-        }
-
-        $cube.hide();
-        $up.hide();
-        $backup.hide();
-        $down.hide();
-        $backdown.hide();
-        $menu.hide();
-        $ex.hide();
-        $backex.hide();
-
-
-    }
-    function showAll(){
-
-        $cube.show();
-        $up.show();
-        $backup.show();
-        $down.show();
-        $backdown.show();
-        $menu.show();
-        $ex.show();
-        $backex.show();
-
-
-    }
-    function showUp(){
-        $backup.hide();
-        $up.lazylinepainter('paint');
-    };
-    function hideUp(){
-        $backup.show();
-        $backup.lazylinepainter('paint');
-        isUp = false;
-    };
-    function showDown(){
-        $backdown.hide();
-        $down.lazylinepainter('paint');
-    };
-    function hideDown(){
-        $backdown.show();
-        $backdown.lazylinepainter('paint');
-        isDown = false;
-    };
-    function showMenu(){
-        $menu.show();
-        $menu.lazylinepainter('paint');
-        $cube.addClass('menu');
-
-        document.getElementById("up").style.visibility = "hidden";
-        document.getElementById("backup").style.visibility = "hidden";
-        document.getElementById("down").style.visibility = "hidden";
-        document.getElementById("backdown").style.visibility = "hidden";
-
-        isMenuButton = true;
-    };
-    function hideMenu(setbool){
-        setbool = (typeof setbool === 'undefined') ? false : setbool;
-        $menu.hide();
-        document.getElementById("up").style.visibility = "visible";
-        document.getElementById("backup").style.visibility = "visible";
-        document.getElementById("down").style.visibility = "visible";
-        document.getElementById("backdown").style.visibility = "visible";
-
-        $('#cube').removeClass('menu');
-        $('#cube').addClass('nomenu');
-
-        isMenuButton = setbool;
-    };
-    function showEx(){
-        $backex.hide();
-        $ex.lazylinepainter('paint');
-    };
-    function hideEx(){
-        $backex.show();
-        $backex.lazylinepainter('paint');
-    };
-
-
-    $(window).resize(function () {
-        $windowHeight = window.innerHeight;
-        $section = $windowHeight/3;
-        $(".my-row").css('height', $section + 'px');
-    });
-
-//		$(document).on('mousemove', function(e){
-//			$('#cursor').css({
-//				left:  e.pageX,
-//				top:   e.pageY
-//			});
-//
-//			if((e.pageY < $section)) {
-//				if(isUp) {
-//					hideUp();
-//				}else if(isDown){
-//					hideDown();
-//				}
-//
-//				if(!isMenuButton && !isNavOpen){
-//					showMenu();
-//				}
-//			}else{
-//				if(isMenuButton && !isNavOpen){
-//					hideMenu();
-//				}
-//			}
-//
-//			if((e.pageY > $section)&&(e.pageY < $section*2)&& !isUp && !isMenuButton){
-//				if(isDown) {
-//					hideDown();
-//				}
-//				if(isMenuButton) {
-//					isMenuButton = false;
-//				}
-//				showUp();
-//				hideMenu()
-//			}
-//
-//			if((e.pageY > $section*2)&& !isDown && !isMenuButton){
-//				if(isUp) {
-//					hideUp();
-//				}
-//				if(isMenuButton) {
-//					isMenuButton = false;
-//				}
-//				showDown();
-//				hideMenu()
-//			}
-//
-//			if(isMenuButton && !isNavOpen){
-//				$navigation.css({
-//					display:'block',
-//					left:  (e.pageX-14),
-//					top:   (e.pageY-8)
-//				});
-//			} else if(!isNavOpen){
-//				$navigation.css({
-//					display:'none'
-//				});
-//			}
-//		});
-
-    $(document).on('click', function(e){
-        if(isMenuButton){
-            if(!isNavOpen) {
-                $cursor.addClass('open');
-                $navigation.addClass('open');
-                isNavOpen = true;
-                setTimeout(function(){
-                    hideAll('ex');
-                    showEx();
-                }, 2000);
-
-            }else{
-                $cursor.removeClass('open');
-                $navigation.removeClass('open');
-                isNavOpen = false;
-
-                showAll();
-                hideEx();
-
-            }
-        }
-        if(isUp){
-            $.fn.fullpage.moveSectionUp();
-        }
-        if(isDown){
-            $.fn.fullpage.moveSectionDown();
-        }
-    });
 
     initFok();
 });

@@ -140,7 +140,6 @@ p{
 .pad-top-md{
   padding-top: 160px;
 }
-
 .ball {
   animation-name: bounce;
   animation-duration: 4s;
@@ -161,9 +160,37 @@ p{
   animation-direction: alternate;
 
 }
+.offball {
+  animation-name: offbounce;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.offshadow {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  border-radius: 50%;
+  bottom: -33px;
+  animation-name: offshadowBounce;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 
-.svgHolder {
-  margin-top: 550px;
+}
+
+.splat-small{
+  transform: scale(0.0);
+  transition:all 0.2s;
+  transition-timing-function: ease-out;
+}
+.grow
+{
+  -webkit-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  transform: scale(1.0);
 }
 
 @-webkit-keyframes bounce {
@@ -191,6 +218,33 @@ p{
                box-shadow: 0px 0 2px 4px rgba(20, 20, 20, 0.17);
               }
             }
+
+@-webkit-keyframes offbounce {
+  100% {
+    -webkit-transform: translateY(-10%);
+  }
+  0%{
+    -webkit-transform: translateY(0%);
+  }
+}
+@-webkit-keyframes offshadowBounce {
+  100%{
+    width: 19%;
+    height: 20px;
+    margin-left: -51px;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0 2px 4px rgba(20, 20, 20, 0.1);
+  }
+
+  0% {
+    width: 30%;
+    height: 15px;
+    margin-left: -54px;
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0 2px 4px rgba(20, 20, 20, 0.17);
+  }
+}
+
 @keyframes scaleIt {
   from {transform: scale(1,1);}
   to {transform: scale(1.3,1.3);}

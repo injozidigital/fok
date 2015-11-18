@@ -43,9 +43,11 @@
 			<source src="assets/final.webm" type="video/webm">
 		</video>
 		<div class="overlay"></div>
-		<div class="myLayer child myLayer1 col-xs-7">
+		<div class="myLayer child myLayer1 col-xs-9">
 			<div class="copy pull-right col-xs-12">
-				<div class="row typer"><p class="col-sm-3">WE CREATE /</p><div class="col-sm-9 element clr-pad"></div></div>
+				<div class="row typer">
+					<p class="we-create">WE CREATE</p><div class="col-sm-9 element clr-pad"></div>
+				</div>
 			</div>
 			<div class="svgHolder col-xs-12">
 				<div id='card'></div>
@@ -63,7 +65,7 @@
 			<ul id="scene" class="scene border col-xs-12">
 				<li class="layer" data-depth="1.00"></li>
 				<li class="layer" data-depth="1.00">
-						<img class="col-xs-10" src="assets/slide2_splat.png">
+						<img class="col-xs-10 " src="assets/slide2_splat.png">
 				</li>
 				<li class="layer" data-depth="0.80">
 					<img class="col-lg-offset-5 col-xs-9 crystalClump" src="assets/slide2_crystals.png">
@@ -78,7 +80,7 @@
 					<img class="col-lg-offset-4 col-xs-9 main-text" src="assets/Slide2_header-01.png">
 				</li>
 				<li class="layer crystal3Item" data-depth="0.00">
-					<img class="crystal" src="assets/slide2_miscJewel3.png">
+					<img class="crystal rotateAni" src="assets/slide2_miscJewel3.png">
 				</li>
 			</ul>
 			<br>
@@ -88,18 +90,18 @@
 		<div class="square"></div>
 		<div class="col-sm-10 child myLayer small-ball-container">
 			<div class="clr-pad col-sm-4">
-				<img src="assets/slide3_smlBall.png" class="img-responsive col-sm-12 ball small-ball">
-				<span class="shadow"></span>
+				<img src="assets/slide3_smlBall.png" class="img-responsive col-sm-12 offball small-ball">
+				<span class="offshadow"></span>
 			</div>
 		</div>
 		<div class=" col-sm-10 child myLayer myLayer1">
 
 			<div class="col-sm-4 pad-top-md">
-				<img src="assets/slide3_medBall.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
+				<img src="assets/slide3_medBall.png" class="img-responsive col-sm-12 offball">
+				<span class="offshadow"></span>
 			</div>
 
-			<img src="assets/slide3_greenSplat.png" class="img-responsive col-sm-4 splat ">
+			<img src="assets/slide3_greenSplat.png" class="img-responsive col-sm-4 splat splat-small">
 
 		</div>
 		<div class=" col-sm-offset-1 col-sm-10 child myLayer myLayer2 big-ball-container">
@@ -121,7 +123,7 @@
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer main-text">
 			<img src="assets/slide4_header.png" class="img-responsive col-sm-7">
 		</div>
-		<img src="assets/slide4_splat.png" class="img-responsive col-sm-7 splat ">
+		<img src="assets/slide4_splat.png" class="img-responsive col-sm-7 splat splat-small">
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
 			<div class="col-sm-offset-2 col-sm-3 ">
 				<img src="assets/slide4_smlBall.png" class="img-responsive col-sm-12 ball">
@@ -146,7 +148,7 @@
 
 		<div class="square"></div>
 		<div class="square-outer"></div>
-		<img src="assets/slide5_splat.png" class="img-responsive splat">
+		<img src="assets/slide5_splat.png" class="img-responsive splat splat-small">
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer small-ball-container">
 			<div class="clr-pad">
 				<div class="clr-pad sm-ball-offset col-sm-2">
@@ -169,7 +171,6 @@
 			<img src="assets/slide5_header.png" class="img-responsive col-sm-8 ">
 		</div>
 	</div>
-
 	<div class="section" id="section6outer">
 		<div class="section" id="section6"></div>
 		<div class="copy col-xs-8 child">
@@ -205,12 +206,12 @@
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/jquery.fullPage.js"></script>
-<script type="text/javascript" src="examples/examples.js"></script>
 <script type="text/javascript" src="js/jquery.lazylinepainter-1.7.0.min.js"></script>
 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="bower_components/progressbar.js/dist/progressbar.js"></script>
 <script type="text/javascript" src="js/parallax.js"></script>
 <script type="text/javascript" src="js/typed.js"></script>
+<script type="text/javascript" src="js/partslide.js"></script>
 <script type="text/javascript" src="js/fok.js"></script>
 <script>
 	var canvas = document.getElementById('noise'),
