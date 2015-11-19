@@ -1,17 +1,7 @@
+ #section4 {
+    //background-image: url(/assets/slide5_bg.png);
+    //padding: 6% 0 0 0;
 
-
-#section4outer {
-  overflow: hidden;
-  z-index: 2;
-
-  #section4 {
-    background-image: url(/assets/slide5_bg.png);
-    padding: 6% 0 0 0;
-    animation-name: scaleIt;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
   .square {
     width: 280px;
     height: 280px;
@@ -75,4 +65,32 @@
     text-align: right;
   }
 
+   .tilt {
+     overflow: hidden;
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     margin: 0 auto;
+   }
+
+   .tilt__back,
+   .tilt__front {
+     width: 100%;
+     height: 100%;
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+     background-size: cover;
+     -webkit-backface-visibility: hidden;
+     backface-visibility: hidden;
+   }
+
+   .tilt__back {
+     position: relative;
+   }
+
+   .tilt__front {
+     position: absolute;
+     top: 0;
+     left: 0;
+   }
 }

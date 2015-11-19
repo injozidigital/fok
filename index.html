@@ -17,15 +17,6 @@
 		var console = { log: function() {} };
 	</script>
 	<![endif]-->
-	<style>
-		html, body {
-			background:#777;
-			margin:0;
-		}
-		#noise {
-			background:#777;
-		}
-	</style>
 </head>
 <body>
 <span id="preloaderwrapper">
@@ -139,16 +130,16 @@
 		</div>
 
 	</div>
-	<div class="section" id="section4outer">
-		<div class="section" id="section4"></div>
-		<!--<div class="copy col-xs-8 child">-->
-			<!--<p class="main">THIS IS WHAT WE DO</p>-->
-			<!--<p class="sub">WORK THAT MAINTAINS A CERTAIN<br>BOLDNESS IN THE FACE OF STANDARDS.</p>-->
-		<!--</div>-->
-
+	<div class="section" id="section4">
+		<ul class="grid grid--examples">
+			<li class="grid__item">
+				<div class="grid__img grid__img--example-1" >
+					<img src="assets/slide5_bg.png" class="tilt-effect" alt="grid01" data-tilt-options='{ "opacity" : 0.3, "extraImgs" : 3, "movement": { "perspective" : 1200, "translateX" : -5, "translateY" : -5, "rotateX" : -5, "rotateY" : -5 } }' />
+				</div>
+			</li>
+		</ul>
 		<div class="square"></div>
 		<div class="square-outer"></div>
-		<!--<img src="assets/slide5_splat.png" class="img-responsive splat splat-small">-->
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer small-ball-container">
 			<div class="clr-pad">
 				<div class="clr-pad sm-ball-offset col-sm-2">
@@ -210,6 +201,7 @@
 <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="bower_components/progressbar.js/dist/progressbar.js"></script>
 <script type="text/javascript" src="js/parallax.js"></script>
+<script type="text/javascript" src="js/tiltfx.js"></script>
 <script type="text/javascript" src="js/jquery.typer.js"></script>
 <script type="text/javascript" src="js/partslide.js"></script>
 <script type="text/javascript" src="js/fok.js"></script>
