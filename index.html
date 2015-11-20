@@ -39,32 +39,30 @@
 		.copy-container{
 			overflow: hidden;
 		}
-		.wrk{
+
+		.copy{
 			margin-top: -12px;
 			text-align: right;
 			opacity: 0;
 			transition: all 0.5s ease-out 1s;
 		}
-		.wrk.showcopy{
+
+
+
+		.copy.showcopy{
 			opacity: 1;
 			margin-top: 10px;
 		}
 
 
-		.sub.showcopy{
-			opacity: 1;
-			margin-top: 40px;
-		}
-
 		.wrk-container{
 			top:200px;
 		}
 
-		#line2{
-			top: 30px;
-		}
-
-		.sub {
+		/*#line2{*/
+		/*top: 30px;*/
+		/*}*/
+		.sub{
 			color: #FFFFFF;
 			line-height: 16px;
 			letter-spacing: 5px;
@@ -72,9 +70,6 @@
 			font-family: 'Geomanist-Regular';
 			font-weight: 100;
 			text-align: right;
-			margin-top: -27px;
-			opacity: 0;
-			transition: all 1.5s ease-out 1.4s;
 		}
 
 		.makeBold{
@@ -100,7 +95,7 @@
 		</video>
 		<div class="overlay"></div>
 		<div class="myLayer child myLayer1 col-xs-9">
-			<div class="copy pull-right col-xs-12">
+			<div class="typecopy pull-right col-xs-12">
 
 
 				<div class="row typer">
@@ -172,18 +167,22 @@
 			</div>
 			<div class="col-sm-5 clr-pad wrk-container">
 
-				<div class="line-container col-sm-offset-10 col-sm-2">
-					<span id="line1" class="line wholesome"></span>
-				</div>
-				<div class="copy-container col-xs-12">
-					<p id="copy1" class="wrk">WORK</p>
+				<div class="copy-line-container">
+					<div class="line-container col-sm-offset-10 col-sm-2">
+						<span id="line1" class="line wholesome"></span>
+					</div>
+					<div class="copy-container col-xs-12 clr-pad">
+						<p id="copy1" class="copy green">WORK</p>
+					</div>
 				</div>
 
-				<div class="line-container col-sm-offset-10 col-sm-2">
-					<span id="line2" class="line wholesome"></span>
-				</div>
-				<div class="copy-container col-xs-12">
-					<p id="copy2" class="sub">WORK THAT MAINTAINS A CERTAIN<br><span>BOLDNESS</span> IN THE FACE OF STANDARDS.</p>
+				<div class="copy-line-container" style="margin-top: 70px;">
+					<div class="line-container col-sm-offset-10 col-sm-2">
+						<span id="line2" class="line wholesome"></span>
+					</div>
+					<div class="copy-container col-xs-12 clr-pad">
+						<p id="copy2" class="copy sub">WORK THAT MAINTAINS A CERTAIN<br><span class="makeBold green">BOLDNESS</span> IN THE FACE OF STANDARDS.</p>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -239,8 +239,6 @@ function initFok(){
 
     setTimeout(function(){
         $card.animate({opacity:'1'},4500);
-
-
         setTimeout(function(){
             $card.lazylinepainter('paint');
             setTimeout(function(){
