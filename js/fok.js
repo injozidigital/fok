@@ -170,6 +170,13 @@ var $ec3Splat = $('#section3').find('.splat');
 var $ec6Splat = $('#section6outer').find('.splat');
 var captionLength = 0;
 var caption = '';
+var corruption = imgGlitch.default('#glitchBettaHaveMyMoney', {
+    maxErrors: 700,
+    margin: 2200,
+    limiter: 0.7
+});
+
+
 
 $card.lazylinepainter({
     'svgData': svgDataCard,
@@ -182,6 +189,15 @@ $card.lazylinepainter({
 captionEl = $('#caption');
 
 setInterval ('cursorAnimation()', 600);
+
+(function loop() {
+    var rand = Math.round(Math.random() * (5000 - 1500)) + 500;
+    setTimeout(function() {
+        //alert('A');
+        runGlitch();
+        loop();
+    }, rand);
+}());
 
 function initFok(){
     $('#fullpage').fullpage({
@@ -288,4 +304,16 @@ function cursorAnimation() {
     }, 'fast', 'swing').animate({
         opacity: 1
     }, 'fast', 'swing');
+}
+
+function runGlitch () {
+    corruption.start();
+
+    setTimeout(function () {
+        corruption.stop();
+    }, 2000);
+
+    setTimeout(function () {
+        corruption.clear();
+    }, 3000);
 }
