@@ -17,6 +17,72 @@
 		var console = { log: function() {} };
 	</script>
 	<![endif]-->
+
+	<style>
+		.line{
+			height:2px;
+			background-color: #2DE9A1;
+			content: "";
+			position: absolute;
+			width: 0;
+			top: 0%;
+			left: 0;
+			display: inline-block;
+			opacity: 0;
+			transition:         all 0.8s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+		}
+
+		.line.showline{
+			opacity: 1;
+			width: 100%;
+		}
+
+		.copy-container{
+			overflow: hidden;
+		}
+		.wrk{
+			margin-top: -12px;
+			text-align: right;
+			opacity: 0;
+			transition: all 0.5s ease-out 1s;
+		}
+		.wrk.showcopy{
+			opacity: 1;
+			margin-top: 10px;
+		}
+
+
+		.sub.showcopy{
+			opacity: 1;
+			margin-top: 40px;
+		}
+
+		.wrk-container{
+			top:200px;
+		}
+
+		#line2{
+			top: 30px;
+		}
+
+		.sub {
+			color: #FFFFFF;
+			line-height: 16px;
+			letter-spacing: 5px;
+			font-size: 10px;
+			font-family: 'Geomanist-Regular';
+			font-weight: 100;
+			text-align: right;
+			margin-top: -27px;
+			opacity: 0;
+			transition: all 1.5s ease-out 1.4s;
+		}
+
+		.makeBold{
+			font-family: 'Geomanist-Bold';
+		}
+
+	</style>
 </head>
 <body>
 <span id="preloaderwrapper">
@@ -105,12 +171,25 @@
 				<img src="assets/slide3_bigBall.png" class="img-responsive col-sm-12 ball">
 				<span class="shadow"></span>
 			</div>
+			<div class="col-sm-5 clr-pad wrk-container">
+
+				<div class="line-container col-sm-offset-10 col-sm-2">
+					<span id="line1" class="line wholesome"></span>
+				</div>
+				<div class="copy-container col-xs-12">
+					<p id="copy1" class="wrk">WORK</p>
+				</div>
+
+				<div class="line-container col-sm-offset-10 col-sm-2">
+					<span id="line2" class="line wholesome"></span>
+				</div>
+				<div class="copy-container col-xs-12">
+					<p id="copy2" class="sub">WORK THAT MAINTAINS A CERTAIN<br><span>BOLDNESS</span> IN THE FACE OF STANDARDS.</p>
+				</div>
+			</div>
 		</div>
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
 			<img src="assets/slide3_Header.png" class="img-responsive col-sm-9 ">
-			<div class="copy col-xs-8 child">
-				<p class="sub">WORK THAT MAINTAINS A CERTAIN<br><span>BOLDNESS</span> IN THE FACE OF STANDARDS.</p>
-			</div>
 		</div>
 	</div>
 	<div class="section" id="section3">
@@ -173,8 +252,8 @@
 			<p class="main">THIS IS WHAT WE DO</p>
 			<p class="sub">WORK THAT MAINTAINS A CERTAIN<br>BOLDNESS IN THE FACE OF STANDARDS.</p>
 		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child myLayer splat splat-small">
-			<img src="assets/green-splat.png" class="img-responsive col-sm-4  ">
+		<div class="col-sm-10 child myLayer splat splat-small">
+			<img src="assets/slide6_splat.png" class="img-responsive col-sm-9">
 		</div>
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
 			<div class="col-sm-offset-2 col-sm-3 ">

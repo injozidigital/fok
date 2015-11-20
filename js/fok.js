@@ -194,9 +194,18 @@ function initFok(){
             var leavingSection = $(this);
 
             if(index == 2 && direction =='down'){
+
                 setTimeout(function(){
-                    $ec1Splat.addClass('grow');
-                }, 3500);
+                    $("#line1").addClass("showline");
+                    $("#line2").addClass("showline");
+                    $("#copy1").addClass("showcopy");
+                    $("#copy2").addClass("showcopy");
+                    setTimeout(function(){
+                        $ec1Splat.addClass('grow');
+                    }, 500);
+                }, 100);
+
+
             }
             if(index == 3 && direction =='down'){
                 setTimeout(function(){
@@ -214,6 +223,8 @@ function initFok(){
 
     setTimeout(function(){
         $card.animate({opacity:'1'},4500);
+
+
         setTimeout(function(){
             $card.lazylinepainter('paint');
             setTimeout(function(){
