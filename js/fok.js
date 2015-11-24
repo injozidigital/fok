@@ -172,6 +172,26 @@ var $ec1Splat = $('#section2').find('.splat');
 var $ec3Splat = $('#section3').find('.splat');
 //var $ec4Splat = $('#section4outer').find('.splat');
 var $ec6Splat = $('#section6outer').find('.splat');
+
+
+var $ec1line1 = $('#section1').find('#slide1line1');
+var $ec1copy1 = $('#section1').find('#slide1copy1');
+
+var $ec2line1 = $('#section2').find('#line1');
+var $ec2line2 = $('#section2').find('#line2');
+var $ec2copy1 = $('#section2').find('#copy1');
+var $ec2copy2 = $('#section2').find('#copy2');
+
+var $ec3line1 = $('#section3').find('#slide3line1');
+var $ec3line2 = $('#section3').find('#slide3line2');
+var $ec3copy1 = $('#section3').find('#slide3copy1');
+var $ec3copy2 = $('#section3').find('#slide3copy2');
+
+
+
+
+
+
 var captionLength = 0;
 var caption = '';
 var corruption = imgGlitch.default('#glitchBettaHaveMyMoney', {
@@ -232,6 +252,10 @@ function initFok(){
             if(nextIndex == 2){
                 console.log("40%");
                 setInterval (path.animate(0.4), 500);
+                setTimeout(function(){
+                    $ec1line1.addClass("showline");
+                    $ec1copy1.addClass("showcopy");
+                }, 200);
             }
             if(nextIndex == 3){
                 console.log("60%");
@@ -239,10 +263,10 @@ function initFok(){
                 if(direction =='down'){
 
                     setTimeout(function(){
-                        $("#line1").addClass("showline");
-                        $("#line2").addClass("showline");
-                        $("#copy1").addClass("showcopy");
-                        $("#copy2").addClass("showcopy");
+                        $ec2line1.addClass("showline");
+                        $ec2line2.addClass("showline");
+                        $ec2copy1.addClass("showcopy");
+                        $ec2copy2.addClass("showcopy");
                         setTimeout(function(){
                             $ec1Splat.addClass('grow');
                         }, 500);
@@ -256,8 +280,14 @@ function initFok(){
                 setInterval ( path.animate(0.8), 500);
                 if(direction =='down'){
                     setTimeout(function(){
-                        $ec3Splat.addClass('grow');
-                    }, 3500);
+                        $ec3line1.addClass("showline");
+                        $ec3line2.addClass("showline");
+                        $ec3copy1.addClass("showcopy");
+                        $ec3copy2.addClass("showcopy");
+                        setTimeout(function(){
+                            $ec3Splat.addClass('grow');
+                        }, 500);
+                    }, 100);
                 }
             }
             if(nextIndex == 5){
