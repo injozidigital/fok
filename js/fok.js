@@ -188,7 +188,9 @@ var $ec3copy1 = $('#section3').find('#slide3copy1');
 var $ec3copy2 = $('#section3').find('#slide3copy2');
 
 
-
+var container = document.getElementById('progressline-white');
+var path;
+var svgPathClasslist;
 
 
 
@@ -199,6 +201,7 @@ var corruption = imgGlitch.default('#glitchBettaHaveMyMoney', {
     margin: 2200,
     limiter: 0.7
 });
+
 
 $card.lazylinepainter({
     'svgData': svgDataCard,
@@ -222,17 +225,15 @@ setInterval ('cursorAnimation()', 600);
 }());
 
 function initFok(){
-    var container = document.getElementById('progressline');
-    container.innerHTML = '<object id="scene" type="image/svg+xml" data="assets/moon-scene.svg"></object>';
-
-    var scene = document.getElementById('scene');
-    var path;
+    container.innerHTML = '<object id="white-scene" type="image/svg+xml" data="assets/line_white.svg"></object>';
+    var scene = document.getElementById('white-scene');
     scene.addEventListener('load', function() {
-        path = new ProgressBar.Path(scene.contentDocument.querySelector('#asterism-path'), {
+        path = new ProgressBar.Path(scene.contentDocument.querySelector('#white-path'), {
             duration: 5000
         });
         path.animate(0.1);
     });
+
 
 
     $('#fullpage').fullpage({
@@ -252,6 +253,9 @@ function initFok(){
             if(nextIndex == 2){
                 console.log("40%");
                 setInterval (path.animate(0.4), 500);
+                svgPathClasslist =  document.getElementById('white-scene').contentDocument.querySelector('#white-path').classList;
+                svgPathClasslist.remove("white");
+                svgPathClasslist.add("black");
                 setTimeout(function(){
                     $ec1line1.addClass("showline");
                     $ec1copy1.addClass("showcopy");
@@ -260,6 +264,8 @@ function initFok(){
             if(nextIndex == 3){
                 console.log("60%");
                 setInterval (path.animate(0.6), 500);
+                svgPathClasslist.remove("black");
+                svgPathClasslist.add("white");
                 if(direction =='down'){
 
                     setTimeout(function(){
@@ -278,6 +284,8 @@ function initFok(){
             if(nextIndex == 4){
                 console.log("80%");
                 setInterval ( path.animate(0.8), 500);
+                svgPathClasslist.remove("white");
+                svgPathClasslist.add("black");
                 if(direction =='down'){
                     setTimeout(function(){
                         $ec3line1.addClass("showline");
@@ -294,12 +302,18 @@ function initFok(){
                 console.log("100%");
                 setInterval (path.animate(1), 500);
                 if(index == 5 && direction =='down'){
-                            setTimeout(function(){
-                                $ec6Splat.addClass('grow');
-                            }, 3500);
-                        }
+                    setTimeout(function(){
+                        $ec6Splat.addClass('grow');
+                    }, 3500);
+                }
             }
+            if(nextIndex == 6){
+                console.log("120%");
+                setInterval (path.animate(1), 500);
+                svgPathClasslist.remove("black");
+                svgPathClasslist.add("white");
             }
+        }
 
 
     });
