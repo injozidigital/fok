@@ -779,21 +779,20 @@
     body{
         background-color: black;
     }
-    #preloaderwrapper {
+    #preloaderline {
         width: 100%;
         height: 500%;
         position: absolute;
         background-color: #000000;
-        z-index: 1;
+        z-index: 4;
         opacity: 0.4;
     }
-
 </style>
 
 <div id="fullpage">
 
-<span id="preloaderwrapper">
-    <span  id="progress"></span>
+<span id="preloaderline">
+    <span  id="progressline"></span>
 </span>
     <div class="section " id="section0">
         1
@@ -823,17 +822,7 @@
 </div>
 <script>
 $(document).ready(function() {
-    var container = document.getElementById('progress');
-    container.innerHTML = '<object id="scene" type="image/svg+xml" data="assets/moon-scene.svg"></object>';
 
-    var scene = document.getElementById('scene');
-    var path;
-    scene.addEventListener('load', function() {
-        path = new ProgressBar.Path(scene.contentDocument.querySelector('#asterism-path'), {
-            duration: 2000
-        });
-        path.animate(0.1);
-    });
 
     $('#fullpage').fullpage({
         sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'lightgreen', 'teal'],

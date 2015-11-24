@@ -47,21 +47,15 @@
 			transition: all 0.5s ease-out 1s;
 		}
 
-
-
 		.copy.showcopy{
 			opacity: 1;
 			margin-top: 10px;
 		}
 
-
 		.wrk-container{
 			top:200px;
 		}
 
-		/*#line2{*/
-		/*top: 30px;*/
-		/*}*/
 		.sub{
 			color: #FFFFFF;
 			line-height: 16px;
@@ -75,7 +69,12 @@
 		.makeBold{
 			font-family: 'Geomanist-Bold';
 		}
-
+		#preloaderline {
+			width: 100%;
+			height: 500%;
+			position: absolute;
+			z-index: 4;
+		}
 	</style>
 </head>
 <body>
@@ -88,6 +87,9 @@
 </span>
 
 <div id="fullpage">
+	<span id="preloaderline">
+    	<span  id="progressline"></span>
+	</span>
 	<div class="section" id="section0">
 		<video autoplay loop muted id="myVideo">
 			<source src="assets/final.mp4" type="video/mp4">
@@ -136,6 +138,14 @@
 					<img class="col-lg-offset-4 col-xs-9 main-text" src="assets/Slide2_header-01.png">
 				</li>
 				<li class="layer crystal3Item" data-depth="0.00">
+					<div class="copy-line-container">
+						<div class="line-container col-sm-offset-10 col-sm-2">
+							<span id="slide2line1" class="line wholesome"></span>
+						</div>
+						<div class="copy-container col-xs-12 clr-pad">
+							<p id="slide1copy1" class="copy sub">THERES <span class="makeBold">SOMETHING</span><br>TO BE SAID FOR</p>
+						</div>
+					</div>
 					<img class="crystal rotateAni" src="assets/slide2_miscJewel3.png">
 				</li>
 			</ul>
@@ -147,14 +157,14 @@
 		<div class="col-sm-10 child myLayer small-ball-container">
 			<div class="clr-pad col-sm-4">
 				<img src="assets/slide3_smlBall.png" class="img-responsive col-sm-12 offball small-ball">
-				<span class="offshadow"></span>
+				<!--<span class="offshadow"></span>-->
 			</div>
 		</div>
 		<div class=" col-sm-10 child myLayer myLayer1">
 
 			<div class="col-sm-4 pad-top-md">
 				<img src="assets/slide3_medBall.png" class="img-responsive col-sm-12 offball">
-				<span class="offshadow"></span>
+				<!--<span class="offshadow"></span>-->
 			</div>
 
 			<img src="assets/slide3_greenSplat.png" class="img-responsive col-sm-4 splat splat-small">
@@ -163,7 +173,7 @@
 		<div class=" col-sm-offset-1 col-sm-10 child myLayer myLayer2 big-ball-container">
 			<div class="col-sm-5">
 				<img src="assets/slide3_bigBall.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
+				<!--<span class="shadow"></span>-->
 			</div>
 			<div class="col-sm-5 clr-pad wrk-container">
 
@@ -176,7 +186,7 @@
 					</div>
 				</div>
 
-				<div class="copy-line-container" style="margin-top: 70px;">
+				<div class="copy-line-container lower">
 					<div class="line-container col-sm-offset-10 col-sm-2">
 						<span id="line2" class="line wholesome"></span>
 					</div>
@@ -200,14 +210,14 @@
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
 			<div class="col-sm-offset-2 col-sm-3 ">
 				<img src="assets/slide4_smlBall.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
+				<!--<span class="shadow"></span>-->
 			</div>
 		</div>
 
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2">
 			<div class="clr-pad col-sm-offset-2 col-sm-8">
 				<img src="assets/slide4_bigBall.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
+				<!--<span class="shadow"></span>-->
 			</div>
 		</div>
 
@@ -226,18 +236,18 @@
 			<div class="clr-pad">
 				<div class="clr-pad sm-ball-offset col-sm-2">
 					<img src="assets/slide5_smlBall.png" class="img-responsive col-sm-12 ball small-ball">
-					<span class="shadow"></span>
+					<!--<span class="shadow"></span>-->
 				</div>
 				<div class=" col-sm-offset-2 col-sm-2 clr-pad">
 				<img src="assets/slide5_medBall.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
+				<!--<span class="shadow"></span>-->
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-10 child myLayer pad-top-md myLayer1">
 			<div class="col-sm-offset-5  col-sm-5 clr-pad">
 				<img src="assets/slide5_bigBall.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
+				<!--<span class="shadow"></span>-->
 			</div>
 		</div>
 		<div class="col-sm-10 child myLayer myLayer2 main-text">
@@ -258,11 +268,11 @@
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
 			<div class="col-sm-offset-2 col-sm-3 ">
 				<img src="assets/ball1.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
+				<!--<span class="shadow"></span>-->
 			</div>
 			<div class="col-sm-2 pad-top-md">
 				<img src="assets/ball1.png" class="img-responsive col-sm-12 ball">
-				<span class="shadow"></span>
+				<!--<span class="shadow"></span>-->
 			</div>
 		</div>
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
@@ -271,9 +281,15 @@
 		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 top-ball">
 			<div class="clr-pad col-sm-offset-2 col-sm-2">
 				<img src="assets/ball1.png" class="img-responsive col-sm-12 ball small-ball">
-				<span class="shadow"></span>
+				<!--<span class="shadow"></span>-->
 			</div>
 		</div>
+	</div>
+	<div class="section" id="section7">
+		<video autoplay loop muted id="myVideo2">
+			<source src="assets/Crystal_Explosion_100fps_Slow_Mo.mp4" type="video/mp4">
+			<source src="assets/Crystal_Explosion_100fps_Slow_Mo.webm" type="video/webm">
+		</video>
 	</div>
 </div>
 

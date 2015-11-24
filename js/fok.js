@@ -3,7 +3,11 @@
  */
 $(document).ready(function() {
     initFok();
+    $(window).trigger('resize');
 });
+
+
+
 
 var scene = document.getElementById('scene');
 var parallax = new Parallax(scene, {
@@ -176,8 +180,6 @@ var corruption = imgGlitch.default('#glitchBettaHaveMyMoney', {
     limiter: 0.7
 });
 
-
-
 $card.lazylinepainter({
     'svgData': svgDataCard,
     'strokeWidth': 1,
@@ -200,41 +202,76 @@ setInterval ('cursorAnimation()', 600);
 }());
 
 function initFok(){
+    var container = document.getElementById('progressline');
+    container.innerHTML = '<object id="scene" type="image/svg+xml" data="assets/moon-scene.svg"></object>';
+
+    var scene = document.getElementById('scene');
+    var path;
+    scene.addEventListener('load', function() {
+        path = new ProgressBar.Path(scene.contentDocument.querySelector('#asterism-path'), {
+            duration: 5000
+        });
+        path.animate(0.1);
+    });
+
+
     $('#fullpage').fullpage({
         verticalCentered: false,
         afterRender: function(){
             //playing the video
             $('video').get(0).play();
         },
+        scrollingSpeed: 1700,
         onLeave: function(index, nextIndex, direction){
             var leavingSection = $(this);
 
-            if(index == 2 && direction =='down'){
+            if(nextIndex == 1 ){
+                console.log("20%");
+                setInterval (path.animate(0.1), 500);
+            }
+            if(nextIndex == 2){
+                console.log("40%");
+                setInterval (path.animate(0.4), 500);
+            }
+            if(nextIndex == 3){
+                console.log("60%");
+                setInterval (path.animate(0.6), 500);
+                if(direction =='down'){
 
-                setTimeout(function(){
-                    $("#line1").addClass("showline");
-                    $("#line2").addClass("showline");
-                    $("#copy1").addClass("showcopy");
-                    $("#copy2").addClass("showcopy");
                     setTimeout(function(){
-                        $ec1Splat.addClass('grow');
-                    }, 500);
-                }, 100);
+                        $("#line1").addClass("showline");
+                        $("#line2").addClass("showline");
+                        $("#copy1").addClass("showcopy");
+                        $("#copy2").addClass("showcopy");
+                        setTimeout(function(){
+                            $ec1Splat.addClass('grow');
+                        }, 500);
+                    }, 100);
 
 
+                }
             }
-            if(index == 3 && direction =='down'){
-                setTimeout(function(){
-                    $ec3Splat.addClass('grow');
-                }, 3500);
+            if(nextIndex == 4){
+                console.log("80%");
+                setInterval ( path.animate(0.8), 500);
+                if(direction =='down'){
+                    setTimeout(function(){
+                        $ec3Splat.addClass('grow');
+                    }, 3500);
+                }
             }
-            if(index == 5 && direction =='down'){
-                setTimeout(function(){
-                    $ec6Splat.addClass('grow');
-                }, 3500);
+            if(nextIndex == 5){
+                console.log("100%");
+                setInterval (path.animate(1), 500);
+                if(index == 5 && direction =='down'){
+                            setTimeout(function(){
+                                $ec6Splat.addClass('grow');
+                            }, 3500);
+                        }
+            }
             }
 
-        }
+
     });
 
     setTimeout(function(){
