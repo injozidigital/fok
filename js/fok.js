@@ -1,4 +1,3 @@
-//function initFok(){container.innerHTML='<object id="white-scene" type="image/svg+xml" data="assets/line_white.svg"></object>';var t=document.getElementById("white-scene");t.addEventListener("load",function(){path=new ProgressBar.Path(t.contentDocument.querySelector("#white-path"),{duration:5e3}),path.animate(.1)}),$("#fullpage").fullpage({verticalCentered:!1,afterRender:function(){$("video").get(0).play()},scrollingSpeed:1700,onLeave:function(t,e,a){$(this);1==e&&(console.log("20%"),setInterval(path.animate(.1),500)),2==e&&(console.log("40%"),setInterval(path.animate(.4),500),svgPathClasslist=document.getElementById("white-scene").contentDocument.querySelector("#white-path").classList,svgPathClasslist.remove("white"),svgPathClasslist.add("black"),setTimeout(function(){$ec1line1.addClass("showline"),$ec1copy1.addClass("showcopy")},200)),3==e&&(console.log("60%"),setInterval(path.animate(.6),500),svgPathClasslist.remove("black"),svgPathClasslist.add("white"),"down"==a&&setTimeout(function(){$ec2line1.addClass("showline"),$ec2line2.addClass("showline"),$ec2copy1.addClass("showcopy"),$ec2copy2.addClass("showcopy"),setTimeout(function(){$ec1Splat.addClass("grow")},500)},100)),4==e&&(console.log("80%"),setInterval(path.animate(.8),500),svgPathClasslist.remove("white"),svgPathClasslist.add("black"),"down"==a&&setTimeout(function(){$ec3line1.addClass("showline"),$ec3line2.addClass("showline"),$ec3copy1.addClass("showcopy"),$ec3copy2.addClass("showcopy"),setTimeout(function(){$ec3Splat.addClass("grow")},500)},100)),5==e&&(console.log("100%"),setInterval(path.animate(1),500),5==t&&"down"==a&&setTimeout(function(){$ec6Splat.addClass("grow")},3500)),6==e&&(console.log("120%"),setInterval(path.animate(1),500),svgPathClasslist.remove("black"),svgPathClasslist.add("white"))}}),setTimeout(function(){$card.animate({opacity:"1"},4500),setTimeout(function(){$card.lazylinepainter("paint"),setTimeout(function(){document.getElementById("mycursor").style.display="inline-block",setTimeout(function(){TypingEffect()},1e3),setTimeout(function(){$("[data-typer-targets]").typer({highlightSpeed:20,typeSpeed:100,clearDelay:500,typeDelay:200,clearOnHighlight:!0,typerDataAttr:"data-typer-targets",typerInterval:2e3})},2e3),setTimeout(function(){$("#particle-slider").animate({opacity:"1"},4e3)},4500)},3500)},1e3)},2e3)}function TypingEffect(){caption="WE CREATE ",type()}function type(){captionEl.html(caption.substr(0,captionLength++)),captionLength<caption.length+1?setTimeout("type()",50):(captionLength=0,caption="")}function cursorAnimation(){$("#mycursor").animate({opacity:0},"fast","swing").animate({opacity:1},"fast","swing")}function runGlitch(){corruption.start(),setTimeout(function(){corruption.stop()},2e3),setTimeout(function(){corruption.clear()},3e3)}$(document).ready(function(){initFok(),$(window).trigger("resize")});var scene=document.getElementById("scene"),parallax=new Parallax(scene,{relativeInput:!0}),$card=$("#card"),svgDataCard={card:{strokepath:[{path:"M461.1,11.6l-56.3,56.1L461.1,11.6c-7.7-5.8-17.5-9.3-27.9-9.3c-25.3,0-45.8,20.5-45.8,45.7    s20.5,45.7,45.8,45.7c25.3,0,45.5-20.5,45.8-45.7c0.2-10.7-2.9-19.7-9.3-27.9l-56.2,56.1l56.3-56.1",duration:3e3},{path:"M453,19.4c-5.4-3.9-12.4-6.2-19.7-6.2c-19.1,0-34.7,15.7-34.7,34.7c0,19.1,15.7,34.7,34.7,34.7    S468,66.9,468,47.9c0-7.5-2.3-14-6.2-19.7",duration:3e3},{path:"M 732.8 6 L 732.8 99.2",duration:3e3},{path:"M 722.2 99.2 L 722.2 58.8",duration:3e3},{path:"M 732.8 58.8 L 722.2 58.8",duration:3e3},{path:"M 722.2 6 L 722.2 46.4",duration:3e3},{path:"M 732.8 46.4 L 722.2 46.4",duration:3e3},{path:"M 546.9 5.4 L 608.6 5.4",duration:3e3},{path:"M 547.8 17.9 L 600.4 17.9",duration:3e3},{path:"M 608.6 5.4 L 554 88.6",duration:3e3},{path:"M 622.9 5.6 L 568.2 88.4",duration:3e3},{path:"M 554 88.6 L 622.7 88.6",duration:3e3},{path:"M 622.7 99.8 L 545.5 99.8",duration:3e3},{path:"M 300.8 6 L 300.8 46.4",duration:3e3},{path:"M 313.6 46.4 L 300.8 46.4",duration:3e3},{path:"M 120.2 6 L 120.2 99.2",duration:3e3},{path:"M 132.4 99.2 L 132.4 17.4",duration:3e3},{path:"M 196.6 81.1 L 196.6 6",duration:3e3},{path:"M 184.5 6 L 184.5 69.3",duration:3e3},{path:"M 196.6 81.1 L 132.4 17.4",duration:3e3},{path:"M 132.2 35 L 196.2 98.7",duration:3e3},{path:"M 9.2 6 L 9.2 46.4",duration:3e3},{path:"M 20.4 6 L 20.4 99.2",duration:3e3},{path:"M 9.2 99.2 L 9.2 58.8",duration:3e3},{path:"M 9.2 46.4 L 19.8 46.4",duration:3e3},{path:"M 19.8 58.8 L 9.2 58.8",duration:3e3},{path:"M 313.6 6 L 313.6 71.6",duration:3e3},{path:"M313.6,71.6c0,2.3-0.3,10.9-6.8,18.4c-8.2,9.4-19.7,9.6-21.4,9.6",duration:3e3},{path:"M 313.7 57.6 L 302.1 57.6",duration:3e3},{path:"M 302.1 57.6 L 302.1 71.1",duration:3e3},{path:"M285.4,87.8c1.1,0,8.1-0.4,12.9-6.3c3.4-4.2,3.7-8.9,3.8-10.4",duration:3e3},{path:"M 622.7 99.8 L 545.5 99.8",duration:3e3}],dimensions:{width:776,height:126}}},init=function(){var t=navigator.userAgent&&navigator.userAgent.toLowerCase().indexOf("mobile")>=0,e=window.innerWidth<1e3,a=new ParticleSlider({ptlGap:t||e?3:0,ptlSize:t||e?3:1,width:1e9,height:1e9});window.addEventListener?window.addEventListener("click",function(){a.init(!0)},!1):window.onclick=function(){a.init(!0)}},ps=new ParticleSlider,$ec1Splat=$("#section2").find(".splat"),$ec3Splat=$("#section3").find(".splat"),$ec6Splat=$("#section6outer").find(".splat"),$ec1line1=$("#section1").find("#slide1line1"),$ec1copy1=$("#section1").find("#slide1copy1"),$ec2line1=$("#section2").find("#line1"),$ec2line2=$("#section2").find("#line2"),$ec2copy1=$("#section2").find("#copy1"),$ec2copy2=$("#section2").find("#copy2"),$ec3line1=$("#section3").find("#slide3line1"),$ec3line2=$("#section3").find("#slide3line2"),$ec3copy1=$("#section3").find("#slide3copy1"),$ec3copy2=$("#section3").find("#slide3copy2"),container=document.getElementById("progressline-white"),path,svgPathClasslist,captionLength=0,caption="",corruption=imgGlitch["default"]("#glitchBettaHaveMyMoney",{maxErrors:700,margin:2200,limiter:.7});$card.lazylinepainter({svgData:svgDataCard,strokeWidth:1,strokeColor:"#ffffff",drawSequential:!1,ease:"easeInOutQuad"}),captionEl=$("#caption"),setInterval("cursorAnimation()",600),function t(){var e=Math.round(3500*Math.random())+500;setTimeout(function(){runGlitch(),t()},e)}();
 
 /**
  * Created by Steinburch on 11/11/15.
@@ -15,6 +14,12 @@ var scene = document.getElementById('scene');
 var parallax = new Parallax(scene, {
     relativeInput: true
 });
+
+var scene2 = document.getElementById('scene2');
+var parallax = new Parallax(scene2, {
+    relativeInput: true
+});
+
 var $card = $('#card');
 var svgDataCard= {
     "card": {
@@ -174,21 +179,22 @@ var $ec1Splat = $('#section2').find('.splat');
 var $ec3Splat = $('#section3').find('.splat');
 //var $ec4Splat = $('#section4outer').find('.splat');
 var $ec6Splat = $('#section6outer').find('.splat');
-
-
 var $ec1line1 = $('#section1').find('#slide1line1');
 var $ec1copy1 = $('#section1').find('#slide1copy1');
-
 var $ec2line1 = $('#section2').find('#line1');
 var $ec2line2 = $('#section2').find('#line2');
 var $ec2copy1 = $('#section2').find('#copy1');
 var $ec2copy2 = $('#section2').find('#copy2');
-
 var $ec3line1 = $('#section3').find('#slide3line1');
 var $ec3line2 = $('#section3').find('#slide3line2');
 var $ec3copy1 = $('#section3').find('#slide3copy1');
 var $ec3copy2 = $('#section3').find('#slide3copy2');
-
+var $ec4line1 = $('#section4').find('#slide4line1');
+var $ec4copy1 = $('#section4').find('#slide4copy1');
+var $ec6line1 = $('#section6outer').find('#slide6line1');
+var $ec6line2 = $('#section6outer').find('#slide6line2');
+var $ec6copy1 = $('#section6outer').find('#slide6copy1');
+var $ec6copy2 = $('#section6outer').find('#slide6copy2');
 
 var container = document.getElementById('progressline-white');
 var path;
@@ -303,10 +309,11 @@ function initFok(){
             if(nextIndex == 6){
                 console.log("slide5");
                 setInterval (path.animate(1), 500);
-                if(index == 5 && direction =='down'){
+                if(direction =='down'){
                     setTimeout(function(){
-                        $ec6Splat.addClass('grow');
-                    }, 3500);
+                        $ec4line1.addClass("showline");
+                        $ec4copy1.addClass("showcopy");
+                    }, 100);
                 }
             }
             if(nextIndex == 7){
@@ -314,6 +321,15 @@ function initFok(){
                 setInterval (path.animate(1), 500);
                 svgPathClasslist.remove("black");
                 svgPathClasslist.add("white");
+                setTimeout(function(){
+                    $ec6line1.addClass("showline");
+                    $ec6line2.addClass("showline");
+                    $ec6copy1.addClass("showcopy");
+                    $ec6copy2.addClass("showcopy");
+                    setTimeout(function(){
+                        $ec6Splat.addClass('grow');
+                    }, 500);
+                }, 100);
             }
 
 

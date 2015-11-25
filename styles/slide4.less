@@ -39,7 +39,22 @@
     margin-left: 20.666667%
   }
   .main-text {
-
+    img{width:50%;}
+    .copy-line-container{
+      p {
+        &.sub {
+          text-align: left;
+          color: #000;
+          span {
+            color: @brand-green;
+          }
+        }
+      }
+      .line {
+        height: 2px;
+        background-color: #000;
+      }
+    }
   }
   .top-ball {
     padding-top: 82px;
@@ -55,16 +70,6 @@
     font-family: 'Geomanist-Regular';
     font-weight: 400;
   }
-   .copy-line-container {
-     p {
-       &.sub {
-         color: #000;
-         line-height: 18px;
-         font-size: 15px;
-       }
-     }
-   }
-
    .tilt {
      overflow: hidden;
      position: absolute;
