@@ -792,8 +792,9 @@
 <div id="fullpage">
 
 <span id="preloaderline">
-    <span  id="progressline"></span>
-</span>
+    	<span  id="progressline-white"></span>
+    <span  id="progressline-black"></span>
+	</span>
     <div class="section " id="section0">
         1
     </div>
@@ -822,51 +823,60 @@
 </div>
 <script>
 $(document).ready(function() {
+//    var container = document.getElementById('progressline-white');
+//    container.innerHTML = '<object id="white-scene" type="image/svg+xml" data="assets/line_white.svg"></object>';
+//
+//    var scene = document.getElementById('white-scene');
+//    var path;
+//    scene.addEventListener('load', function() {
+//        path = new ProgressBar.Path(scene.contentDocument.querySelector('#white-path'), {
+//            duration: 1000
+//        });
+//        path.animate(0.03);
+//    });
 
+    var blackcontainer = document.getElementById('progressline-black');
+    blackcontainer.innerHTML = '<object id="black-scene" type="image/svg+xml" data="assets/line_black.svg"></object>';
+
+    var blackscene = document.getElementById('black-scene');
+    var blackpath;
+    blackscene.addEventListener('load', function() {
+        blackpath = new ProgressBar.Path(blackscene.contentDocument.querySelector('#black-path'), {
+            duration: 5000
+        });
+        blackpath.animate(0.25);
+    });
 
     $('#fullpage').fullpage({
         sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'lightgreen', 'teal'],
         scrollingSpeed: 1700,
-        onLeave: function(index, nextIndex, direction){
-            var leavingSection = $(this);
-
-            if(nextIndex == 1 ){
-                console.log("20%");
-                path.animate(0.1);
-            }
-            if(nextIndex == 2){
-                console.log("40%");
-                path.animate(0.4);
-            }
-            if(nextIndex == 3){
-                console.log("60%");
-                path.animate(0.6);
-            }
-            if(nextIndex == 4){
-                console.log("80%");
-                path.animate(0.8);
-            }
-            if(nextIndex == 5){
-                console.log("100%");
-                path.animate(1);
-            }
-        }
+//        onLeave: function(index, nextIndex, direction){
+//            var leavingSection = $(this);
+//
+//            if(nextIndex == 1 ){
+//                console.log("20%");
+//                setInterval (path.animate(0.05), 500);
+//            }
+//            if(nextIndex == 2){
+//                console.log("40%");
+//                setInterval (path.animate(0.4), 500);
+//            }
+//            if(nextIndex == 3){
+//                console.log("60%");
+//                setInterval (path.animate(0.6), 500);
+//            }
+//            if(nextIndex == 4){
+//                console.log("80%");
+//                setInterval ( path.animate(0.8), 500);
+//            }
+//            if(nextIndex == 5){
+//                console.log("100%");
+//                setInterval (path.animate(1), 500);
+//            }
+//        }
     });
 
 
-
-//    container.innerHTML = '<object id="scene" type="image/svg+xml" data="assets/moon-scene.svg"></object>';
-//
-//    var scene = document.getElementById('scene');
-//
-//        var path = new ProgressBar.Path(scene.contentDocument.querySelector('#asterism-path'), {
-//            duration: 1000
-//        });
-//
-//
-//        path.animate(1.0, function() {
-//            path.animate(0);
-//        });
 
 });
 </script>

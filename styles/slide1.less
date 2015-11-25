@@ -1,75 +1,105 @@
-#section1{
+#section1outer {
   background-image: url(../assets/GOOWORK/beauty_background.png);
-  padding: 6% 0 0 0;
-  z-index: 3;
-  color: #000!important;
-  .crystalClump{
-    margin-top: 35%;
-  }
-  .bottom-crystal{
-    position: absolute;
-    bottom: 0;
-    left: 46%;
-  }
-  .main-text-container {
-    opacity: 1!important;
-    .copy-line-container{
-      p{
-        &.sub {
-          color: #000;
-          line-height: 18px;
-          font-size: 15px;
-          text-align: left;
-          span{
-            color: #000;
-          }
-        }
-        //color: #000!important;
-        //.makeBold{
-        //  color: #000;
-        //}
-      }
-      .line {
-        height: 2px;
-        background-color: #000;
-      }
-    }
-    .main-text {
+  #section1 {
+    padding: 6% 0 0 0;
+    z-index: 5;
+    color: #000 !important;
+    .crystalClump {
       margin-top: 35%;
     }
-  }
-
-  .rotateAni {
-    -webkit-animation:spin 12s alternate infinite;
-    -moz-animation:spin 12s alternate infinite;
-    animation:spin 12s alternate infinite;
-  }
-  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
-  .crystal1Item{
-    left: 20%!important;
-    margin-top: 27%;
-    .crystal{
-    }
-  }
-
-  .crystal2Item{
-    left: 22%!important;
-    margin-top: 25%;
-    .black_crystal{
+    .bottom-crystal {
       position: absolute;
-      margin-top: 205%;
-      left: 60%;
+      bottom: 0;
+      left: 46%;
     }
-  }
-  .crystal3Item {
-    left: 50%!important;
-    margin-top: 35%;
-    .crystal{
-      width: 80px;
-      height: auto;
+    .main-text-container {
+      opacity: 1 !important;
+      .copy-line-container {
+        margin-top: 195px;
+        p {
+          &.sub {
+            color: #000;
+            line-height: 18px;
+            font-size: 15px;
+            text-align: left;
+            span {
+              color: #000;
+            }
+          }
+          //color: #000!important;
+          //.makeBold{
+          //  color: #000;
+          //}
+        }
+        .line {
+          height: 2px;
+          background-color: #000;
+        }
+      }
+      .main-text {
+        margin-top: 35%;
+      }
+      .square {
+        width: 350px;
+        height: 350px;
+        border: 2px #000 solid;
+        transform: rotate(45deg);
+        top: 23%;
+        left: 45%;
+        position: absolute;
+      }
+    }
+
+    .rotateAni {
+      -webkit-animation: spin 12s alternate infinite;
+      -moz-animation: spin 12s alternate infinite;
+      animation: spin 12s alternate infinite;
+    }
+    .rotateAniSlow {
+      -webkit-animation: spin 200s alternate infinite;
+      -moz-animation: spin 200s alternate infinite;
+      animation: spin 200s alternate infinite;
+    }
+    @-moz-keyframes spin {
+      100% {
+        -moz-transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    .crystal1Item {
+      left: 20% !important;
+      margin-top: 27%;
+      .crystal {
+      }
+    }
+
+    .crystal2Item {
+      left: 22% !important;
+      margin-top: 25%;
+      .black_crystal {
+        position: absolute;
+        margin-top: 205%;
+        left: 60%;
+      }
+    }
+    .crystal3Item {
+      left: 50% !important;
+      margin-top: 35%;
+      .crystal {
+        width: 80px;
+        height: auto;
+      }
     }
   }
 }
