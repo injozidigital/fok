@@ -2,7 +2,7 @@
 /**
  * Created by Steinburch on 11/11/15.
  */
-$(document).ready(function() {
+$(document).ready(function domready() {
 
     var scene = $('#scene')[0];
     var parallax = new Parallax(scene, {
@@ -187,6 +187,50 @@ $(document).ready(function() {
 
     captionEl = $('#caption');
 
+
+
+    function type() {
+        captionEl.html(caption.substr(0, captionLength++));
+        if(captionLength < caption.length+1) {
+            setTimeout(type, 50);
+
+        } else {
+            cursorAnimation();
+            captionLength = 0;
+            caption = '';
+        }
+    }
+
+    function TypingEffect() {
+        caption = "WE CREATE ";
+        type();
+    }
+
+    function cursorAnimation() {
+        $myCursor.animate({
+            opacity: 0
+        }, 'fast', 'swing').animate({
+            opacity: 1
+        }, 'fast', 'swing');
+        setTimeout(cursorAnimation, 800);
+    }
+
+    function initParticle(){
+
+
+        var isSmall = $(window).innerWidth < 1000;
+
+        ps = new ParticleSlider({
+            ptlGap: isSmall ? 3 : 0,
+            ptlSize: isSmall ? 3 : 1,
+            width: 1e9,
+            height: 1e9
+        });
+
+        (window.addEventListener
+            ? window.addEventListener('click', function(){ps.init(true)}, false)
+            : window.onclick = function(){ps.init(true)});
+    };
     function initApp(){
         container.innerHTML = '<object id="white-scene" type="image/svg+xml" data="assets/line_white.svg"></object>';
         var scene = document.getElementById('white-scene');
@@ -318,49 +362,8 @@ $(document).ready(function() {
                 }, 3500);
             }, 1000);
         }, 2000);
-        setInterval ('cursorAnimation()', 600);
+        setInterval (cursorAnimation(), 600);
     };
-
-    function TypingEffect() {
-        caption = "WE CREATE ";
-        type();
-    }
-
-    function type() {
-        captionEl.html(caption.substr(0, captionLength++));
-        if(captionLength < caption.length+1) {
-            setTimeout('type()', 50);
-        } else {
-            captionLength = 0;
-            caption = '';
-        }
-    }
-
-    function cursorAnimation() {
-        $myCursor.animate({
-            opacity: 0
-        }, 'fast', 'swing').animate({
-            opacity: 1
-        }, 'fast', 'swing');
-    }
-
-    function initParticle(){
-
-
-        var isSmall = $(window).innerWidth < 1000;
-
-        ps = new ParticleSlider({
-            ptlGap: isSmall ? 3 : 0,
-            ptlSize: isSmall ? 3 : 1,
-            width: 1e9,
-            height: 1e9
-        });
-
-        (window.addEventListener
-            ? window.addEventListener('click', function(){ps.init(true)}, false)
-            : window.onclick = function(){ps.init(true)});
-    };
-
     initApp();
     $(window).trigger('resize');
 });
