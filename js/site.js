@@ -154,6 +154,16 @@ $(document).ready(function domready() {
     var $ec1Splat = $('#section2').find('.splat');
     var $ec3Splat = $('#section3').find('.splat');
     var $ec6Splat = $('#section6outer').find('.splat');
+
+    var container = $('#progressline-white')[0];
+    var $myCursor = $('#mycursor');
+    var path;
+    var svgPathClasslist;
+    var captionLength = 0;
+    var caption = '';
+    var $wrapperID = $("#wrapper");
+
+    //COPY
     var $ec1line1 = $('#slide1line1');
     var $ec1copy1 = $('#slide1copy1');
     var $ec2line1 = $('#line1');
@@ -170,12 +180,18 @@ $(document).ready(function domready() {
     var $ec6line2 = $('#slide6line2');
     var $ec6copy1 = $('#slide6copy1');
     var $ec6copy2 = $('#slide6copy2');
-    var container = $('#progressline-white')[0];
-    var $myCursor = $('#mycursor');
-    var path;
-    var svgPathClasslist;
-    var captionLength = 0;
-    var caption = '';
+    //MENU
+    var $menuContent = $("#menuContent");
+    var $menu = $wrapperID.find(".main-menu");
+    var $aboutLink = $("#aboutLink");
+    var $whatWeDoLink = $("#whatwedoLink");
+    var $theWorkLink = $("#theworkLink");
+    var $contactLink = $("#contactLink");
+    var $contactInfo = $wrapperID.find(".contact-info");
+    var $gevaar = $wrapperID.find(".gevaar");
+    var $backmenu = $wrapperID.find(".backmenu");
+    var $contactInfo =$("#contactDetails");
+    var $menuLink =$("#menuLinks");
 
     $card.lazylinepainter({
         'svgData': svgDataCard,
@@ -231,6 +247,43 @@ $(document).ready(function domready() {
             ? window.addEventListener('click', function(){ps.init(true)}, false)
             : window.onclick = function(){ps.init(true)});
     };
+
+    $menuLink.click(function () {
+        $menuContent.addClass("contentPush");
+        $menu.addClass("opened");
+    });
+
+    /*
+     * other text fades
+     * contact slides up
+     * contact info shows*/
+    $contactLink.click(function contactClickHandler() {
+        $contactLink.addClass('show');
+        $aboutLink.addClass('hideLink');
+        $whatWeDoLink.addClass('hideLink');
+        $theWorkLink.addClass('hideLink');
+        $contactInfo.animate({opacity: '1'}, 1000).css("z-index", "999");
+
+        $gevaar.animate({opacity: '0'});
+        $backmenu.animate({opacity: '1'});
+    });
+
+    $backmenu.click(function backMenuClickHandler() {
+        $gevaar.animate({opacity: '1'});
+        $backmenu.animate({opacity: '0'});
+
+        $contactInfo.animate({opacity: '0'}).css("z-index", "0");
+        $contactLink.removeClass('show');
+        $aboutLink.removeClass('show');
+        $whatWeDoLink.removeClass('show');
+        $theWorkLink.removeClass('show');
+        $contactLink.removeClass('hideLink');
+        $aboutLink.removeClass('hideLink');
+        $whatWeDoLink.removeClass('hideLink');
+        $theWorkLink.removeClass('hideLink');
+
+    });
+
     function initApp(){
         container.innerHTML = '<object id="white-scene" type="image/svg+xml" data="assets/line_white.svg"></object>';
         var scene = document.getElementById('white-scene');
