@@ -192,6 +192,9 @@ $(document).ready(function domready() {
     var $backmenu = $wrapperID.find(".backmenu");
     var $contactInfo =$("#contactDetails");
     var $menuLink =$("#menuLinks");
+    //FOOTER
+    var $footer =$("#jozi-footer");
+
 
     $card.lazylinepainter({
         'svgData': svgDataCard,
@@ -285,6 +288,11 @@ $(document).ready(function domready() {
     });
 
     function initApp(){
+
+        setTimeout(function(){
+            $footer.addClass('show');
+        }, 1000);
+
         container.innerHTML = '<object id="white-scene" type="image/svg+xml" data="assets/line_white.svg"></object>';
         var scene = document.getElementById('white-scene');
         scene.addEventListener('load', function() {

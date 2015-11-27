@@ -73,6 +73,65 @@
 @brand-white:#ffffff;
 @brand-grey:#4b4b4b;
 
+#jozi-footer {
+  font-family: 'Geomanist-Regular';
+  span{
+    font-family: 'Geomanist-Bold';
+    color: #4b4b4b;
+  }
+  .footer {
+    background-color: #000;
+    height: 35px;
+    position: absolute;
+    bottom: 0;
+    p{
+      letter-spacing: 12px;
+    }
+  }
+
+  .footer-nav{
+    /*background-color: mediumaquamarine;*/
+    position: absolute;
+    text-align: left;
+    bottom: -92px;
+    transition:all 1.8s ease-in-out;
+    opacity: 0;
+  }
+
+  .nav-line{
+    background-color: #4b4b4b;
+    width: 40px;
+    height: 1px;
+  }
+  ul {
+    letter-spacing: 5px;
+    font-size: 13px;
+    line-height: 0px;
+    transition:all 1s ease-in-out 1s;
+    li {
+      color: #4b4b4b;
+    }
+  }
+
+  .footer-offset{
+    margin-left: 14.7%;
+  }
+  &.show {
+    ul {
+      line-height: 30px;
+    }
+    .footer-nav{
+        bottom: 125px;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+
 body {
   background-color: red;
 }
