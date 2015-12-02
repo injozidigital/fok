@@ -10,452 +10,452 @@
 
 	<link rel="stylesheet" type="text/css" href="styles/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="styles/site.css" />
+	<link rel="stylesheet" type="text/css" href="styles/preloader.css" />
 
 	<!--[if IE]>
 	<script type="text/javascript">
 		var console = { log: function() {} };
 	</script>
 	<![endif]-->
-
+	<style>
+		.preloaderScreen{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background: #000;
+			z-index: 1;
+		}
+	</style>
 </head>
 <body>
-<span id="preloaderwrapper">
-    <span class="progress" id="progress"></span>
-    <span id="mask-outer" class="mask"></span>
-    <span id="loader-fill2" class="always"></span>
-    <span id="loader-fill" class="some"></span>
-    <span id="mask-inner" class="mask"></span>
-</span>
-
-
 <div  id="wrapper">
-    <div class="main-menu">
-        <div id="menuContainer">
-            <img src="assets/menu_Splat.svg" class="img-responsive menu-splat">
-            <div class="menufix">
-                <div class="menuTopText">
-                    <p class="col-md-6 gevaar">DANGER/GEVAAR/INJOZI</p>
-                    <p class="col-md-6 backmenu"><img src="assets/arrow-01.svg" class="arrowimg"/> BACK TO MENU</p>
-                </div>
-                <ul class="col-sm-12 clr-pad menu-links">
-                    <li>
-                        <div id="aboutLink" class="col-md-9 about"></div>
-                    </li>
-                    <li>
-                        <div id="whatwedoLink" class="col-md-9 whatwedo"></div>
-                    </li>
-                    <li>
-                        <div id="theworkLink" class="col-md-9 thework"></div>
+	<div class="main-menu">
+		<div id="menuContainer">
+			<img src="assets/menu_Splat.svg" class="img-responsive menu-splat">
+			<div class="menufix">
+				<div class="menuTopText">
+					<p class="col-md-6 gevaar">DANGER/GEVAAR/INJOZI</p>
+					<p class="col-md-6 backmenu"><img src="assets/arrow-01.svg" class="arrowimg"/> BACK TO MENU</p>
+				</div>
+				<ul class="col-sm-12 clr-pad menu-links">
+					<li>
+						<div id="aboutLink" class="col-md-9 about"></div>
+					</li>
+					<li>
+						<div id="whatwedoLink" class="col-md-9 whatwedo"></div>
+					</li>
+					<li>
+						<div id="theworkLink" class="col-md-9 thework"></div>
 
-                    </li>
-                    <li>
-                        <div id="contactLink" class="col-md-12 contact"></div>
-                    </li>
-                </ul>
-                <div id ="contactDetails" class ="pushRow">
-                    <div class="col-md-4 columnRight">
-                        <hr class="menuborder">
-                        <div class="spacing"></div>
-                        <span class="contactColor">E_</span> <a href="mailto:info@injozi.biz" class="contactlink">INFO@INJOZI.BIZ</a>
-                        <div class="spacing"></div>
-                        <hr class="menuborder">
-                        <div class="spacing"></div>
-                        <span class="contactColor">T_ </span>+27 11 726 8466 <br/>
-                        <div class="contactaddress">
-                            <div class="spacing"></div>
-                            <hr class="menuborder">
-                            <div class="addressMargin"></div>
-                            <span class="contactColor">INJOZI</span> GROUND FLOOR, BLOCK H, HAMPTON HOUSE<br/> 54
-                            PETER PLACE, <br/> BRYANSTON,<br/> JHB, GAUTENG, SOUTH AFRICA
-                            <div class="addressMargin"></div>
-                            <hr class="menuborder">
-                        </div>
-                    </div>
+					</li>
+					<li>
+						<div id="contactLink" class="col-md-12 contact"></div>
+					</li>
+				</ul>
+				<div id ="contactDetails" class ="pushRow">
+					<div class="col-md-4 columnRight">
+						<hr class="menuborder">
+						<div class="spacing"></div>
+						<span class="contactColor">E_</span> <a href="mailto:info@injozi.biz" class="contactlink">INFO@INJOZI.BIZ</a>
+						<div class="spacing"></div>
+						<hr class="menuborder">
+						<div class="spacing"></div>
+						<span class="contactColor">T_ </span>+27 11 726 8466 <br/>
+						<div class="contactaddress">
+							<div class="spacing"></div>
+							<hr class="menuborder">
+							<div class="addressMargin"></div>
+							<span class="contactColor">INJOZI</span> GROUND FLOOR, BLOCK H, HAMPTON HOUSE<br/> 54
+							PETER PLACE, <br/> BRYANSTON,<br/> JHB, GAUTENG, SOUTH AFRICA
+							<div class="addressMargin"></div>
+							<hr class="menuborder">
+						</div>
+					</div>
 
-                    <div class="col-md-4  columnLeft pull-right">
-                        <hr class="menuborderright">
-                        <div class="spacing"></div>
-                        <div class="careersblurb">
-                            <p class="columleftheader"> We're looking for the exceptional</p>If you’re ready to
-                            make mind-blowing magic<br/> send us your CV and portfolio
-                        </div>
-                        <div class="spacing"></div>
+					<div class="col-md-4  columnLeft pull-right">
+						<hr class="menuborderright">
+						<div class="spacing"></div>
+						<div class="careersblurb">
+							<p class="columleftheader"> We're looking for the exceptional</p>If you’re ready to
+							make mind-blowing magic<br/> send us your CV and portfolio
+						</div>
+						<div class="spacing"></div>
 
-                        <div class="CareerMargin"></div>
-                        <div class="spacing"></div>
-                        <div class ="careerEmail"><span class="lefttext">E_</span><span class="contactColor">
+						<div class="CareerMargin"></div>
+						<div class="spacing"></div>
+						<div class ="careerEmail"><span class="lefttext">E_</span><span class="contactColor">
                               <a href="mailto:careers@injozi.biz" class="careerlink">CAREERS@INJOZI.BIZ </a> </span></div>
-                        <br/>
+						<br/>
 
-                        <div class="spacing"></div>
-                        <hr class="menuborderright">
+						<div class="spacing"></div>
+						<hr class="menuborderright">
 
-                    </div>
-                </div>
+					</div>
+				</div>
 
-                <div class="cl-effect-5 social">
-                    <div class="col-md-12">
+				<div class="cl-effect-5 social">
+					<div class="col-md-12">
 
-                        <img src="assets/menuItems_menu_btnFrame.svg">
-                        <a href="https://www.facebook.com/injozi?fref=ts" target="self" class="frame">
-                            <span data-hover="FACEBOOK">FACEBOOK</span>
-                        </a>
+						<img src="assets/menuItems_menu_btnFrame.svg">
+						<a href="https://www.facebook.com/injozi?fref=ts" target="self" class="frame">
+							<span data-hover="FACEBOOK">FACEBOOK</span>
+						</a>
 
-                        <span class="iconadd">+</span>
+						<span class="iconadd">+</span>
 
                                        <span class="menuleft">
                                            <img src="assets/menuItems_menu_btnFrame.svg">
                                        </span>
 
-                        <a href="https://twitter.com/injozi" target="self" class="frame2">
-                            <span data-hover="TWITTER">TWITTER</span></a>
+						<a href="https://twitter.com/injozi" target="self" class="frame2">
+							<span data-hover="TWITTER">TWITTER</span></a>
 
-                    </div>
-                </div>
+					</div>
+				</div>
 
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div id="menuContent"class="content">
-<div id="fullpage">
-	<!-- VIDEO-->
-	<div class="section" id="section0">
-		<video autoplay loop muted id="myVideo">
-			<source src="assets/final.mp4" type="video/mp4">
-			<source src="assets/final.webm" type="video/webm">
-		</video>
-        <div id="menuLinks" class="menulinks">MENU</div>
-		<div class="myLayer child myLayer1 col-xs-9">
-			<div class="typecopy pull-right col-xs-12">
-				<div class="row typer">
-					<p class="we-create col-sm-12 console">
-						<span id="caption"></span><span id="mycursor">|</span>
-					<br>
+	<div id="fullpage">
+		<!-- VIDEO-->
+		<div class="section" id="section0">
+			<video autoplay loop muted id="myVideo">
+				<source src="assets/final.mp4" type="video/mp4">
+				<source src="assets/final.webm" type="video/webm">
+			</video>
+			<div id="menuLinks" class="menulinks">MENU</div>
+			<div class="myLayer child myLayer1 col-xs-9">
+				<div class="typecopy pull-right col-xs-12">
+					<div class="row typer">
+						<p class="we-create col-sm-12 console">
+							<span id="caption"></span><span id="mycursor">|</span>
+							<br>
 
-					<div class="col-sm-12 element" data-typer-targets='{ "targets" : ["Websites","Apps","Ideas","Attack Dragons","Strategy","Illustrations","Branding","OK Sh","Great Shit","Your Mom","Installations","Games","Concepts","Drink Names","Crafted Work"]}'></div>
-					</p>
+						<div class="col-sm-12 element" data-typer-targets='{ "targets" : ["Websites","Apps","Ideas","Attack Dragons","Strategy","Illustrations","Branding","OK Sh","Great Shit","Your Mom","Installations","Games","Concepts","Drink Names","Crafted Work"]}'></div>
+						</p>
+					</div>
+				</div>
+				<div class="svgHolder col-xs-12">
+					<div id='card'></div>
 				</div>
 			</div>
-			<div class="svgHolder col-xs-12">
-				<div id='card'></div>
-			</div>
-		</div>
-		<div class="myLayer myLayer1  est" id="particle-slider">
-			<div class="slides">
-				<div class="slide" data-src="assets/est-01-2.png">
+			<div class="myLayer myLayer1  est" id="particle-slider">
+				<div class="slides">
+					<div class="slide" data-src="assets/est-01-2.png">
+					</div>
 				</div>
-			</div>
-			<canvas class="draw"></canvas>
-		</div>
-		<div id="jozi-footer">
-			<div class="col-sm-3 footer-offset footer-nav">
-				<ul>
-					<div class="nav-line"></div>
-					<li>+THE<span>WORK</span></li>
-					<div class="nav-line"></div>
-					<li>+<span>WHAT</span>WE<span>DO</span></li>
-					<div class="nav-line"></div>
-					<li>+<span>CONTACT</span></li>
-					<div class="nav-line"></div>
-					<li>+<span>CAREERS</span></li>
-				</ul>
-			</div>
-			<div class="col-sm-12 footer">
-				<p class="footer-offset">INJOZI</p>
+				<canvas class="draw"></canvas>
 			</div>
 		</div>
-	</div>
-	<!-- GOOD WORK-->
-	<div class="section" id="section1outer">
+		<!-- GOOD WORK-->
+		<div class="section" id="section1outer">
 		<span id="preloaderline">
     		<span  id="progressline-white"></span>
 		</span>
-		<div class="section" id="section1">
-			<ul id="scene" class="scene border col-xs-12">
-				<li class="layer" data-depth="1.00"></li>
-				<li class="layer" data-depth="1.00">
+			<div class="section" id="section1">
+				<ul id="scene" class="scene border col-xs-12">
+					<li class="layer" data-depth="1.00"></li>
+					<li class="layer" data-depth="1.00">
 						<img class="col-xs-8 " src="assets/GOOWORK/black_splat.png">
-					<img class="col-lg-offset-5 col-xs-9 crystalClump mrg-btm-med" src="assets/GOOWORK/08.png">
-				</li>
-				<li class="layer" data-depth="0.80">
-					<img class="col-lg-offset-2 col-xs-9 crystalClump" src="assets/GOOWORK/05.png">
-					<img class="col-lg-offset-3 col-xs-9 crystalClump rotateAniSlow" src="assets/GOOWORK/07.png">
+						<img class="col-lg-offset-5 col-xs-9 crystalClump mrg-btm-med" src="assets/GOOWORK/08.png">
+					</li>
+					<li class="layer" data-depth="0.80">
+						<img class="col-lg-offset-2 col-xs-9 crystalClump" src="assets/GOOWORK/05.png">
+						<img class="col-lg-offset-3 col-xs-9 crystalClump rotateAniSlow" src="assets/GOOWORK/07.png">
 
-				</li>
-				<li class="layer crystal1Item" data-depth="0.60">
-					<img class="col-lg-offset-5 col-xs-9 crystal" src=" assets/GOOWORK/02.png">
-					<img class="col-xs-9 crystal" src=" assets/GOOWORK/04.png">
+					</li>
+					<li class="layer crystal1Item" data-depth="0.60">
+						<img class="col-lg-offset-5 col-xs-9 crystal" src=" assets/GOOWORK/02.png">
+						<img class="col-xs-9 crystal" src=" assets/GOOWORK/04.png">
 
-				</li>
-				<li class="layer crystal2Item" data-depth="0.40">
-					<img class="col-lg-offset-9 col-xs-9 crystal" src="assets/GOOWORK/03.png">
-					<img class="col-lg-offset-5 col-xs-9 crystal" src="assets/GOOWORK/06.png">
-				</li>
-				<li class="layer main-text-container" data-depth="0.20">
-					<div class="main-text col-lg-offset-2">
-						<div class="copy-line-container col-sm-3 clr-pad">
-							<div class="line-container col-sm-4">
-								<span id="slide1line1" class="line wholesome"></span>
+					</li>
+					<li class="layer crystal2Item" data-depth="0.40">
+						<img class="col-lg-offset-9 col-xs-9 crystal" src="assets/GOOWORK/03.png">
+						<img class="col-lg-offset-5 col-xs-9 crystal" src="assets/GOOWORK/06.png">
+					</li>
+					<li class="layer main-text-container" data-depth="0.20">
+						<div class="main-text col-lg-offset-2">
+							<div class="copy-line-container col-sm-3 clr-pad">
+								<div class="line-container col-sm-4">
+									<span id="slide1line1" class="line wholesome"></span>
+								</div>
+								<div class="copy-container col-xs-12 clr-pad">
+									<p id="slide1copy1" class="copy sub">THERE'S <span class="makeBold">SOMETHING</span><br>TO BE SAID FOR</p>
+								</div>
 							</div>
-							<div class="copy-container col-xs-12 clr-pad">
-								<p id="slide1copy1" class="copy sub">THERE'S <span class="makeBold">SOMETHING</span><br>TO BE SAID FOR</p>
+							<div class="col-xs-9 clr-pad">
+								<img class="col-xs-12 clr-pad" src="assets/GOOWORK/GOOD_WORK.png">
+								<div class="square"></div>
 							</div>
 						</div>
-						<div class="col-xs-9 clr-pad">
-							<img class="col-xs-12 clr-pad" src="assets/GOOWORK/GOOD_WORK.png">
-							<div class="square"></div>
-						</div>
-					</div>
-				</li>
-				<li class="layer crystal3Item" data-depth="0.00">
-					<img class="crystal rotateAni" src="assets/GOOWORK/03.png">
-				</li>
-			</ul>
-	</div>
-	</div>
-	<!-- WHOLESOME-->
-	<div class="section" id="section2">
-		<canvas id="noise"></canvas>
-		<div class="square"></div>
-		<div class="col-sm-10 child myLayer small-ball-container">
-			<div class="clr-pad col-sm-4">
-				<img src="assets/slide3_smlBall.png" class="img-responsive col-sm-12 offball small-ball">
-				<!--<span class="offshadow"></span>-->
+					</li>
+					<li class="layer crystal3Item" data-depth="0.00">
+						<img class="crystal rotateAni" src="assets/GOOWORK/03.png">
+					</li>
+				</ul>
 			</div>
 		</div>
-		<div class=" col-sm-10 child myLayer myLayer1">
-
-			<div class="col-sm-4 pad-top-md">
-				<img src="assets/slide3_medBall.png" class="img-responsive col-sm-12 offball">
-				<!--<span class="offshadow"></span>-->
-			</div>
-
-			<img src="assets/slide3_greenSplat.png" class="img-responsive col-sm-4 splat splat-small">
-
-		</div>
-		<div class=" col-sm-offset-1 col-sm-10 child myLayer myLayer2 big-ball-container">
-			<div class="col-sm-5">
-				<img src="assets/slide3_bigBall.png" class="img-responsive col-sm-12 ball">
-				<!--<span class="shadow"></span>-->
-			</div>
-			<div class="col-sm-5 clr-pad wrk-container">
-
-				<div class="copy-line-container">
-					<div class="line-container col-sm-offset-10 col-sm-2">
-						<span id="line1" class="line wholesome"></span>
-					</div>
-					<div class="copy-container col-xs-12 clr-pad">
-						<p id="copy1" class="copy">WORK</p>
-					</div>
-				</div>
-
-				<div class="copy-line-container lower">
-					<div class="line-container col-sm-offset-10 col-sm-2">
-						<span id="line2" class="line wholesome"></span>
-					</div>
-					<div class="copy-container col-xs-12 clr-pad">
-						<p id="copy2" class="copy sub">WORK THAT MAINTAINS A CERTAIN<br><span class="makeBold">BOLDNESS</span> IN THE FACE OF STANDARDS</p>
-					</div>
+		<!-- WHOLESOME-->
+		<div class="section" id="section2">
+			<canvas id="noise"></canvas>
+			<div class="square"></div>
+			<div class="col-sm-10 child myLayer small-ball-container">
+				<div class="clr-pad col-sm-4">
+					<img src="assets/slide3_smlBall.png" class="img-responsive col-sm-12 offball small-ball">
+					<!--<span class="offshadow"></span>-->
 				</div>
 			</div>
-		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
-			<img src="assets/slide3_Header.png" class="img-responsive col-sm-9 ">
-		</div>
-	</div>
-	<!-- BEAUTY-->
-	<div class="section" id="section3">
+			<div class=" col-sm-10 child myLayer myLayer1">
 
-		<img src="assets/BEAUTY/BEAUTY_BLOB.png" class="img-responsive col-sm-offset-4  offball med-ball">
-		<div class=" col-sm-offset-2 col-sm-10 child myLayer main-text">
-			<div class="col-xs-12">
-				<div class="copy-line-container col-sm-4 clr-pad">
-					<div class="line-container col-sm-4">
-						<span id="slide3line1" class="line wholesome"></span>
-					</div>
-					<div class="copy-container col-xs-12 clr-pad">
-						<p id="slide3copy1" class="copy sub">WORK THAT ISN'T <span class="makeBold">AFRAID</span><br>TO LOOK FOR THE</p>
-					</div>
+				<div class="col-sm-4 pad-top-md">
+					<img src="assets/slide3_medBall.png" class="img-responsive col-sm-12 offball">
+					<!--<span class="offshadow"></span>-->
 				</div>
-			</div>
-			<div class="col-xs-12">
-				<img src="assets/BEAUTY/slide4_header.png" class="img-responsive col-sm-7">
-			</div>
-			<div class="col-xs-12">
-				<div class="copy-line-container col-sm-offset-4 col-sm-3 clr-pad">
-					<div class="line-container col-sm-4">
-						<span id="slide3line2" class="line wholesome"></span>
-					</div>
-					<div class="copy-container col-xs-12 clr-pad">
-						<p id="slide3copy2" class="copy sub">IN <span class="makeBold">STRANGE</span> PLACES</p>
-					</div>
-				</div>
+
+				<img src="assets/slide3_greenSplat.png" class="img-responsive col-sm-4 splat splat-small">
 
 			</div>
-
-		</div>
-		<img src="assets/BEAUTY/slide4_splat.png" class="img-responsive col-sm-7 splat splat-small">
-		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
-			<div class="col-sm-offset-2 col-sm-3 ">
-				<img src="assets/BEAUTY/slide4_smlBall.png" class="img-responsive col-sm-12 ball">
-				<!--<span class="shadow"></span>-->
-			</div>
-		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2">
-			<div class="clr-pad col-sm-offset-2 col-sm-8">
-				<img src="assets/BEAUTY/slide4_bigBall.png" class="img-responsive col-sm-12 ball">
-				<!--<span class="shadow"></span>-->
-			</div>
-			<img src="assets/BEAUTY/solid_crystal_shape.png" class="img-responsive col-sm-4 solid_crystal">
-		</div>
-		<ul id="scene2" class="scene border col-xs-12">
-			<li class="layer" data-depth="1.00"></li>
-			<li class="layer col-sm-12" data-depth="0.80">
-				<div class="col-sm-12">
-					<img src="assets/BEAUTY/black_crystal.png" class="img-responsive col-sm-offset-7 col-sm-5">
-				</div>
-			</li>
-			<li class="layer" data-depth="0.60">
-				<div class="col-sm-12">
-					<img src="assets/BEAUTY/slide4_tinyGreyBalls.png" class="img-responsive col-sm-12">
-				</div>
-			</li>
-			<li class="layer col-sm-12" data-depth="0.40">
-				<div class="col-sm-12">
-					<img src="assets/BEAUTY/slide4_tinyGreenBalls.png" class="img-responsive col-sm-offset-7 col-sm-5">
-				</div>
-			</li>
-			<!--<li class="layer" data-depth="0.20">-->
-				<!--<img src="assets/GOOWORK/05.png" class="img-responsive col-sm-12">-->
-			<!--</li>-->
-			<!--<li class="layer" data-depth="0.00">-->
-
-			<!--</li>-->
-		</ul>
-
-	</div>
-	<!-- STRAIGHT-->
-	<div class="section" id="section4">
-		<ul class="grid grid--examples">
-			<li class="grid__item">
-				<div class="grid__img grid__img--example-1" >
-					<img src="assets/slide5_bg.png" class="tilt-effect" alt="grid01" data-tilt-options='{ "opacity" : 0.3, "extraImgs" : 3, "movement": { "perspective" : 1200, "translateX" : -5, "translateY" : -5, "rotateX" : -5, "rotateY" : -5 } }' />
-				</div>
-			</li>
-		</ul>
-		<div class="square"></div>
-		<img src="assets/GOOWORK/03_big.png" class="img-responsive col-sm-offset-6 col-sm-4 bg-crystal">
-
-		<div class="square-outer"></div>
-		<div class=" col-sm-offset-2 col-sm-10 child myLayer small-ball-container">
-			<div class="clr-pad">
-				<div class="clr-pad sm-ball-offset col-sm-2">
-					<img src="assets/slide5_smlBall.png" class="img-responsive col-sm-12 ball small-ball">
+			<div class=" col-sm-offset-1 col-sm-10 child myLayer myLayer2 big-ball-container">
+				<div class="col-sm-5">
+					<img src="assets/slide3_bigBall.png" class="img-responsive col-sm-12 ball">
 					<!--<span class="shadow"></span>-->
 				</div>
-				<div class=" col-sm-offset-2 col-sm-2 clr-pad">
-				<img src="assets/slide5_medBall.png" class="img-responsive col-sm-12 ball">
-				<!--<span class="shadow"></span>-->
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-10 child myLayer pad-top-md myLayer1">
-			<div class="col-sm-offset-5  col-sm-5 clr-pad">
-				<img src="assets/slide5_bigBall.png" class="img-responsive col-sm-12 ball">
-				<!--<span class="shadow"></span>-->
-			</div>
-		</div>
-		<div class="col-sm-10 child myLayer myLayer2 main-text">
-			<div class="col-xs-12">
-				<div class="copy-line-container col-sm-4 clr-pad">
-					<div class="line-container col-sm-4">
-						<span id="slide4line1" class="line"></span>
+				<div class="col-sm-5 clr-pad wrk-container">
+
+					<div class="copy-line-container">
+						<div class="line-container col-sm-offset-10 col-sm-2">
+							<span id="line1" class="line wholesome"></span>
+						</div>
+						<div class="copy-container col-xs-12 clr-pad">
+							<p id="copy1" class="copy">WORK</p>
+						</div>
 					</div>
-					<div class="copy-container col-xs-9 clr-pad">
-						<p id="slide4copy1" class="copy sub">WORK THAT STRIVES TO GO <span class="green"><span class="makeBold">OFF CENTER</span>WHEN ALL THAT'S IN FRONT OF IT IS A</span></p>
+
+					<div class="copy-line-container lower">
+						<div class="line-container col-sm-offset-10 col-sm-2">
+							<span id="line2" class="line wholesome"></span>
+						</div>
+						<div class="copy-container col-xs-12 clr-pad">
+							<p id="copy2" class="copy sub">WORK THAT MAINTAINS A CERTAIN<br><span class="makeBold">BOLDNESS</span> IN THE FACE OF STANDARDS</p>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="glitch-image">
-				<canvas id="canvasGlitch"></canvas>
+			<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
+				<img src="assets/slide3_Header.png" class="img-responsive col-sm-9 ">
 			</div>
 		</div>
-	</div>
-	<!--PEOPLE -->
-	<div class="section" id="section6outer">
-		<div class="section" id="section6"></div>
-		<!--<div class="col-xs-8 child">-->
+		<!-- BEAUTY-->
+		<div class="section" id="section3">
+
+			<img src="assets/BEAUTY/BEAUTY_BLOB.png" class="img-responsive col-sm-offset-4  offball med-ball">
+			<div class=" col-sm-offset-2 col-sm-10 child myLayer main-text">
+				<div class="col-xs-12">
+					<div class="copy-line-container col-sm-4 clr-pad">
+						<div class="line-container col-sm-4">
+							<span id="slide3line1" class="line wholesome"></span>
+						</div>
+						<div class="copy-container col-xs-12 clr-pad">
+							<p id="slide3copy1" class="copy sub">WORK THAT ISN'T <span class="makeBold">AFRAID</span><br>TO LOOK FOR THE</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<img src="assets/BEAUTY/slide4_header.png" class="img-responsive col-sm-7">
+				</div>
+				<div class="col-xs-12">
+					<div class="copy-line-container col-sm-offset-4 col-sm-3 clr-pad">
+						<div class="line-container col-sm-4">
+							<span id="slide3line2" class="line wholesome"></span>
+						</div>
+						<div class="copy-container col-xs-12 clr-pad">
+							<p id="slide3copy2" class="copy sub">IN <span class="makeBold">STRANGE</span> PLACES</p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<img src="assets/BEAUTY/slide4_splat.png" class="img-responsive col-sm-7 splat splat-small">
+			<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
+				<div class="col-sm-offset-2 col-sm-3 ">
+					<img src="assets/BEAUTY/slide4_smlBall.png" class="img-responsive col-sm-12 ball">
+					<!--<span class="shadow"></span>-->
+				</div>
+			</div>
+			<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2">
+				<div class="clr-pad col-sm-offset-2 col-sm-8">
+					<img src="assets/BEAUTY/slide4_bigBall.png" class="img-responsive col-sm-12 ball">
+					<!--<span class="shadow"></span>-->
+				</div>
+				<img src="assets/BEAUTY/solid_crystal_shape.png" class="img-responsive col-sm-4 solid_crystal">
+			</div>
+			<ul id="scene2" class="scene border col-xs-12">
+				<li class="layer" data-depth="1.00"></li>
+				<li class="layer col-sm-12" data-depth="0.80">
+					<div class="col-sm-12">
+						<img src="assets/BEAUTY/black_crystal.png" class="img-responsive col-sm-offset-7 col-sm-5">
+					</div>
+				</li>
+				<li class="layer" data-depth="0.60">
+					<div class="col-sm-12">
+						<img src="assets/BEAUTY/slide4_tinyGreyBalls.png" class="img-responsive col-sm-12">
+					</div>
+				</li>
+				<li class="layer col-sm-12" data-depth="0.40">
+					<div class="col-sm-12">
+						<img src="assets/BEAUTY/slide4_tinyGreenBalls.png" class="img-responsive col-sm-offset-7 col-sm-5">
+					</div>
+				</li>
+				<!--<li class="layer" data-depth="0.20">-->
+				<!--<img src="assets/GOOWORK/05.png" class="img-responsive col-sm-12">-->
+				<!--</li>-->
+				<!--<li class="layer" data-depth="0.00">-->
+
+				<!--</li>-->
+			</ul>
+
+		</div>
+		<!-- STRAIGHT-->
+		<div class="section" id="section4">
+			<ul class="grid grid--examples">
+				<li class="grid__item">
+					<div class="grid__img grid__img--example-1" >
+						<img src="assets/slide5_bg.png" class="tilt-effect" alt="grid01" data-tilt-options='{ "opacity" : 0.3, "extraImgs" : 3, "movement": { "perspective" : 1200, "translateX" : -5, "translateY" : -5, "rotateX" : -5, "rotateY" : -5 } }' />
+					</div>
+				</li>
+			</ul>
+			<div class="square"></div>
+			<img src="assets/GOOWORK/03_big.png" class="img-responsive col-sm-offset-6 col-sm-4 bg-crystal">
+
+			<div class="square-outer"></div>
+			<div class=" col-sm-offset-2 col-sm-10 child myLayer small-ball-container">
+				<div class="clr-pad">
+					<div class="clr-pad sm-ball-offset col-sm-2">
+						<img src="assets/slide5_smlBall.png" class="img-responsive col-sm-12 ball small-ball">
+						<!--<span class="shadow"></span>-->
+					</div>
+					<div class=" col-sm-offset-2 col-sm-2 clr-pad">
+						<img src="assets/slide5_medBall.png" class="img-responsive col-sm-12 ball">
+						<!--<span class="shadow"></span>-->
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-10 child myLayer pad-top-md myLayer1">
+				<div class="col-sm-offset-5  col-sm-5 clr-pad">
+					<img src="assets/slide5_bigBall.png" class="img-responsive col-sm-12 ball">
+					<!--<span class="shadow"></span>-->
+				</div>
+			</div>
+			<div class="col-sm-10 child myLayer myLayer2 main-text">
+				<div class="col-xs-12">
+					<div class="copy-line-container col-sm-4 clr-pad">
+						<div class="line-container col-sm-4">
+							<span id="slide4line1" class="line"></span>
+						</div>
+						<div class="copy-container col-xs-9 clr-pad">
+							<p id="slide4copy1" class="copy sub">WORK THAT STRIVES TO GO <span class="green"><span class="makeBold">OFF CENTER</span>WHEN ALL THAT'S IN FRONT OF IT IS A</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="glitch-image">
+					<canvas id="canvasGlitch"></canvas>
+				</div>
+			</div>
+		</div>
+		<!--PEOPLE -->
+		<div class="section" id="section6outer">
+			<div class="section" id="section6"></div>
+			<!--<div class="col-xs-8 child">-->
 			<!--<div class="copy-line-container">-->
-				<!--<div class="line-container col-sm-offset-10 col-sm-2">-->
-					<!--<span id="slide6line1" class="line wholesome"></span>-->
-				<!--</div>-->
-				<!--<div class="copy-container col-xs-12 clr-pad">-->
-					<!--<p id="slide6copy1" class="copy">THIS IS <span class="makeBold">WHAT WE DO</span></p>-->
-				<!--</div>-->
+			<!--<div class="line-container col-sm-offset-10 col-sm-2">-->
+			<!--<span id="slide6line1" class="line wholesome"></span>-->
+			<!--</div>-->
+			<!--<div class="copy-container col-xs-12 clr-pad">-->
+			<!--<p id="slide6copy1" class="copy">THIS IS <span class="makeBold">WHAT WE DO</span></p>-->
+			<!--</div>-->
 			<!--</div>-->
 
 			<!--<div class="copy-line-container lower">-->
-				<!--<div class="line-container col-sm-offset-10 col-sm-2">-->
-					<!--<span id="slide6line2" class="line"></span>-->
-				<!--</div>-->
-				<!--<div class="copy-container col-xs-12 clr-pad">-->
-					<!--<p id="slide6copy2" class="copy sub"><span class="makeBold">GOOD WORK</span> FOR <span class="makeBold">GOOD</span></p>-->
-				<!--</div>-->
+			<!--<div class="line-container col-sm-offset-10 col-sm-2">-->
+			<!--<span id="slide6line2" class="line"></span>-->
 			<!--</div>-->
-		<!--</div>-->
-		<div class="col-sm-10 child myLayer splat splat-small">
-			<img src="assets/slide6_splat.png" class="img-responsive col-sm-9">
-		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
-			<div class="col-sm-offset-2 col-sm-3 ">
-				<img src="assets/ball1.png" class="img-responsive col-sm-12 ball">
-				<!--<span class="shadow"></span>-->
+			<!--<div class="copy-container col-xs-12 clr-pad">-->
+			<!--<p id="slide6copy2" class="copy sub"><span class="makeBold">GOOD WORK</span> FOR <span class="makeBold">GOOD</span></p>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--</div>-->
+			<div class="col-sm-10 child myLayer splat splat-small">
+				<img src="assets/slide6_splat.png" class="img-responsive col-sm-9">
 			</div>
-			<div class="col-sm-2 pad-top-md">
-				<img src="assets/ball1.png" class="img-responsive col-sm-12 ball">
-				<!--<span class="shadow"></span>-->
-			</div>
-		</div>
-		<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
-			<img src="assets/pasted%20svg%20517709x382_poster_.png" class="img-responsive col-sm-6 ">
-			<div class="col-sm-3">
-				<div class="copy-line-container">
-					<div class="line-container col-sm-offset-8 col-sm-4">
-						<span id="slide6line1" class="line wholesome"></span>
-					</div>
-					<div class="copy-container col-xs-12 clr-pad">
-						<p id="slide6copy1" class="copy">THIS IS <span class="makeBold">WHAT WE DO</span></p>
-					</div>
+			<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
+				<div class="col-sm-offset-2 col-sm-3 ">
+					<img src="assets/ball1.png" class="img-responsive col-sm-12 ball">
+					<!--<span class="shadow"></span>-->
 				</div>
+				<div class="col-sm-2 pad-top-md">
+					<img src="assets/ball1.png" class="img-responsive col-sm-12 ball">
+					<!--<span class="shadow"></span>-->
+				</div>
+			</div>
+			<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
+				<img src="assets/pasted%20svg%20517709x382_poster_.png" class="img-responsive col-sm-6 ">
+				<div class="col-sm-3">
+					<div class="copy-line-container">
+						<div class="line-container col-sm-offset-8 col-sm-4">
+							<span id="slide6line1" class="line wholesome"></span>
+						</div>
+						<div class="copy-container col-xs-12 clr-pad">
+							<p id="slide6copy1" class="copy">THIS IS <span class="makeBold">WHAT WE DO</span></p>
+						</div>
+					</div>
 
-				<div class="copy-line-container lower">
-					<div class="line-container col-sm-offset-8 col-sm-4">
-						<span id="slide6line2" class="line"></span>
-					</div>
-					<div class="copy-container col-xs-12 clr-pad">
-						<p id="slide6copy2" class="copy sub"><span class="makeBold">GOOD WORK</span> FOR <span class="makeBold">GOOD</span></p>
+					<div class="copy-line-container lower">
+						<div class="line-container col-sm-offset-8 col-sm-4">
+							<span id="slide6line2" class="line"></span>
+						</div>
+						<div class="copy-container col-xs-12 clr-pad">
+							<p id="slide6copy2" class="copy sub"><span class="makeBold">GOOD WORK</span> FOR <span class="makeBold">GOOD</span></p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-sm-10 child myLayer myLayer2 top-ball">
-			<div class="clr-pad col-sm-offset-1 col-sm-2">
-				<img src="assets/ball1.png" class="img-responsive col-sm-12 ball small-ball">
-				<!--<span class="shadow"></span>-->
+			<div class="col-sm-10 child myLayer myLayer2 top-ball">
+				<div class="clr-pad col-sm-offset-1 col-sm-2">
+					<img src="assets/ball1.png" class="img-responsive col-sm-12 ball small-ball">
+					<!--<span class="shadow"></span>-->
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- VIDEO-->
-	<div class="section" id="section7">
-		<video autoplay loop muted id="myVideo2">
-			<source src="assets/Crystal_Explosion_100fps_Slow_Mo.mp4" type="video/mp4">
-			<source src="assets/Crystal_Explosion_100fps_Slow_Mo.webm" type="video/webm">
-		</video>
+		<!-- VIDEO-->
+		<div class="section" id="section7">
+			<video autoplay loop muted id="myVideo2">
+				<source src="assets/Crystal_Explosion_100fps_Slow_Mo.mp4" type="video/mp4">
+				<source src="assets/Crystal_Explosion_100fps_Slow_Mo.webm" type="video/webm">
+			</video>
+			<div id="jozi-footer">
+				<div class="col-sm-3 footer-offset footer-nav">
+					<ul>
+						<div class="nav-line"></div>
+						<li>+THE<span>WORK</span></li>
+						<div class="nav-line"></div>
+						<li>+<span>WHAT</span>WE<span>DO</span></li>
+						<div class="nav-line"></div>
+						<li>+<span>CONTACT</span></li>
+						<div class="nav-line"></div>
+						<li>+<span>CAREERS</span></li>
+					</ul>
+				</div>
+				<div class="col-sm-12 footer">
+					<p class="footer-offset">INJOZI</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-    </div>
 
 <!-- Scripts -->
 <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>

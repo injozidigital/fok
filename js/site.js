@@ -288,11 +288,6 @@ $(document).ready(function domready() {
     });
 
     function initApp(){
-
-        setTimeout(function(){
-            $footer.addClass('show');
-        }, 1000);
-
         container.innerHTML = '<object id="white-scene" type="image/svg+xml" data="assets/line_white.svg"></object>';
         var scene = document.getElementById('white-scene');
         scene.addEventListener('load', function() {
@@ -365,7 +360,7 @@ $(document).ready(function domready() {
                         }, 100);
                     }
                 }
-                if(nextIndex == 6){
+                if(index == 5){
                     console.log("slide5");
                     setInterval (path.animate(1), 500);
                     if(direction =='down'){
@@ -375,8 +370,9 @@ $(document).ready(function domready() {
                         }, 100);
                     }
                 }
-                if(nextIndex == 7){
+                if(index == 6){
                     console.log("slide6");
+                    console.log();
                     setInterval (path.animate(1), 500);
                     svgPathClasslist.remove("black");
                     svgPathClasslist.add("white");
@@ -389,6 +385,12 @@ $(document).ready(function domready() {
                             $ec6Splat.addClass('grow');
                         }, 500);
                     }, 100);
+                }
+                if(index == 7){
+                    console.log("slide7");
+                    setTimeout(function(){
+                        $footer.addClass('show');
+                    }, 1500);
                 }
 
 
