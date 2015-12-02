@@ -181,6 +181,7 @@ $(document).ready(function domready() {
     var $ec6copy1 = $('#slide6copy1');
     var $ec6copy2 = $('#slide6copy2');
     //MENU
+    var $window = $(window);
     var $menuContent = $("#menuContent");
     var $menu = $wrapperID.find(".main-menu");
     var $aboutLink = $("#aboutLink");
@@ -191,6 +192,9 @@ $(document).ready(function domready() {
     var $gevaar = $wrapperID.find(".gevaar");
     var $backmenu = $wrapperID.find(".backmenu");
     var $contactInfo =$("#contactDetails");
+    var $menuLink =$("#menuLinks");
+    var $menuContainer = $("#menuContainer");
+    var $menuWidth = $window.innerWidth();
     var $menuLink =$("#menuLinks");
     //FOOTER
     var $footer =$("#jozi-footer");
@@ -251,9 +255,11 @@ $(document).ready(function domready() {
             : window.onclick = function(){ps.init(true)});
     };
 
+
     $menuLink.click(function () {
-        $menuContent.addClass("contentPush");
+        $('.content').addClass("contentPush");
         $menu.addClass("opened");
+        $(".menu-links").addClass("menuSlideanimation");
     });
 
     /*
@@ -262,11 +268,14 @@ $(document).ready(function domready() {
      * contact info shows*/
     $contactLink.click(function contactClickHandler() {
         $contactLink.addClass('show');
+        $contactLink.addClass('white');
         $aboutLink.addClass('hideLink');
         $whatWeDoLink.addClass('hideLink');
         $theWorkLink.addClass('hideLink');
         $contactInfo.animate({opacity: '1'}, 1000).css("z-index", "999");
-
+        $menuContainer.css({
+            'width' : 'auto'
+        });
         $gevaar.animate({opacity: '0'});
         $backmenu.animate({opacity: '1'});
     });
@@ -276,6 +285,7 @@ $(document).ready(function domready() {
         $backmenu.animate({opacity: '0'});
 
         $contactInfo.animate({opacity: '0'}).css("z-index", "0");
+
         $contactLink.removeClass('show');
         $aboutLink.removeClass('show');
         $whatWeDoLink.removeClass('show');
@@ -285,6 +295,16 @@ $(document).ready(function domready() {
         $whatWeDoLink.removeClass('hideLink');
         $theWorkLink.removeClass('hideLink');
 
+        $contactLink.removeClass('white');
+
+    });
+
+    $window.resize(function(){
+        $menuWidth = $window.innerWidth();
+        $menuContainer.css("width", $menuWidth);
+        $(".fittext1").fitText();
+        $(".fittext2").fitText(1.2);
+        $(".fittext3").fitText(1.1, { minFontSize: '111px', maxFontSize: '75px' });
     });
 
     function initApp(){

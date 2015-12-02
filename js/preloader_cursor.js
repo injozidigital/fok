@@ -340,7 +340,7 @@ $(document).ready(function() {
     var $loaderFill2 =$('#loader-fill2');
     var $preloaderWrapper=$('#preloaderwrapper');
 
-    imgArray = ['http://fok.local/assets/1.png'];
+    imgArray = ['http://injozi.biz/wip/injozi/assets/1.png'];
     $maskInner.hide();
     $loaderFill2[0].style.display = "none";
     $loaderFill1[0].style.display = "none";
@@ -579,13 +579,13 @@ $(document).ready(function() {
         $(".my-row").css('height', $section + 'px');
     });
 
-    $(document).on('mousemove', function(e){
-        $cursor.css({
-            left:  e.pageX,
-            top:   e.pageY
-        });
-        checkCursor(e);
-    });
+    //$(document).on('mousemove', function(e){
+    //    $cursor.css({
+    //        left:  e.pageX,
+    //        top:   e.pageY
+    //    });
+    //    checkCursor(e);
+    //});
 
     $(document).on('click', function(e){
         if(!hasClicked){
@@ -637,6 +637,10 @@ $(document).ready(function() {
             $preloaderWrapper.animate({opacity:'0'},800);
             setTimeout(function(){
                 $(".preloaderScreen").animate({opacity:'0'},800);
+                setTimeout(function(){
+                    $(".preloaderScreen")[0].style.display ="none";
+
+                }, 800);
             }, 500);
         }, 1000);
     }
@@ -652,7 +656,7 @@ $(document).ready(function() {
         });
 
         setTimeout(function(){
-            $('html').css({cursor: 'none'});
+            //$('html').css({cursor: 'none'});
             hasPreLoaded=true;
         }, 1000);
 
