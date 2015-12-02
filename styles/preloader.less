@@ -1,69 +1,344 @@
-.mask{
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 80px;
-  height: 80px;
-}
-#mask-outer{
-  background: url(../assets/cube-01-outer.png)0 0 no-repeat;
-  background-size: cover;
-}
-#mask-inner{
-  background: url(../assets/cube-01.png)0 0 no-repeat;
-  background-size: cover;
-  display: none;
-}
-#preloaderwrapper{
+//******************************//
+//*   PRELODER CODE              *//
+//******************************//
+#preloaderwrapper {
   width: 80px;
   height: 80px;
   position: fixed;
   top: 50%;
   left: 50%;
   margin-top: -41px;
-  margin-left: -40px;
+  margin-left: -32px;
+  .mask {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 80px;
+    height: 80px;
+  }
+  #mask-outer {
+    background: url(../assets/cube-01-outer.png) 0 0 no-repeat;
+    background-size: cover;
+  }
+  #mask-inner {
+    background: url(../assets/cube-01.png) 0 0 no-repeat;
+    background-size: cover;
+    display: none;
+  }
+
+  #loader-fill {
+    -webkit-transition: all 1.5s ease-in-out;
+    -o-transition: all 1.5s ease-in-out;
+    transition: all 1.5s ease-in-out;;
+  }
+  .none {
+    width: 1px;
+    height: 1px;
+    background: black;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-left: -1px;
+    margin-top: -1px;
+  }
+  .some {
+    width: 62px;
+    height: 62px;
+    background: black;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-left: -31px;
+    margin-top: -31px;
+  }
+  .always {
+    width: 60px;
+    height: 60px;
+    background: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
 }
-#loader-fill{
-  -webkit-transition: all 1.5s ease-in-out;
-  -o-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out;;
-}
-.none {
-  width: 1px;
-  height: 1px;
-  background: black;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  margin-left: -1px;
-  margin-top: -1px;
-}
-.some {
-  width: 62px;
-  height: 62px;
-  background: black;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  margin-left: -31px;
-  margin-top: -31px;
-}
-.always {
-  width: 60px;
-  height: 60px;
-  background: white;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  margin-left: -30px;
-  margin-top: -30px;
-}
+
+//******************************//
+//*   CURSOR CODE              *//
+//******************************//
+
+  #cursor {
+    display: block;
+    position: absolute;
+    margin-top: -14px;
+    margin-left: -14px;
+    z-index: 99;
+    text-align: center;
+
+    .over {
+      float: right;
+      overflow: visible;
+      position: relative;
+      width: 40px;
+      z-index: 1000;
+      margin-top: -40px;
+    }
+    .under {
+      width: 40px;
+      height: 40px;
+    }
+    .nudge_left {
+      margin-left: -40px;
+    }
+
+    .nudge_down {
+      margin-top: 0px;
+    }
+    #ex,#backex{
+      &.nudge_left {
+        margin-left: -80px;
+      }
+
+      &.nudge_down {
+        margin-top: -40px;
+      }
+    }
+    ///*no menu*/
+    .nomenu svg {
+      -webkit-transform: rotate(0deg) translate(0, 0);
+      -moz-transform: rotate(0deg) translate(0, 0);
+      -ms-transform: rotate(0deg) translate(0, 0);
+      -o-transform: rotate(0deg) translate(0, 0);
+      transform: rotate(0deg) translate(0 0);
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :first-child {
+      opacity: 1;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(8) {
+      opacity: 1;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(7) {
+      opacity: 1;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(6) {
+      opacity: 1;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(5) {
+      opacity: 1;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(3) {
+      opacity: 1;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(2) {
+      transform-origin: center;
+      transform: rotate(0deg) translate(0px, 0px);
+      -moz-transform: rotate(0deg) translate(0px, 0px);
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(4) {
+      transform-origin: center;
+      transform: rotate(0deg) translate(0px, 0px);
+      -moz-transform: rotate(0deg) translate(0px, 0px);
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(9) {
+      transform: rotate(0deg);
+      transform-origin: center;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(11) {
+      transform: rotate(0deg);
+      transform-origin: center;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(10) {
+      transform: rotate(0deg);
+      transform-origin: center;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .nomenu svg :nth-child(12) {
+      transform: rotate(0deg);
+      transform-origin: center;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    /*menu*/
+    .menu svg {
+      -webkit-transform: rotate(0deg) translate(0, 0);
+      -moz-transform: rotate(0deg) translate(0, 0);
+      -ms-transform: rotate(0deg) translate(0, 0);
+      -o-transform: rotate(0deg) translate(0, 0);
+      transform: rotate(0deg) translate(0 0);
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :first-child {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(8) {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(7) {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(6) {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(5) {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(3) {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(2) {
+      transform-origin: center;
+      transform: rotate(-30deg) translate(10px, -12px);
+      -moz-transform: rotate(-30deg) translate(0px, -19px);
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(4) {
+      transform-origin: center;
+      transform: rotate(-30deg) translate(-11px, 9px);
+      -moz-transform: rotate(-30deg) translate(0px, -19px);
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(9) {
+      transform: rotate(-30deg);
+      transform-origin: center;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(11) {
+      transform: rotate(-30deg);
+      transform-origin: center;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(10) {
+      transform: rotate(30deg);
+      transform-origin: center;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    .menu svg :nth-child(12) {
+      transform: rotate(30deg);
+      transform-origin: center;
+      -webkit-transition: all 0.3s ease-in; /* Changed here */
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+    }
+    #menu svg :nth-child(1), #menu svg :nth-child(3) {
+      transform: rotate(-30deg);
+      transform-origin: center;
+    }
+    #menu svg :nth-child(2), #menu svg :nth-child(4) {
+      transform: rotate(30deg);
+      transform-origin: center;
+    }
+    #menu svg :nth-child(6) {
+      transform-origin: center;
+      transform: rotate(-30deg) translate(10px, -12px);
+      -moz-transform: rotate(-30deg) translate(0px, -19px);
+    }
+    #menu svg :nth-child(5) {
+      transform-origin: center;
+      transform: rotate(-30deg) translate(-11px, 9px);
+      -moz-transform: rotate(-30deg) translate(0px, -19px);
+    }
+    .margin-top-ghost{
+      margin-top: -52px;
+    }
+  }
