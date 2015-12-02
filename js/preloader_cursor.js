@@ -635,6 +635,9 @@ $(document).ready(function() {
 
         setTimeout(function(){
             $preloaderWrapper.animate({opacity:'0'},800);
+            setTimeout(function(){
+                $(".preloaderScreen").animate({opacity:'0'},800);
+            }, 500);
         }, 1000);
     }
 
@@ -663,9 +666,9 @@ $(document).ready(function() {
                     circle.animate(cirCount / 100);
                 }
             });
-
         });
     }
+
     preload(imgArray);
     $(window).load(function() {
         loaded = true;

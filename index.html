@@ -28,6 +28,28 @@
 	</style>
 </head>
 <body>
+<!--CURSOR AND PRELOADER LIVE OUTSIDE THE REALM OF MORTAL SLIDES-->
+<div id="cursor">
+	<div class="under" id="cube"></div>
+	<div class="over nudge_left" id="up"></div>
+	<div class="over nudge_left" id="backup"></div>
+	<div class="over nudge_left" id="down"></div>
+	<div class="over nudge_left" id="backdown"></div>
+	<div class="over nudge_left nudge_down" id="ex"></div>
+	<div class="over nudge_down" id="backex"></div>
+	<div class="over margin-top-ghost" id="menu"></div>
+</div>
+
+<div class="preloaderScreen">
+	<span id="preloaderwrapper">
+		<span class="progress" id="progress"></span>
+		<span id="mask-outer" class="mask"></span>
+		<span id="loader-fill2" class="always"></span>
+		<span id="loader-fill" class="some"></span>
+		<span id="mask-inner" class="mask"></span>
+	</span>
+</div>
+
 <div  id="wrapper">
 	<div class="main-menu">
 		<div id="menuContainer">
@@ -470,6 +492,7 @@
 <script type="text/javascript" src="js/partslide.min.js"></script>
 <script type="text/javascript" src='js/glitchBettaHaveMyMoney.js'></script>
 <script type="text/javascript" src="js/site.js"></script>
+<script type="text/javascript" src="js/preloader_cursor.js"></script>
 
 <script>
 	var canvas = document.getElementById('noise'),
