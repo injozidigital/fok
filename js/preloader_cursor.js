@@ -62,11 +62,6 @@ $(document).ready(function() {
                     "path": "M 50.4 59.8 L 50.4 116.8",
                     "duration": 400
                 },
-
-
-
-
-
                 //7
                 {
                     "path": "M 99.2 30.4 L 99.2 88.4",
@@ -579,13 +574,13 @@ $(document).ready(function() {
         $(".my-row").css('height', $section + 'px');
     });
 
-    //$(document).on('mousemove', function(e){
-    //    $cursor.css({
-    //        left:  e.pageX,
-    //        top:   e.pageY
-    //    });
-    //    checkCursor(e);
-    //});
+    $(document).on('mousemove', function(e){
+        $cursor.css({
+            left:  e.pageX,
+            top:   e.pageY
+        });
+        checkCursor(e);
+    });
 
     $(document).on('click', function(e){
         if(!hasClicked){
@@ -656,7 +651,7 @@ $(document).ready(function() {
         });
 
         setTimeout(function(){
-            //$('html').css({cursor: 'none'});
+            $('html').css({cursor: 'none'});
             hasPreLoaded=true;
         }, 1000);
 

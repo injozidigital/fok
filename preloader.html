@@ -19,8 +19,8 @@
     <div class="over nudge_left" id="backup"></div>
     <div class="over nudge_left" id="down"></div>
     <div class="over nudge_left" id="backdown"></div>
-    <div class="over nudge_left" id="ex"></div>
-    <div class="over nudge_left" id="backex"></div>
+    <div class="over nudge_left nudge_down" id="ex"></div>
+    <div class="over nudge_down" id="backex"></div>
     <div class="over " id="menu"></div>
     <!--<div class="over" id="backmenu"></div>-->
 </div>
@@ -46,7 +46,7 @@
         var isDown = false;
         var isMenuButton = false;
         var isNavOpen = false;
-        var $navigation = $('nav');
+//        var $navigation = $('nav');
         var $cube = $('#cube');
         var $up = $('#up');
         var $backup = $('#backup');
@@ -427,7 +427,7 @@
             'drawSequential': false,
             'ease': 'easeInOutQuad',
             'onStrokeStart': function(){console.log("Stroke started")},
-            'onStrokeComplete': function(){$backex.hide();$ex.hide()},
+            'onStrokeComplete': function(){document.getElementById("backex").style.visibility = "hidden";$ex.hide()},
 
         });
 
@@ -442,7 +442,7 @@
             $backdown.hide();
             $menu.hide();
             $ex.hide();
-            $backex.hide();
+            document.getElementById("backex").style.visibility = "hidden";
 
             switch (except) {
                 case "cube":
@@ -461,7 +461,7 @@
                     break;
                 case "ex":
                     $ex.show();
-                    $backex.show();
+                    document.getElementById("backex").style.visibility = "visible";
                     break;
             }
 
@@ -472,12 +472,11 @@
             $backdown.hide();
             $menu.hide();
             $ex.hide();
-            $backex.hide();
+            document.getElementById("backex").style.visibility = "hidden";
 
 
         }
         function showAll(){
-
             $cube.show();
             $up.show();
             $backup.show();
@@ -485,9 +484,7 @@
             $backdown.show();
             $menu.show();
             $ex.show();
-            $backex.show();
-
-
+            document.getElementById("backex").style.visibility = "visible";
         }
         function showUp(){
             $backup.hide();
@@ -533,11 +530,11 @@
             isMenuButton = setbool;
         };
         function showEx(){
-            $backex.hide();
+            document.getElementById("backex").style.visibility = "hidden";
             $ex.lazylinepainter('paint');
         };
         function hideEx(){
-            $backex.show();
+            document.getElementById("backex").style.visibility = "visible";
             $backex.lazylinepainter('paint');
         };
 
@@ -593,15 +590,15 @@
                }
 
                if(isMenuButton && !isNavOpen){
-                   $navigation.css({
-                       display:'block',
-                       left:  (e.pageX-14),
-                       top:   (e.pageY-8)
-                   });
+//                   $navigation.css({
+//                       display:'block',
+//                       left:  (e.pageX-14),
+//                       top:   (e.pageY-8)
+//                   });
                } else if(!isNavOpen){
-                   $navigation.css({
-                       display:'none'
-                   });
+//                   $navigation.css({
+//                       display:'none'
+//                   });
                }
            }
         });
@@ -610,20 +607,20 @@
             if(isMenuButton){
                 if(!isNavOpen) {
                     $cursor.addClass('open');
-                    $navigation.addClass('open');
+//                    $navigation.addClass('open');
                     isNavOpen = true;
-                    setTimeout(function(){
+
                         hideAll('ex');
                         showEx();
-                    }, 2000);
+
 
                 }else{
                     $cursor.removeClass('open');
-                    $navigation.removeClass('open');
+//                    $navigation.removeClass('open');
                     isNavOpen = false;
-
-                    showAll();
                     hideEx();
+//                    showAll();
+
 
                 }
             }

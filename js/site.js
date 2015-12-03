@@ -180,6 +180,7 @@ $(document).ready(function domready() {
     var $ec6line2 = $('#slide6line2');
     var $ec6copy1 = $('#slide6copy1');
     var $ec6copy2 = $('#slide6copy2');
+
     //MENU
     var $window = $(window);
     var $menuContent = $("#menuContent");
