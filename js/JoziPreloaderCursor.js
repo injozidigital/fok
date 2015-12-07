@@ -4,7 +4,7 @@
 /**
  * Created by Steinburch on 12/3/15.
  */
-function JoziPreloaderCursor(preloadThisUrlArray,menuHitZone,navigationHitZone) {
+function JoziPreloaderCursor(preloadThisUrlArray,menuHitZone,navigationHitZone,aJoziMenu) {
 
 
     /*
@@ -368,12 +368,13 @@ function JoziPreloaderCursor(preloadThisUrlArray,menuHitZone,navigationHitZone) 
                 if (ME.isMenuButton) {
                     if (!ME.isNavOpen) {
                         CursorDomElements.cursor.addClass('open');
-                        //OPEN MENU
+                        aJoziMenu.openMenu()
                         ME.isNavOpen = true;
                         hideAll('ex');
                         showEx();
                     } else {
                         //CLOSE MENU
+                        aJoziMenu.closeMenu();
                         CursorDomElements.cursor.removeClass('open');
                         ME.isNavOpen = false;
                         ME.comingFromX = true;

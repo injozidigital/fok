@@ -4,6 +4,15 @@
  */
 $(document).ready(function domready() {
 
+    var $window = $(window);
+    var $menuWidth = $window.innerWidth();
+    var $windowHeight = $window.innerHeight();
+
+    //PRE LOADER/ CURSOR
+    var $section = $windowHeight/3;
+
+    var joziMenu = new JoziMenu();
+    var preloadCursor = new JoziPreloaderCursor(['http://injozi.biz/wip/injozi/assets/1.png'],$section,$section,joziMenu);
     var scene = $('#scene')[0];
     var parallax = new Parallax(scene, {
         relativeInput: true
@@ -12,6 +21,9 @@ $(document).ready(function domready() {
     var parallax = new Parallax(scene2, {
         relativeInput: true
     });
+    var whiteScene;
+    var particleSliderDom = $("#particle-slider");
+
     var $card = $('#card');
     var svgDataCard= {
         "card": {
@@ -161,7 +173,6 @@ $(document).ready(function domready() {
     var svgPathClasslist;
     var captionLength = 0;
     var caption = '';
-    var $wrapperID = $("#wrapper");
 
     //COPY
     var $ec1line1 = $('#slide1line1');
@@ -181,25 +192,107 @@ $(document).ready(function domready() {
     var $ec6copy1 = $('#slide6copy1');
     var $ec6copy2 = $('#slide6copy2');
 
-    //MENU
-    var $window = $(window);
-    var $menuContent = $("#menuContent");
-    var $menu = $wrapperID.find(".main-menu");
-    var $aboutLink = $("#aboutLink");
-    var $whatWeDoLink = $("#whatwedoLink");
-    var $theWorkLink = $("#theworkLink");
-    var $contactLink = $("#contactLink");
-    var $contactInfo = $wrapperID.find(".contact-info");
-    var $gevaar = $wrapperID.find(".gevaar");
-    var $backmenu = $wrapperID.find(".backmenu");
-    var $contactInfo =$("#contactDetails");
-    var $menuLink =$("#menuLinks");
-    var $menuContainer = $("#menuContainer");
-    var $menuWidth = $window.innerWidth();
-    var $menuLink =$("#menuLinks");
+
     //FOOTER
     var $footer =$("#jozi-footer");
 
+    $('#fullpage').fullpage({
+        verticalCentered: false,
+        scrollingSpeed: 1000,
+        onLeave: function(index, nextIndex, direction){
+            var leavingSection = $(this);
+
+            if(nextIndex == 1 ){
+                console.log("slide1");
+
+            }
+            if(nextIndex == 2){
+                console.log("slide2");
+                setInterval (path.animate(0.2), 500);
+                svgPathClasslist =  whiteScene.contentDocument.querySelector('#white-path').classList;
+                svgPathClasslist.remove("white");
+                svgPathClasslist.add("black");
+
+                setTimeout(function(){
+                    $ec1line1.addClass("showline");
+                    $ec1copy1.addClass("showcopy");
+                }, 200);
+            }
+            if(nextIndex == 4){
+                console.log("slide3");
+                setInterval (path.animate(0.6), 500);
+                svgPathClasslist.remove("black");
+                svgPathClasslist.add("white");
+                if(direction =='down'){
+
+                    setTimeout(function(){
+                        $ec2line1.addClass("showline");
+                        $ec2line2.addClass("showline");
+                        $ec2copy1.addClass("showcopy");
+                        $ec2copy2.addClass("showcopy");
+                        setTimeout(function(){
+                            $ec1Splat.addClass('grow');
+                        }, 500);
+                    }, 100);
+
+
+                }
+            }
+            if(nextIndex == 5){
+                console.log("slide4");
+                setInterval ( path.animate(0.8), 500);
+                svgPathClasslist.remove("white");
+                svgPathClasslist.add("black");
+                if(direction =='down'){
+                    setTimeout(function(){
+                        $ec3line1.addClass("showline");
+                        $ec3line2.addClass("showline");
+                        $ec3copy1.addClass("showcopy");
+                        $ec3copy2.addClass("showcopy");
+                        setTimeout(function(){
+                            $ec3Splat.addClass('grow');
+                        }, 500);
+                    }, 100);
+                }
+            }
+            if(index == 5){
+                console.log("slide5");
+                setInterval (path.animate(1), 500);
+                if(direction =='down'){
+                    setTimeout(function(){
+                        $ec4line1.addClass("showline");
+                        $ec4copy1.addClass("showcopy");
+                    }, 100);
+                }
+            }
+            if(index == 6){
+                console.log("slide6");
+                console.log();
+                setInterval (path.animate(1), 500);
+                svgPathClasslist.remove("black");
+                svgPathClasslist.add("white");
+                setTimeout(function(){
+                    $ec6line1.addClass("showline");
+                    $ec6line2.addClass("showline");
+                    $ec6copy1.addClass("showcopy");
+                    $ec6copy2.addClass("showcopy");
+                    setTimeout(function(){
+                        $ec6Splat.addClass('grow');
+                    }, 500);
+                }, 100);
+            }
+            if(index == 7){
+                console.log("slide7");
+                setTimeout(function(){
+                    $footer.addClass('show');
+                }, 1500);
+            }
+
+
+        }
+
+
+    });
 
     $card.lazylinepainter({
         'svgData': svgDataCard,
@@ -254,173 +347,22 @@ $(document).ready(function domready() {
         (window.addEventListener
             ? window.addEventListener('click', function(){ps.init(true)}, false)
             : window.onclick = function(){ps.init(true)});
-    };
-
-
-    $menuLink.click(function () {
-        $('.content').addClass("contentPush");
-        $menu.addClass("opened");
-        $(".menu-links").addClass("menuSlideanimation");
-    });
-
-    /*
-     * other text fades
-     * contact slides up
-     * contact info shows*/
-    $contactLink.click(function contactClickHandler() {
-        $contactLink.addClass('show');
-        $contactLink.addClass('white');
-        $aboutLink.addClass('hideLink');
-        $whatWeDoLink.addClass('hideLink');
-        $theWorkLink.addClass('hideLink');
-        $contactInfo.animate({opacity: '1'}, 1000).css("z-index", "999");
-        $menuContainer.css({
-            'width' : 'auto'
-        });
-        $gevaar.animate({opacity: '0'});
-        $backmenu.animate({opacity: '1'});
-    });
-
-    $backmenu.click(function backMenuClickHandler() {
-        $gevaar.animate({opacity: '1'});
-        $backmenu.animate({opacity: '0'});
-
-        $contactInfo.animate({opacity: '0'}).css("z-index", "0");
-
-        $contactLink.removeClass('show');
-        $aboutLink.removeClass('show');
-        $whatWeDoLink.removeClass('show');
-        $theWorkLink.removeClass('show');
-        $contactLink.removeClass('hideLink');
-        $aboutLink.removeClass('hideLink');
-        $whatWeDoLink.removeClass('hideLink');
-        $theWorkLink.removeClass('hideLink');
-
-        $contactLink.removeClass('white');
-
-    });
-
-    $window.resize(function(){
-        $menuWidth = $window.innerWidth();
-        $menuContainer.css("width", $menuWidth);
-        $(".fittext1").fitText();
-        $(".fittext2").fitText(1.2);
-        $(".fittext3").fitText(1.1, { minFontSize: '111px', maxFontSize: '75px' });
-    });
+   };
 
     function initApp(){
+
         container.innerHTML = '<object id="white-scene" type="image/svg+xml" data="assets/line_white.svg"></object>';
-        var scene = document.getElementById('white-scene');
-        scene.addEventListener('load', function() {
-            path = new ProgressBar.Path(scene.contentDocument.querySelector('#white-path'), {
+        whiteScene = document.getElementById('white-scene');
+        whiteScene.addEventListener('load', function() {
+            path = new ProgressBar.Path(whiteScene.contentDocument.querySelector('#white-path'), {
                 duration: 5000
             });
             path.animate(0.1);
         });
-
-        $('#fullpage').fullpage({
-            verticalCentered: false,
-            afterRender: function(){
-                //playing the video
-                $('video').get(0).play();
-            },
-            scrollingSpeed: 1000,
-            onLeave: function(index, nextIndex, direction){
-                var leavingSection = $(this);
-
-                if(nextIndex == 1 ){
-                    console.log("slide1");
-
-                }
-                if(nextIndex == 2){
-                    console.log("slide2");
-                    setInterval (path.animate(0.2), 500);
-                    svgPathClasslist =  document.getElementById('white-scene').contentDocument.querySelector('#white-path').classList;
-                    svgPathClasslist.remove("white");
-                    svgPathClasslist.add("black");
-
-                    setTimeout(function(){
-                        $ec1line1.addClass("showline");
-                        $ec1copy1.addClass("showcopy");
-                    }, 200);
-                }
-                if(nextIndex == 4){
-                    console.log("slide3");
-                    setInterval (path.animate(0.6), 500);
-                    svgPathClasslist.remove("black");
-                    svgPathClasslist.add("white");
-                    if(direction =='down'){
-
-                        setTimeout(function(){
-                            $ec2line1.addClass("showline");
-                            $ec2line2.addClass("showline");
-                            $ec2copy1.addClass("showcopy");
-                            $ec2copy2.addClass("showcopy");
-                            setTimeout(function(){
-                                $ec1Splat.addClass('grow');
-                            }, 500);
-                        }, 100);
-
-
-                    }
-                }
-                if(nextIndex == 5){
-                    console.log("slide4");
-                    setInterval ( path.animate(0.8), 500);
-                    svgPathClasslist.remove("white");
-                    svgPathClasslist.add("black");
-                    if(direction =='down'){
-                        setTimeout(function(){
-                            $ec3line1.addClass("showline");
-                            $ec3line2.addClass("showline");
-                            $ec3copy1.addClass("showcopy");
-                            $ec3copy2.addClass("showcopy");
-                            setTimeout(function(){
-                                $ec3Splat.addClass('grow');
-                            }, 500);
-                        }, 100);
-                    }
-                }
-                if(index == 5){
-                    console.log("slide5");
-                    setInterval (path.animate(1), 500);
-                    if(direction =='down'){
-                        setTimeout(function(){
-                            $ec4line1.addClass("showline");
-                            $ec4copy1.addClass("showcopy");
-                        }, 100);
-                    }
-                }
-                if(index == 6){
-                    console.log("slide6");
-                    console.log();
-                    setInterval (path.animate(1), 500);
-                    svgPathClasslist.remove("black");
-                    svgPathClasslist.add("white");
-                    setTimeout(function(){
-                        $ec6line1.addClass("showline");
-                        $ec6line2.addClass("showline");
-                        $ec6copy1.addClass("showcopy");
-                        $ec6copy2.addClass("showcopy");
-                        setTimeout(function(){
-                            $ec6Splat.addClass('grow');
-                        }, 500);
-                    }, 100);
-                }
-                if(index == 7){
-                    console.log("slide7");
-                    setTimeout(function(){
-                        $footer.addClass('show');
-                    }, 1500);
-                }
-
-
-            }
-
-
-        });
+        //playing the video
 
         setTimeout(function(){
+            $('video').get(0).play();
             $card.animate({opacity:'1'},4500);
             setTimeout(function(){
                 $card.lazylinepainter('paint');
@@ -441,13 +383,27 @@ $(document).ready(function domready() {
                         });
                     }, 2000);
                     setTimeout(function(){
-                        $("#particle-slider").animate({opacity:'1'},4000);
+                        particleSliderDom.animate({opacity:'1'},4000);
                     }, 4500);
                 }, 3500);
             }, 1000);
         }, 2000);
         setInterval (cursorAnimation(), 600);
     };
-    initApp();
+    preloadCursor.preload();
+    $(window).load(function() {
+        preloadCursor.doneLoading();
+        document.getElementById("mainContent").style.visibility='visible';
+        setTimeout(function(){
+            initApp();
+        }, 4000);
+
+
+    });
+
+    $window.resize(function(){
+        joziMenu.resizeMenu();
+    });
+
     $(window).trigger('resize');
 });
