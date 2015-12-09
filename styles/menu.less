@@ -3,7 +3,6 @@
 //*   MENU CODE             *//
 //******************************//
 
-
 body {
   oveflow: hidden;
 }
@@ -17,11 +16,11 @@ body {
 }
 
 .content {
-  position: absolute;
+  //  position: absolute;
   width: 100%;
-  -webkit-transition: all 0.8s ease;
-  -moz-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+  -webkit-transition: left 0.8s ease;
+  -moz-transition: left 0.8s ease;
+  transition: left 0.8s ease;
   left: 0px;
 }
 
@@ -36,7 +35,7 @@ body {
   height: 100%;
   background: url('../assets/menu_bgGradient.svg') no-repeat center center fixed;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 15;
   left: 0px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -56,7 +55,7 @@ body {
     background: -webkit-gradient(linear, left top, right bottom, from(#fff), to(fade(#fff, 0%)));
     -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(fade(#fff, 0%)));
     -webkit-background-clip: text;
-    z-index: 9999;
+    z-index: 16;
 
 
     li {
@@ -70,7 +69,7 @@ body {
         &.hideLink {
           opacity: 0;
         }
-        z-index:999;
+        z-index:16;
       }
 
       .menuthinText {
@@ -140,12 +139,6 @@ body {
   .menufix {
     margin-left: 12%;
     margin-top: -6%;
-    //    .contact,
-    //    .about,
-    //    .whatwedo,
-    //    .thework {
-    //      color: @brand-grey;
-    //    }
   }
   .arrowimg {
     width: 13px;

@@ -49,7 +49,7 @@ function JoziMenu() {
         ME.aboutLink.addClass('hideLink');
         ME.whatWeDoLink.addClass('hideLink');
         ME.theWorkLink.addClass('hideLink');
-        ME.contactInfo.animate({opacity: '1'}, 1000).css("z-index", "999");
+        ME.contactInfo.animate({opacity: '1'}, 1000).css("z-index", "16");
         ME.menuContainer.css({
             'width' : 'auto'
         });

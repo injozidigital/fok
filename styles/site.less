@@ -48,12 +48,10 @@
   src: url('fonts/geomanist-medium-webfont.eot');
 }
 
-
 @font-face {
   font-family: 'geomanistbold';
   src: url('fonts/geomanist-bold-webfont.eot');
 }
-
 
 @font-face {
   font-family: 'geomanistbook';
@@ -92,15 +90,28 @@
 @import "slide3.less";
 @import "slide4.less";
 @import "slide7.less";
+@import "menu.less";
+@import "preloader.less";
 @import "slidenavigation.less";
 
 @brand-green:#2DE9A1;
 @font-size-small:12px;
 @brand-white:#ffffff;
 @brand-grey:#4b4b4b;
+
 #mainContent{
   visibility: hidden;
 }
+
+.gregs-awesome-overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url('../assets/texture_overlay.png');
+  z-index: 1;
+  opacity: 0.3;
+}
+
 #jozi-footer {
   font-family: 'Geomanist-Regular';
   span{
@@ -154,28 +165,19 @@
     }
   }
 }
-
-
-
-
-
-
 body {
   background-color: red;
 }
-
 .section{
   text-align:center;
   background-size: cover;
 }
-
 .scene {
   padding: 0;
   margin: 0;
   margin-top: -20%;
 
 }
-
 .layer:nth-child(1) button {
   -webkit-transform: rotate(150deg);
 }
@@ -307,17 +309,9 @@ p{
 .myLayer2 {
   z-index: 20;
 }
-
-
-
 #progressline-white{
   svg{stroke:#FFF!important;}
 }
-
-
-
-
-
 .clr-pad{
   padding: 0px;
 }
@@ -374,8 +368,7 @@ p{
   transition:all 0.2s;
   transition-timing-function: ease-out;
 }
-.grow
-{
+.grow{
   -webkit-transform: scale(1.0);
   -ms-transform: scale(1.0);
   transform: scale(1.0);
@@ -406,7 +399,6 @@ p{
     box-shadow: 0px 0 2px 4px rgba(20, 20, 20, 0.17);
   }
 }
-
 @-webkit-keyframes offbounce {
   100% {
     -webkit-transform: translateY(-10%);
@@ -437,7 +429,6 @@ p{
   from {transform: scale(1,1);}
   to {transform: scale(1.3,1.3);}
 }
-
 @keyframes killMarginL {
   100%  {margin-left: 0;}
 }

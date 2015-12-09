@@ -10,8 +10,6 @@
 
 	<link rel="stylesheet" type="text/css" href="styles/jquery.fullPage.css" />
 	<link rel="stylesheet" type="text/css" href="styles/site.css" />
-	<link rel="stylesheet" type="text/css" href="styles/preloader.css" />
-
 	<!--[if IE]>
 	<script type="text/javascript">
 		var console = { log: function() {} };
@@ -121,7 +119,7 @@
                 <div class="cl-effect-5 social">
                     <div class="col-md-12 menuFooter">
 
-                        <img src="assets/menuItems_menu_btnFrame.svg">
+                        <img src="assets/menu_btnFrame.svg">
                         <a href="https://www.facebook.com/injozi?fref=ts" target="self" class="frame">
                             <span data-hover="FACEBOOK">FACEBOOK</span>
                         </a>
@@ -129,7 +127,7 @@
                         <span class="iconadd">+</span>
 
                                        <span class="menuleft">
-                                           <img src="assets/menuItems_menu_btnFrame.svg">
+                                           <img src="assets/menu_btnFrame.svg">
                                        </span>
 
                         <a href="https://twitter.com/injozi" target="self" class="frame2">
@@ -148,9 +146,10 @@
 	<div id="fullpage">
 		<!-- VIDEO-->
 		<div class="section" id="section0">
+			<div class="gregs-awesome-overlay"></div>
 			<video loop muted id="myVideo">
-				<source src="assets/final.mp4" type="video/mp4">
-				<source src="assets/final.webm" type="video/webm">
+				<source src="assets/VIDEO/final.mp4" type="video/mp4">
+				<source src="assets/VIDEO/final.webm" type="video/webm">
 			</video>
 			<div class="myLayer child myLayer1 col-xs-9">
 				<div class="typecopy pull-right col-xs-12">
@@ -166,20 +165,15 @@
 				<div class="svgHolder col-xs-12">
 					<div id='card'></div>
 				</div>
-			</div>
-			<div class="myLayer myLayer1  est" id="particle-slider">
-				<div class="slides">
-					<div class="slide" data-src="assets/est-01-2.png">
-					</div>
+				<!--<img class="col-xs-8" id="est" src="assets/est04.png">-->
+				<div class="glitch-image-est" id="est">
+					<canvas id="estGlitch"></canvas>
 				</div>
-				<canvas class="draw"></canvas>
+				</img>
 			</div>
 		</div>
 		<!-- GOOD WORK-->
 		<div class="section" id="section1outer">
-		<span id="preloaderline">
-    		<span  id="progressline-white"></span>
-		</span>
 			<div class="section" id="section1">
 				<ul id="scene" class="scene border col-xs-12">
 					<li class="layer" data-depth="1.00"></li>
@@ -213,7 +207,6 @@
 							</div>
 							<div class="col-xs-9 clr-pad">
 								<img class="col-xs-12 clr-pad" src="assets/GOOWORK/GOOD_WORK.png">
-								<div class="square"></div>
 							</div>
 						</div>
 					</li>
@@ -225,7 +218,7 @@
 		</div>
 		<!-- WHOLESOME-->
 		<div class="section" id="section2">
-			<canvas id="noise"></canvas>
+			<div class="gregs-awesome-overlay"></div>
 			<div class="square"></div>
 			<div class="col-sm-10 child myLayer small-ball-container">
 				<div class="clr-pad col-sm-4">
@@ -275,7 +268,6 @@
 		</div>
 		<!-- BEAUTY-->
 		<div class="section" id="section3">
-
 			<img src="assets/BEAUTY/BEAUTY_BLOB.png" class="img-responsive col-sm-offset-4  offball med-ball">
 			<div class=" col-sm-offset-2 col-sm-10 child myLayer main-text">
 				<div class="col-xs-12">
@@ -346,6 +338,7 @@
 		</div>
 		<!-- STRAIGHT-->
 		<div class="section" id="section4">
+			<div class="gregs-awesome-overlay"></div>
 			<ul class="grid grid--examples">
 				<li class="grid__item">
 					<div class="grid__img grid__img--example-1" >
@@ -393,27 +386,9 @@
 		</div>
 		<!--PEOPLE -->
 		<div class="section" id="section6outer">
+			<div class="gregs-awesome-overlay"></div>
 			<div class="section" id="section6"></div>
-			<!--<div class="col-xs-8 child">-->
-			<!--<div class="copy-line-container">-->
-			<!--<div class="line-container col-sm-offset-10 col-sm-2">-->
-			<!--<span id="slide6line1" class="line wholesome"></span>-->
-			<!--</div>-->
-			<!--<div class="copy-container col-xs-12 clr-pad">-->
-			<!--<p id="slide6copy1" class="copy">THIS IS <span class="makeBold">WHAT WE DO</span></p>-->
-			<!--</div>-->
-			<!--</div>-->
-
-			<!--<div class="copy-line-container lower">-->
-			<!--<div class="line-container col-sm-offset-10 col-sm-2">-->
-			<!--<span id="slide6line2" class="line"></span>-->
-			<!--</div>-->
-			<!--<div class="copy-container col-xs-12 clr-pad">-->
-			<!--<p id="slide6copy2" class="copy sub"><span class="makeBold">GOOD WORK</span> FOR <span class="makeBold">GOOD</span></p>-->
-			<!--</div>-->
-			<!--</div>-->
-			<!--</div>-->
-			<div class="col-sm-10 child myLayer splat splat-small">
+			<div class="col-sm-12 child myLayer splat splat-small">
 				<img src="assets/slide6_splat.png" class="img-responsive col-sm-9">
 			</div>
 			<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer1">
@@ -426,8 +401,7 @@
 					<!--<span class="shadow"></span>-->
 				</div>
 			</div>
-			<div class=" col-sm-offset-2 col-sm-10 child myLayer myLayer2 main-text">
-				<img src="assets/pasted%20svg%20517709x382_poster_.png" class="img-responsive col-sm-6 ">
+			<div class="col-sm-10 child myLayer myLayer2 main-text">
 				<div class="col-sm-3">
 					<div class="copy-line-container">
 						<div class="line-container col-sm-offset-8 col-sm-4">
@@ -447,6 +421,8 @@
 						</div>
 					</div>
 				</div>
+				<img src="assets/pasted%20svg%20517709x382_poster_.png" class="img-responsive col-sm-6 ">
+
 			</div>
 			<div class="col-sm-10 child myLayer myLayer2 top-ball">
 				<div class="clr-pad col-sm-offset-1 col-sm-2">
@@ -457,9 +433,10 @@
 		</div>
 		<!-- VIDEO-->
 		<div class="section" id="section7">
+			<div class="gregs-awesome-overlay"></div>
 			<video autoplay loop muted id="myVideo2">
-				<source src="assets/Crystal_Explosion_100fps_Slow_Mo.mp4" type="video/mp4">
-				<source src="assets/Crystal_Explosion_100fps_Slow_Mo.webm" type="video/webm">
+				<source src="assets/VIDEO/Crystal_Explosion_100fps_Slow_Mo.mp4" type="video/mp4">
+				<source src="assets/VIDEO/Crystal_Explosion_100fps_Slow_Mo.webm" type="video/webm">
 			</video>
 			<div id="jozi-footer">
 				<div class="col-sm-3 footer-offset footer-nav">
@@ -493,54 +470,13 @@
 <script type="text/javascript" src="js/tiltfx.min.js"></script>
 <script type="text/javascript" src="js/typer.min.js"></script>
 <script type="text/javascript" src="js/partslide.min.js"></script>
-<script type="text/javascript" src='js/glitchBettaHaveMyMoney.js'></script>
+<script type="text/javascript" src='js/glitchBettaHaveMyMoney.min.js'></script>
 <script src="js/jquery.fittext.js"></script>
-<script type="text/javascript" src="js/JoziMenu.js"></script>
-<script type="text/javascript" src="js/CursorDomElements.js"></script>
-<script type="text/javascript" src="js/CursorDrawingInfo.js"></script>
-<script type="text/javascript" src="js/JoziPreloaderCursor.js"></script>
+<script type="text/javascript" src="js/JoziMenu.min.js"></script>
+<script type="text/javascript" src="js/CursorDomElements.min.js"></script>
+<script type="text/javascript" src="js/CursorDrawingInfo.min.js"></script>
+<script type="text/javascript" src="js/JoziPreloaderCursor.min.js"></script>
 <script type="text/javascript" src="js/site.js"></script>
-
-<script>
-	var canvas = document.getElementById('noise'),
-			ctx = canvas.getContext('2d');
-
-	function resize() {
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
-	}
-	resize();
-	window.onresize = resize;
-
-	function noise(ctx) {
-
-		var w = ctx.canvas.width,
-				h = ctx.canvas.height,
-				idata = ctx.createImageData(w, h),
-				buffer32 = new Uint32Array(idata.data.buffer),
-				len = buffer32.length,
-				i = 0;
-
-		for(; i < len;)
-			buffer32[i++] = ((255 * Math.random())|0) << 24;
-
-		ctx.putImageData(idata, 0, 0);
-	}
-
-	var toggle = true;
-
-	// added toggle to get 30 FPS instead of 60 FPS
-	(function loop() {
-		toggle = !toggle;
-		if (toggle) {
-			requestAnimationFrame(loop);
-			return;
-		}
-		noise(ctx);
-		requestAnimationFrame(loop);
-	})();
-
-</script>
 </body>
 </html>
 

@@ -1,9 +1,6 @@
 /**
  * Created by Steinburch on 12/2/15.
  */
-/**
- * Created by Steinburch on 12/2/15.
- */
 $(document).ready(function() {
     var $windowHeight = window.innerHeight;
     var $section = $windowHeight/3;
