@@ -50,9 +50,6 @@ function JoziMenu() {
         ME.whatWeDoLink.addClass('hideLink');
         ME.theWorkLink.addClass('hideLink');
         ME.contactInfo.animate({opacity: '1'}, 1000).css("z-index", "16");
-        ME.menuContainer.css({
-            'width' : 'auto'
-        });
         ME.gevaar.animate({opacity: '0'});
         ME.backmenu.animate({opacity: '1'});
     });
