@@ -6,334 +6,293 @@
 body {
   oveflow: hidden;
 }
-.menuWrapper {
-  height: 100%;
-  width: 100%;
-  bottom: 0;
-  top: 0;
-  position: relative;
-  display: none;
-}
 
-.content {
-  //  position: absolute;
-  width: 100%;
-  -webkit-transition: left 0.8s ease;
-  -moz-transition: left 0.8s ease;
-  transition: left 0.8s ease;
-  left: 0px;
-}
-
-.contentPush {
-  left: 95% !important;
-}
-
-.main-menu {
-  position: absolute;
-  float: left;
-  width: 0%;
-  height: 100%;
-  background: url('../assets/menu_bgGradient.svg') no-repeat center center fixed;
-  overflow: hidden;
-  z-index: 15;
-  left: 0px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  -webkit-transition: width 0.8s ease;
-  -moz-transition: width 0.8s ease;
-  transition: width 0.8s ease;
-  &.opened {
-    width: 100%;
-  }
-
-
-  .menu-links {
-    font-family: 'geomanistbold';
-    font-size: 137px;
-    background: -webkit-gradient(linear, left top, right bottom, from(#fff), to(fade(#fff, 0%)));
-    -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(fade(#fff, 0%)));
-    -webkit-background-clip: text;
-    z-index: 16;
-
-
-    li {
-      cursor: pointer;
-
-      div {
-        height: 100px;
-        background-position-x: -6px;
-        opacity: 1;
-        transition: 1s ease;
-        &.hideLink {
-          opacity: 0;
-        }
-        z-index:16;
-      }
-
-      .menuthinText {
-        font-family: 'geomanistthin';
-      }
-      .menuHover{
-        color: @brand-grey;
-        span{
-          color: @brand-grey;
-        }
-      }
-    }
-
-
-    .whatwedo {
-      margin-top: 0px;
-      &.show {
-        margin-top: -100px;
-      }
-    }
-    .thework {
-      margin-top: 0px;
-      &.show {
-        margin-top: -200px;
-      }
-    }
-    .contact {
-      margin-top: 0px;
-      height: 122px;
-      &.show {
-        margin-top: -300px;
-      }
-    }
-  }
-  .menuSlideanimation {
-    animation: menuBounceIn 1s ease-in-out 1 normal;
-  }
-
-
-  .menu-splat {
-    height: 285px;
-    width: auto;
-  }
-  .menuTopText {
-    p {
-      color: @brand-grey;
-      font-family: 'geomanistbook';
-      font-size: 13px;
-      font-weight: bolder;
-      letter-spacing: 4px;
-      cursor: pointer;
-      &.backmenu {
-        color: @brand-green;
-        position: absolute;
-        opacity: 0;
-        transition: opacity 1s ease;
-      }
-      &:hover {
-        color: @brand-white;
-      }
-      &.gevaar {
-        opacity: 1;
-        transition: opacity 1s ease;
-      }
-    }
-  }
-  .menufix {
-    margin-left: 12%;
-    margin-top: -6%;
-  }
-  .arrowimg {
-    width: 13px;
-    position: relative;
-  }
-}
-
-
-
-
-
-#contactDetails {
-  top: -145px;
-  position: relative;
-  opacity: 0;
-  z-index: 0;
-  .columleftheader {
-    color: @brand-white;
-    line-height: 19px;
-    letter-spacing: 5px;
-    font-size: 12px;
-    font-family: 'geomanistbook';
-    text-align: left;
-  }
-  .careersblurb {
-    line-height: 1.5;
-    font-family: 'Geomanist-Regular';
-    color: @brand-grey;
-    font-size: 12px;
-    position: relative;
-    text-transform: uppercase;
-    text-align: left;
-    letter-spacing: 2px;
-  }
-  .menuborder {
-    border-top: 1px solid @brand-green;
-    width: 90px;
-  }
-  .menuborderright {
-    border-top: 1px solid @brand-green;
-    width: 90px;
-  }
-  .contactaddress {
-    line-height: 1.5;
-    letter-spacing: 2px;
-    word-spacing: 0;
-    font-family: 'Geomanist-Regular';
-    color: @brand-grey;
-    font-size: 12px;
-  }
-  .addressMargin {
-    margin-bottom: 15px;
-  }
-  .CareerMargin {
-    margin-bottom: 89px;
-  }
-  a {
-    font-size: @font-size-small;
-    font-family: 'geomanistbook';
-    text-decoration: none;
-    &.careerlink {
-      color: @brand-green;
-      &:hover {
-        color: @brand-white;
-      }
-    }
-    &.contactlink {
-      color: @brand-white;
-      &:hover {
-        color: @brand-grey;
-      }
-    }
-  }
-  .columnRight {
-    letter-spacing: 4px;
-  }
-  @media screen and (max-width: 1280px) {
-    .columnleft {
-      left: -39px;
-    }
-  }
-  .spacing {
-    margin-bottom: 9px;
-  }
-  .social {
-    bottom: 56px;
+#wrapper{
+  .main-menu{
     position: absolute;
-  }
-  .contactColor {
-    color: @brand-green;
-    font-size: @font-size-small;
-    font-family: 'Geomanist-Regular';
-    letter-spacing: 2px;
-  }
+    float: left;
+    width: 0%;
+    height: 100%;
+    background: url('../assets/menu_bgGradient.svg') no-repeat center center fixed;
+    overflow: hidden;
+    z-index: 15;
+    left: 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    -webkit-transition: width 0.8s ease;
+    -moz-transition: width 0.8s ease;
+    transition: width 0.8s ease;
+    &.opened {
+      width: 100%;
+    }
 
-  .lefttext {
-    font-family: 'Geomanist-Regular';
-    color: @brand-white;
-    font-size: @font-size-small;
-  }
-}
-
-.cl-effect-5 {
-  .menuFooter {
-    a {
-      overflow: hidden;
-      padding: 0 4px;
-      height: 1em;
-      position: relative;
-      font-family: 'Geomanist-Regular';
-      font-size: 12px;
-      display: inline-block;
-      outline: none;
-      color: @brand-green !important;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-
-      span {
-        position: relative;
-        display: inline-block;
-        -webkit-transition: -webkit-transform 0.3s;
-        -moz-transition: -moz-transform 0.3s;
-        transition: transform 0.3s;
-        color: @brand-green;
+    #menuContainer{
+      .menu-splat{
+        height: 20vw;
+        width: auto;
       }
-      span::before {
-        position: absolute;
-        top: 100%;
-        content: attr(data-hover);
-        font-weight: 700;
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        color: @brand-green;
+      .menufix{
+        margin-left: 10.3%;
+        margin-top: -8.2%;
+        padding-top: 33px;
+        padding-left: 23px;
+        .menuTopText{
+          p {
+            color: @brand-grey;
+            font-family: 'geomanistbook';
+            font-size: 13px;
+            font-weight: bolder;
+            letter-spacing: 4px;
+            &.backmenu {
+              color: @brand-green;
+              position: absolute;
+              opacity: 0;
+              transition: opacity 1s ease;
+            }
+            &:hover {
+              color: @brand-white;
+            }
+            &.gevaar {
+              opacity: 1;
+              transition: opacity 1s ease;
+            }
+          }
+          .arrowimg {
+            width: 13px;
+            position: relative;
+          }
+        }
+        .menu-links{
+          font-family: 'geomanistbold';
+          font-size: 7vw;
+          -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(fade(#fff, 0%)));
+          z-index: 16;
+          height: 410px;
+          padding-top: 28px;
+
+          li {
+            height: 100px;
+            .menuHover:hover, .menuHover:hover .menuthinText {
+              color: @brand-white !important;
+            }
+            .menuHover{
+              opacity: 1;
+              transition: color 600ms cubic-bezier(0.77, 0, 0.175, 1), top 600ms cubic-bezier(0.77, 0, 0.175, 1);
+              z-index:16;
+              &.hideLink {
+                opacity: 0;
+              }
+              #contactDetails {
+                position: relative;
+                opacity: 0;
+                z-index: 0;
+                font-size: 12px;
+                line-height: 15px;
+
+                .columleftheader {
+                  color: @brand-white;
+                  line-height: 19px;
+                  letter-spacing: 5px;
+                  font-family: 'geomanistbook';
+                  text-align: left;
+                }
+                .careersblurb {
+                  line-height: 1.5;
+                  font-family: 'Geomanist-Regular';
+                  color: @brand-grey;
+                  font-size: 12px;
+                  position: relative;
+                  text-transform: uppercase;
+                  text-align: left;
+                  letter-spacing: 2px;
+                }
+                .menuborder {
+                  border-top: 1px solid @brand-green;
+                  width: 90px;
+                }
+                .menuborderright {
+                  border-top: 1px solid @brand-green;
+                  width: 90px;
+                }
+                .contactaddress {
+                  line-height: 1.5;
+                  letter-spacing: 2px;
+                  word-spacing: 0;
+                  font-family: 'Geomanist-Regular';
+                  color: @brand-grey;
+                  font-size: 12px;
+                }
+                .addressMargin {
+                  margin-bottom: 15px;
+                }
+                .CareerMargin {
+                  margin-bottom: 89px;
+                }
+                a {
+                  font-size: @font-size-small;
+                  font-family: 'geomanistbook';
+                  text-decoration: none;
+                  &.careerlink {
+                    color: @brand-green;
+                    &:hover {
+                      color: @brand-white;
+                    }
+                  }
+                  &.contactlink {
+                    color: @brand-white;
+                    &:hover {
+                      color: @brand-grey;
+                    }
+                  }
+                }
+                .columnRight {
+                  letter-spacing: 4px;
+                }
+                @media screen and (max-width: 1280px) {
+                  .columnleft {
+                    left: -39px;
+                  }
+                }
+                .spacing {
+                  margin-bottom: 9px;
+                }
+                .social {
+                  bottom: 56px;
+                  position: absolute;
+                  width: 500px;
+                  z-index: 50;
+                }
+                .contactColor {
+                  color: @brand-green;
+                  font-size: @font-size-small;
+                  font-family: 'Geomanist-Regular';
+                  letter-spacing: 2px;
+                }
+
+                .lefttext {
+                  font-family: 'Geomanist-Regular';
+                  color: @brand-white;
+                  font-size: @font-size-small;
+                }
+              }
+            }
+
+            .menuthinText {
+              font-family: 'geomanistthin';
+            }
+            .menuHover{
+              color: @brand-grey;
+              line-height: 70px;
+              span{
+                color: @brand-grey;
+              }
+            }
+          }
+
+          .whatwedo {
+            top: 0px;
+            &.show {
+              top: -100px;
+            }
+          }
+          .thework {
+            top: 0px;
+            &.show {
+              top: -200px;
+            }
+          }
+          .contact {
+            top: 0px;
+            //height: 122px;
+            &.show {
+              top: -300px;
+            }
+          }
+
+        }
+        .menuSlideanimation {
+          animation: menuBounceIn 600ms cubic-bezier(0.77, 0, 0.175, 1) 1 normal;
+        }
+        .cl-effect-5{
+          position: absolute;
+          width: 500px;
+          z-index: 20;
+          .menuFooter {
+            a {
+              cursor:url(../assets/plus_cursor.png) 28 20, auto;
+              overflow: hidden;
+              padding: 0 4px;
+              height: 1em;
+              position: relative;
+              font-family: 'Geomanist-Regular';
+              font-size: 12px;
+              display: inline-block;
+              outline: none;
+              color: @brand-green !important;
+              text-decoration: none;
+              text-transform: uppercase;
+              letter-spacing: 4px;
+
+              span {
+                position: relative;
+                display: inline-block;
+                -webkit-transition: -webkit-transform 0.3s;
+                -moz-transition: -moz-transform 0.3s;
+                transition: transform 0.3s;
+                color: @brand-green;
+              }
+              span::before {
+                position: absolute;
+                top: 100%;
+                content: attr(data-hover);
+                font-weight: 700;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                color: @brand-green;
+              }
+            }
+            span {
+              color: @brand-green;
+            }
+          }
+          .menuleft {
+            position: relative;
+            left: -79px;
+          }
+          .frame {
+            left: -118px;
+          }
+          .frame2 {
+            left: -185px;
+          }
+          a:hover span,
+          a:focus span {
+            -webkit-transform: translateY(-100%);
+            -moz-transform: translateY(-100%);
+            transform: translateY(-100%);
+            color: #2AA073;
+
+          }
+          a:hover,
+          a:focus {
+            outline: none;
+          }
+          .iconadd {
+            font-size: @font-size-small;
+            position: relative;
+            left: -90px;
+          }
+
+
+          .menulight {
+            font-family: 'geomanistmedium';
+          }
+        }
       }
     }
-    span {
-      color: @brand-green;
-    }
-  }
-}
-
-.menuHover:hover, .menuHover:hover .menuthinText {
-  color: @brand-white !important;
-}
-
-
-
-.social {
-  position: absolute;
-  bottom: 50px;
-}
-.menuleft {
-  position: relative;
-  left: -79px;
-}
-.frame {
-  left: -118px;
-}
-.frame2 {
-  left: -185px;
-}
-.cl-effect-5 a:hover span,
-.cl-effect-5 a:focus span {
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  transform: translateY(-100%);
-  color: #2AA073;
-}
-.cl-effect-5 a:hover,
-.cl-effect-5 a:focus {
-  outline: none;
-}
-.iconadd {
-  font-size: @font-size-small;
-  position: relative;
-  left: -90px;
-}
-
-
-.menulight {
-  font-family: 'geomanistmedium';
-}
-@media screen and ( max-height: 711px) {
-  .main-menu .menufix {
-    margin-left: 12%;
-    margin-top: -13%;
-    width:100%;
-  }
-  .main-menu .menu-splat {
-    height: 285px;
-    width: auto;
-    bottom: 69px;
-    position: relative;
   }
 }
 
@@ -347,4 +306,16 @@ body {
   100% {
     transform: translateX(0px);
   }
+}
+
+.content {
+  width: 100%;
+  -webkit-transition: left 0.8s ease;
+  -moz-transition: left 0.8s ease;
+  transition: left 0.8s ease;
+  left: 0px;
+}
+
+.contentPush {
+  left: 95% !important;
 }

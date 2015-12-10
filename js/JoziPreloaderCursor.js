@@ -1,9 +1,9 @@
     /**
      * Created by Steinburch on 12/3/15.
      */
-    function JoziPreloaderCursor(preloadThisUrlArray,menuHitZone,navigationHitZone,aJoziMenu) {
+    function JoziPreloaderCursor(preloadThisUrlArray,menuHitZone,downHitZone,aJoziMenu) {
 
-
+        this.$html =  $('html');
         /*
         * PRELOADER VARIABLES
         * */
@@ -26,7 +26,7 @@
         */
         this.currentMouseEvent; //TRACK CURRENT MOUSE EVENT
         this.menuHitZone = menuHitZone;
-        this.navigationHitZone = navigationHitZone;
+        this.downHitZone = downHitZone;
 
         //STATES
         this.hasPreLoaded = false;
@@ -38,6 +38,14 @@
         this.hasClicked = false;
         this.comingFromX = false;
         this.beenMenu = false;
+        this.normCursor = false;
+
+        this.CX;
+        this.CY;
+        this.cursorZone = $('#cursorZone');
+        this.cursorZoneX;
+        this.cursorZoneY;
+
 
         var ME = this;
 
@@ -148,7 +156,7 @@
             'onStrokeComplete': function () {
                 document.getElementById("backex").style.visibility = "hidden";
                 CursorDomElements.ex.hide();
-                isAnimating = false;
+                ME.isAnimating = false;
                 CursorDomElements.cursor[0].style.opacity = "0";
                 showCube();
             }
@@ -184,6 +192,8 @@
             });
         }
         this.doneLoading = function(){
+            ME.cursorZoneX = ME.cursorZone.offset().left;
+            ME.cursorZoneY = ME.cursorZone.offset().top;
             ME.circle.animate(1, function() {
                 setTimeout(function(){
                     ME.hasPreLoaded = true;
@@ -203,7 +213,7 @@
                 marginLeft: '-12px'
             });
             setTimeout(function(){
-                $('html').css({cursor: 'none'});
+                ME.$html.css({cursor: 'none'});
             }, 1000);
         }
         function checkCursor(e){
@@ -214,7 +224,7 @@
             //check that the preloader is finished and that the cursor is currently animating
             if(!ME.isAnimating){
                 //if in the top(menu) section
-                if((e.pageY < ME.menuHitZone)) {
+                if((ME.CY < ME.menuHitZone)) {
                     //if the cursor is not already a menu button and the menu(nav) is not open
                     if(!ME.isMenuButton && !ME.isNavOpen){
                         showMenu();
@@ -228,7 +238,7 @@
                     }
                 }
                 //middle section
-                if((e.pageY > ME.navigationHitZone)&&(e.pageY < ME.navigationHitZone*2)&& !ME.isUp && !ME.isMenuButton){
+                if((ME.CY > ME.menuHitZone)&&(ME.CY < ME.downHitZone)&& !ME.isUp && !ME.isMenuButton){
                     if(ME.isMenuButton) {
                         ME.isMenuButton = false;
                     }
@@ -236,7 +246,7 @@
                     hideMenu();
                 }
                 //bottom
-                if((e.pageY > (navigationHitZone*2))&& !ME.isDown && !ME.isMenuButton){
+                if((ME.CY > (ME.downHitZone))&& !ME.isDown && !ME.isMenuButton){
                     if(ME.isMenuButton) {
                         ME.isMenuButton = false;
                     }
@@ -354,6 +364,9 @@
             CursorDomElements.backex.lazylinepainter('paint');
 
         };
+        function insideMenu(){
+            return ((ME.CX > ME.cursorZoneX)&&(ME.CY > ME.cursorZoneY));
+        }
 
         $(document).on('click', function(e){
             if(ME.hasPreLoaded) {
@@ -364,13 +377,17 @@
                     }, 500);
                     if (ME.isMenuButton) {
                         if (!ME.isNavOpen) {
+                            $.fn.fullpage.setAllowScrolling(false);
+                            $.fn.fullpage.setKeyboardScrolling(false);
                             CursorDomElements.cursor.addClass('open');
                             aJoziMenu.openMenu()
                             ME.isNavOpen = true;
                             hideAll('ex');
                             showEx();
-                        } else {
+                        } else if(!insideMenu()){
                             //CLOSE MENU
+                            $.fn.fullpage.setAllowScrolling(true);
+                            $.fn.fullpage.setKeyboardScrolling(true);
                             aJoziMenu.closeMenu();
                             CursorDomElements.cursor.removeClass('open');
                             ME.isNavOpen = false;
@@ -384,10 +401,14 @@
                         }
                     }
                     if (ME.isUp) {
+
                         $.fn.fullpage.moveSectionUp();
+
                     }
                     if (ME.isDown) {
+
                         $.fn.fullpage.moveSectionDown();
+
                     }
                 }
             }
@@ -396,12 +417,27 @@
 
         $(document).on('mousemove', function(e){
             if(ME.hasPreLoaded) {
-                CursorDomElements.cursor.css({
-                    left: e.pageX,
-                    top: e.pageY
-                });
-                checkCursor(e);
+                ME.CX = e.pageX;
+                ME.CY = e.pageY;
+
+                if(ME.isNavOpen && insideMenu()){
+                    ME.$html.css({cursor: 'url(../assets/plus_cursor.png) 28 20, auto'});
+                    ME.normCursor = true;
+                    CursorDomElements.cursor.addClass("hide");
+                }else {
+                    if(ME.normCursor){
+                        ME.$html.css({cursor: 'none'});
+                        CursorDomElements.cursor.removeClass("hide");
+                        ME.normCursor = false;
+                    }
+                    CursorDomElements.cursor.css({
+                        left: ME.CX,
+                        top: ME.CY
+                    });
+                    checkCursor(e);
+                }
             }
         });
+
 
     }
