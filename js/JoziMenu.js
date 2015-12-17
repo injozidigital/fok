@@ -76,9 +76,6 @@ function JoziMenu() {
    this.resizeMenu = function(){
         ME.menuWidth = $window.innerWidth();
         ME.menuContainer.css("width", ME.menuWidth);
-        ME.fittext1.fitText();
-        ME.fittext2.fitText(1.2);
-        ME.fittext3.fitText(1.1, { minFontSize: '111px', maxFontSize: '75px' });
     };
 
 

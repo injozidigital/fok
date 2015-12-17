@@ -401,20 +401,16 @@
                         }
                     }
                     if (ME.isUp) {
-
                         $.fn.fullpage.moveSectionUp();
-
                     }
                     if (ME.isDown) {
-
                         $.fn.fullpage.moveSectionDown();
-
                     }
                 }
             }
 
         });
-
+//$(document).mousemove(function(event){}):
         $(document).on('mousemove', function(e){
             if(ME.hasPreLoaded) {
                 ME.CX = e.pageX;
